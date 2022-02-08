@@ -1,0 +1,5 @@
+[03-Dec-2021 11:03:36 Europe/Madrid] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/it/public_html/nueva/app/Http/Controllers/PedidosController.php on line 166
+[03-Dec-2021 16:39:26 Europe/Madrid] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/it/public_html/nueva/app/Http/Controllers/RutaController.php on line 3
+[03-Dec-2021 16:39:58 Europe/Madrid] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/it/public_html/nueva/app/Http/Controllers/RutaController.php on line 3
+[11-Jan-2022 09:27:45 Europe/Madrid] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/it/public_html/nueva/storage/framework/views/c7c7bef98ccaa876262cd4addc75205fe65aaf0f.php on line 585
+[27-Jan-2022 14:47:06 Europe/Madrid] PHP Fatal error:  'break' not in the 'loop' or 'switch' context in /home/it/public_html/nueva/app/Http/Controllers/RutaController.php on line 375

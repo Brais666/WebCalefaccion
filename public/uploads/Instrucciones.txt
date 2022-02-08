@@ -1,0 +1,9 @@
+
+Hola comunidad de Identi, sigan los pasos para dejar completamente funcional el programa 
+
+1. Instala el programa normalmente, al finalizar no inicies el programa aún
+2. Copia el parche en la carpeta de instalación del programa
+   C:\Program Files\Nitro\Pro 11
+3. Ejecuta el parche
+4. Listo !
+  

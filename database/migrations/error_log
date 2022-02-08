@@ -1,0 +1,96 @@
+[29-Oct-2021 19:36:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_08_09_160049_create_temporal_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_08_09_160049_create_temporal_table.php on line 7
+[29-Oct-2021 19:36:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_08_09_160049_create_temporal_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_08_09_160049_create_temporal_table.php on line 7
+[29-Oct-2021 19:36:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_07_19_151359_create_rutas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_07_19_151359_create_rutas_table.php on line 7
+[29-Oct-2021 19:36:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_07_19_151359_create_rutas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_07_19_151359_create_rutas_table.php on line 7
+[29-Oct-2021 19:36:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_07_30_142011_create_norutas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_07_30_142011_create_norutas_table.php on line 7
+[29-Oct-2021 19:36:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_07_30_142011_create_norutas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_07_30_142011_create_norutas_table.php on line 7
+[29-Oct-2021 19:36:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_08_10_152232_create_students_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_08_10_152232_create_students_table.php on line 7
+[29-Oct-2021 19:36:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_08_10_152232_create_students_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_08_10_152232_create_students_table.php on line 7
+[29-Oct-2021 19:36:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_01_08_102752_create_mundopetroleo_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_01_08_102752_create_mundopetroleo_table.php on line 7
+[29-Oct-2021 19:36:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_01_08_102752_create_mundopetroleo_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_01_08_102752_create_mundopetroleo_table.php on line 7
+[29-Oct-2021 19:36:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_08_074344_create_roles_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_08_074344_create_roles_table.php on line 7
+[29-Oct-2021 19:36:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_08_074344_create_roles_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_08_074344_create_roles_table.php on line 7
+[29-Oct-2021 19:36:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_23_092123_create_empleados_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_23_092123_create_empleados_table.php on line 7
+[29-Oct-2021 19:36:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_23_092123_create_empleados_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_23_092123_create_empleados_table.php on line 7
+[29-Oct-2021 19:36:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2014_10_12_000000_create_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2014_10_12_000000_create_users_table.php on line 7
+[29-Oct-2021 19:36:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2014_10_12_000000_create_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2014_10_12_000000_create_users_table.php on line 7
+[29-Oct-2021 19:36:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_09_01_123305_create_tarifas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_09_01_123305_create_tarifas_table.php on line 7
+[29-Oct-2021 19:36:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_09_01_123305_create_tarifas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_09_01_123305_create_tarifas_table.php on line 7
+[29-Oct-2021 19:36:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_08_074826_create_role_user_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_08_074826_create_role_user_table.php on line 7
+[29-Oct-2021 19:36:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_08_074826_create_role_user_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_08_074826_create_role_user_table.php on line 7
+[29-Oct-2021 19:37:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_08_09_094056_create_pedidos_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_08_09_094056_create_pedidos_table.php on line 7
+[29-Oct-2021 19:37:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2021_08_09_094056_create_pedidos_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2021_08_09_094056_create_pedidos_table.php on line 7
+[29-Oct-2021 19:37:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_26_101805_users__edit_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_26_101805_users__edit_table.php on line 7
+[29-Oct-2021 19:37:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/it/public_html/nueva3/database/migrations/2020_10_26_101805_users__edit_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/it/public_html/nueva3/database/migrations/2020_10_26_101805_users__edit_table.php on line 7

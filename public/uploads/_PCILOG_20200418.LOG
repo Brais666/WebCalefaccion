@@ -1,0 +1,123 @@
+18-04-2020 21:20:43:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] >>>>>>> creación de LOG <<<<<<<<<<
+18-04-2020 21:20:43:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Entrada OK.  FUELSOFT v7.0.9 del 22-01-2020
+18-04-2020 21:20:48:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] SELECCIONAR_ALMACEN (0001)
+18-04-2020 21:20:53:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] WCONTA.APP ==> INICIO.
+18-04-2020 21:20:55:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] WCONTA.APP ==> FIN. (2.227 seg.)
+18-04-2020 21:20:56:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:21:00:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] COMPROBAR_CADUCIDADES (.F.)
+18-04-2020 21:21:01:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDEN: ENTRAR
+18-04-2020 21:21:01:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDENCIAS: Incidencias en control de caducidades y/o alarmas.
+18-04-2020 21:21:02:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDENCIAS: (3) Camion: 0001 4883CWB DAF CF-360. ADR caduca el miércoles, 29 de abril de 2020
+18-04-2020 21:21:08:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:21:08:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;screenevents.activate;main)
+18-04-2020 21:21:15:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVTAS: ENTRAR (A;0001;        ) (main)
+18-04-2020 21:21:16:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browseclie: ENTRAR (frmvtas.pagbase.page1.cntalmacen.txtcodigo.gotfocus;frmvtas.pagbase.page1.cntalmacen.txtcodigo.gotfocus;frmvtas.mandarfocoacontrol;frmmantenimiento.init;frmvtas.init;main)
+18-04-2020 21:21:25:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browseclie: REFRESCAR (txtPoblacion:;txtalmacen:;txtComision:;chkComi1:.T.;chkComi2:.T.;txtTeleOpera:;txtCodigo:4300025733;txtCodMatriz:;txtTipoClie:;txtTipoBloq:;txtcadena:;chkNOMP:.F.;txtCifPais:;txtCif:;chkPunteo1:.F.;chkPunteo2:.F.;chkPunteo3:.F.;chkPunteo4:.F.;chkPunteo5:.F.;chkPunteo6:.F.;opgCDPT:3;chkBuscarEnCentros:.F.;chkBuscarEnBuques:.T.;chkBuscarEnContactos:.T.;chkContenidoEn:.T.;chkBajas:.F.;chkSinAlmacen:.T.;txtNombre:;txtDireccion:;txttelefono:)
+18-04-2020 21:22:34:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVTAS: AÑADIR (0001;TR   105;18-04-2020)
+18-04-2020 21:26:21:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVTAS: MODIFICAR. (0001;TR   105;18-04-2020)
+18-04-2020 21:26:22:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVTAS: CAMBIO PRECIO. (0001;TR   105;18-04-2020) (0;0;0) (0.291537;0;0) 
+18-04-2020 21:26:23:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados: PVP (0:0.291537); TOTAL (0:1149.24)
+18-04-2020 21:26:34:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVTAS: MODIFICAR. (0001;TR   105;18-04-2020)
+18-04-2020 21:26:35:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados: HORA (21:24:21:26)
+18-04-2020 21:26:38:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVTAS: MOD500 (0001;TR   105;18-04-2020)
+18-04-2020 21:26:57:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] EMCS: ENVIAR EXPEDICION (0001;TR   105;18-04-2020;20000000207) ==> ARC: 20ESD43200N0000142099-1; CSV: CVZJW67QGXANSK45
+18-04-2020 21:27:17:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browseclie: ENTRAR (appbrowseclientes;frmvtas.pagbase.page1.cntalmacen.txtcodigo.gotfocus;frmvtas.mandarfocoacontrol;frmmantenimiento.cmdsalir.click;frmvtas.cmdsalir.click;main)
+18-04-2020 21:27:21:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:27:29:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMASPE_LOGISPLAN: ENTRAR
+18-04-2020 21:27:50:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMASPE_LOGISPLAN: ACEPTAR (Exp. para LOGISPLAN: planificación) (TxtHora2:23:59;Txtcliente1:;Txtcliente2:9999999999;OpgVenta:3;TxtZonas:;TxtArticulos:;TxtCamiones:;TxtConductores:;chkComi1:.T.;chkComi2:.T.;TxtComisionistas:;chkPS:.T.;TxtCentros:;txtCadenas:;TxtCp:;chkGenerarPedidos:.T.;txtDestinoPedidos:D:\LOGISPLAN\PROCONSI\Proconsi\CSV PO\20200420.CSV;chkGenerarRecursos:.F.;txtDestinoRecursos:D:\LOGISPLAN\PROCONSI\Proconsi\Recursos\RECURSOS20180921.CSV;Txtalmacen1:0001;Txtfecha1:11-04-2014;Txtfecha2:18-04-2020;txtSerie:;txtNumero:0;txtSerie:ZZ;txtNumero:999999;Txtfecha1:20-04-2020;Txtfecha2:20-04-2020;TxtHora1::)
+18-04-2020 21:27:53:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:37:14:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsepecl: ENTRAR (ON... ;main)
+18-04-2020 21:37:19:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsepecl: REFRESCAR (txtalbcircu:;txtCamion:;txtConductor:;txtComision:;txtarticulo:;txtcliente:;txtpcarga:;txtzona:;Txtfecha1:;Txtfecha2:31-12-2049;Txtfecha1:20-04-2020;Txtfecha2:20-04-2020;TXTUSUARIO:;txtRefProv:;txtCifPais:;txtCif:;txtTipoBloq:;cmbBloqueadoTipo1:N;txtTipoBloq2:;cmbBloqueadoTipo2:N;opgCerrado:3;chkEstadoS:.F.;chkEstadoP:.T.;chkEstadoB:.T.;chkEstadoD:.T.;chkEstadoO:.F.;chkEstadoA:.F.;chkNOMP:.F.;chkPunteo1:.F.;chkPunteo2:.F.;chkPunteo3:.F.;txtNombre:;chkPunteo4:.F.;chkPunteo5:.F.;chkPunteo6:.F.;txtalmacen:;txtPedido:)
+18-04-2020 21:37:27:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2980;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:37:45:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: MODIFICAR. (0001;20  2980;17-04-2020)
+18-04-2020 21:37:46:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados: ESTADO (B:D); FECHAMOD (17-04-2020 18:55:27:18-04-2020 21:37:46); DESBLOQ (N:S)
+18-04-2020 21:37:53:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2981;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:38:03:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: MODIFICAR. (0001;20  2981;17-04-2020)
+18-04-2020 21:38:04:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados: ESTADO (B:D); FECHAMOD (17-04-2020 19:12:41:18-04-2020 21:38:04); DESBLOQ (N:S)
+18-04-2020 21:38:08:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsepecl: REFRESCAR (txtalbcircu:;txtCamion:;txtConductor:;txtComision:;txtarticulo:;txtcliente:;txtpcarga:;txtzona:;Txtfecha1:;Txtfecha2:31-12-2049;Txtfecha1:20-04-2020;Txtfecha2:20-04-2020;TXTUSUARIO:;txtRefProv:;txtCifPais:;txtCif:;txtTipoBloq:;cmbBloqueadoTipo1:N;txtTipoBloq2:;cmbBloqueadoTipo2:N;opgCerrado:3;chkEstadoS:.F.;chkEstadoP:.T.;chkEstadoB:.T.;chkEstadoD:.T.;chkEstadoO:.F.;chkEstadoA:.F.;chkNOMP:.F.;chkPunteo1:.F.;chkPunteo2:.F.;chkPunteo3:.F.;txtNombre:;chkPunteo4:.F.;chkPunteo5:.F.;chkPunteo6:.F.;txtalmacen:;txtPedido:)
+18-04-2020 21:38:12:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2976;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:39:19:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2976;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:39:37:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMCLIE: ENTRAR (C;4300011124) (frmpecl.pagbase.page1.cmdcliente.click;main)
+18-04-2020 21:40:46:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2975;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:40:58:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: MODIFICAR. (0001;20  2975;17-04-2020)
+18-04-2020 21:41:01:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados: VIAJE (0:1); CAMION (:0002); CONDUCTOR (:0020); FECHAMOD (17-04-2020 17:30:06:18-04-2020 21:41:01)
+18-04-2020 21:41:02:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2976) (main)
+18-04-2020 21:41:03:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2983) (main)
+18-04-2020 21:41:09:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: MODIFICAR. (0001;20  2983;17-04-2020)
+18-04-2020 21:41:13:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados: VIAJE (0:1); CAMION (:0002); CONDUCTOR (:0020); FECHAMOD (17-04-2020 21:35:27:18-04-2020 21:41:13)
+18-04-2020 21:41:17:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2868;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:41:24:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:41:25:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;screenevents.activate;main)
+18-04-2020 21:41:31:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMASPE_LOGISPLAN: ENTRAR
+18-04-2020 21:41:40:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMASPE_LOGISPLAN: ACEPTAR (Imp. planificación de LOGISPLAN) (txtOrigenPlanificacion:D:\LOGISPLAN\SALIDA\SALIDAPROCONSIPR.CSV)
+18-04-2020 21:41:44:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDEN: ENTRAR
+18-04-2020 21:41:44:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDENCIAS: Incidencias en la importación de la PLANIFICACION DE LOGISPLAN.
+18-04-2020 21:41:44:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDENCIAS: (1) Ref.pedido: 2020/0001/20002976. El ESTADO del pedido no es PENDIENTE o DESBLOQUEADO.
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] INCIDEN: ENTRAR
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Pedidos actualizados según planificación de LOGISPLAN.
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002868. Actualizado (20-04-2020;2002;0219;1;1)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002972. Actualizado (20-04-2020;2002;0219;1;2)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002969. Actualizado (20-04-2020;2002;0219;1;3)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002967. Actualizado (20-04-2020;2002;0219;1;4)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002963. Actualizado (20-04-2020;2002;0219;1;5)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002966. Actualizado (20-04-2020;2002;0219;1;6)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002965. Actualizado (20-04-2020;2002;0219;1;7)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002970. Actualizado (20-04-2020;2002;0219;1;8)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002960. Actualizado (20-04-2020;0021;0003;1;2)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002908. Actualizado (20-04-2020;0021;0003;1;3)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002979. Actualizado (20-04-2020;0021;0003;1;4)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002980. Actualizado (20-04-2020;0021;0003;1;5)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002915. Actualizado (20-04-2020;0021;0003;1;6)
+18-04-2020 21:41:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LOGISPLAN: Ref.pedido: 2020/0001/20002981. Actualizado (20-04-2020;0021;0003;1;7)
+18-04-2020 21:41:53:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:41:56:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMASPE: ENTRAR
+18-04-2020 21:42:08:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMASPE: ACEPTAR (TxtHora2:23:59;Txtcliente1:;Txtcliente2:9999999999;TxtZonas:;TxtArticulos:;TxtCamiones:;TxtConductores:;chkComi1:.T.;chkComi2:.T.;TxtComisionistas:;chkPS:.T.;TxtCentros:;txtCadenas:;txtFechaCarga:20-04-2020;TxtCp:;OpgVenta:3;chkNoRestoreWindow:.F.;chkAutoExpandirViajes:.T.;txtAutoRefresco:0;Txtalmacen1:0001;Txtfecha1:01-01-2019;Txtfecha2:26-04-2020;txtSerie:;txtNumero:0;txtSerie:ZZ;txtNumero:999999;Txtfecha1:20-04-2020;Txtfecha2:20-04-2020;TxtHora1::;opgDestino:2;cmbImpresoras:ALCOVER - LASERJET;txtFichero:;chkModoAscii:.F.;chkEMail:.F.;chkInvertirSeparadores:.F.)
+18-04-2020 21:42:16:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMVASPE: ASIGNACION_PEDIDOS. ENTRAR
+18-04-2020 21:43:34:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:43:37:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsepecl: ENTRAR (ON... ;main)
+18-04-2020 21:43:42:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsepecl: REFRESCAR (txtalbcircu:;txtCamion:;txtConductor:;txtComision:;txtarticulo:;txtcliente:;txtpcarga:;txtzona:;Txtfecha1:;Txtfecha2:31-12-2049;Txtfecha1:20-04-2020;Txtfecha2:20-04-2020;TXTUSUARIO:;txtRefProv:;txtCifPais:;txtCif:;txtTipoBloq:;cmbBloqueadoTipo1:N;txtTipoBloq2:;cmbBloqueadoTipo2:N;opgCerrado:3;chkEstadoS:.F.;chkEstadoP:.T.;chkEstadoB:.T.;chkEstadoD:.T.;chkEstadoO:.F.;chkEstadoA:.F.;chkNOMP:.F.;chkPunteo1:.F.;chkPunteo2:.F.;chkPunteo3:.F.;txtNombre:;chkPunteo4:.F.;chkPunteo5:.F.;chkPunteo6:.F.;txtalmacen:;txtPedido:)
+18-04-2020 21:43:45:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: ENTRAR (C;0001;20  2868;2020) (browsepecl.aceptarcancelar.cmdconsultar.click;browsepecl.keypress;main)
+18-04-2020 21:45:38:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2908) (main)
+18-04-2020 21:45:43:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2915) (main)
+18-04-2020 21:45:47:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2960) (main)
+18-04-2020 21:45:51:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2963) (main)
+18-04-2020 21:45:55:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2965) (main)
+18-04-2020 21:45:58:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2966) (main)
+18-04-2020 21:46:03:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2967) (main)
+18-04-2020 21:46:06:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2969) (main)
+18-04-2020 21:46:10:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2970) (main)
+18-04-2020 21:46:18:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2972) (main)
+18-04-2020 21:46:22:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2975) (main)
+18-04-2020 21:46:26:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2976) (main)
+18-04-2020 21:46:29:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2983) (main)
+18-04-2020 21:46:35:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2979) (main)
+18-04-2020 21:46:40:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2980) (main)
+18-04-2020 21:46:44:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMPECL: SIGUIENTE (C;0001;20  2981) (main)
+18-04-2020 21:46:48:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:46:49:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;screenevents.activate;main)
+18-04-2020 21:47:45:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsetrte: ENTRAR (ON... ;main)
+18-04-2020 21:48:02:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMTRAZ: ENTRAR
+18-04-2020 21:48:33:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMTRAZ: AÑADIR (0001;20   594;18-04-2020)
+18-04-2020 21:48:35:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsetrte: REFRESCAR (txtalmacen:;txtalbaran:;txtarticulo:;Txtfecha1:01-01-2020;Txtfecha2:31-12-2049)
+18-04-2020 21:48:36:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:49:01:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;screenevents.activate;main)
+18-04-2020 21:49:04:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsetrte: ENTRAR (ON... ;main)
+18-04-2020 21:49:11:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsetrte: REFRESCAR (txtalmacen:;txtalbaran:;txtarticulo:;Txtfecha1:18-04-2020;Txtfecha2:18-04-2020)
+18-04-2020 21:49:13:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMTRAZ: ENTRAR
+18-04-2020 21:49:35:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMTRAZ: MODIFICAR (0001;20   594;18-04-2020)
+18-04-2020 21:49:36:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados T1: LITROS (3941.8:3180.84); LITROS15 (3971.8:3204.84); PESO (3320.56:2679.53)
+18-04-2020 21:49:36:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados T2: LITROS (0.2:0.16); LITROS15 (0.2:0.16); PESO (0.18:0.14)
+18-04-2020 21:49:36:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Datos cambiados TE: LITROS (3942:3181); LITROS15 (3972:3205); PESO (3320.74:2679.67); TOTAL (917.99:740.77)
+18-04-2020 21:49:37:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] browsetrte: REFRESCAR (txtalmacen:;txtalbaran:;txtarticulo:;Txtfecha1:18-04-2020;Txtfecha2:18-04-2020)
+18-04-2020 21:49:38:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:49:41:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LISEXIS: ENTRAR
+18-04-2020 21:49:56:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LISEXIS: ACEPTAR (txtPagIni:0;chkVDM3:.T.;opgListado:1;opgTotales:3;chkColumnaPMM:.F.;cmbPreferencia:;chkSoloFosil:.F.;chkSoloBIO:.F.;TxtTitulo:LIBRO EXISTENCIAS 0B2 - 17/04/2020 - 21:49;chkRetornosComoEntradas:.F.;chkApaisado:.F.;ChkMovInt:.F.;ChkDetallar:.T.;ChkDecimales:.T.;chkAgruparMismaReferencia:.T.;TxtArticulos1:0001,0006,0011,0016,0019,0021,0024,0026,0029,0030,0035,0038,0040,0042,0055,0065,0070,1111,2222,GASA;TxtEpigrafe1:0B2;txtCodigoMI1:;TxtDescri1:M3;Txtalmacen1:0001;Txtalmacen2:0001;TxtArticulos2:;TxtEpigrafe2:;txtCodigoMI2:;TxtDescri2:M3;Txtfecha1:18-04-2020;Txtfecha2:18-04-2020;txtTanque:;opgDestino:1;chkPantallaPDF:0;cmbImpresoras:ALCOVER - LASERJET;txtFichero:F:\PROCONSI\FUEL_003\TMP\libro-exist-gasb.XLS;chkModoAscii:.F.;chkEMail:.F.;chkInvertirSeparadores:.F.)
+18-04-2020 21:49:59:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMSICA: LEER_FTP
+18-04-2020 21:50:28:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LISEXIS: ACEPTAR (txtPagIni:0;chkVDM3:.T.;opgListado:1;opgTotales:3;chkColumnaPMM:.F.;cmbPreferencia:;chkSoloFosil:.F.;chkSoloBIO:.F.;TxtTitulo:LIBRO EXISTENCIAS 0B3 - 17/04/2020 - 21:49;chkRetornosComoEntradas:.F.;chkApaisado:.F.;ChkMovInt:.F.;ChkDetallar:.T.;ChkDecimales:.F.;chkAgruparMismaReferencia:.T.;TxtArticulos1:0002,0003,0004,0007,0008,0009,0012,0020,0031,0034,0036,0039,0043,0060,0066,4444;TxtEpigrafe1:0B3;txtCodigoMI1:;TxtDescri1:M3;Txtalmacen1:0001;Txtalmacen2:0001;TxtArticulos2:;TxtEpigrafe2:;txtCodigoMI2:;TxtDescri2:M3;Txtfecha1:18-04-2020;Txtfecha2:18-04-2020;txtTanque:;opgDestino:1;chkInvertirSeparadores:.F.;chkPantallaPDF:0;cmbImpresoras:ALCOVER - LASERJET;txtFichero:F:\PROCONSI\FUEL_003\TMP\libro-exist-gasb.XLS;chkModoAscii:.F.;chkEMail:.F.)
+18-04-2020 21:50:33:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMSICA: LEER_FTP
+18-04-2020 21:50:52:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] LISEXIS: ACEPTAR (txtPagIni:0;chkVDM3:.T.;opgListado:2;chkLitros15EnCompras:.T.;opgTotales:3;chkColumnaPMM:.F.;cmbPreferencia:;chkSoloFosil:.F.;chkSoloBIO:.F.;TxtTitulo:LIBRO EXISTENCIAS 0B3 - 17/04/2020 - 21:49;chkRetornosComoEntradas:.F.;chkApaisado:.F.;ChkMovInt:.F.;ChkDetallar:.T.;ChkDecimales:.F.;chkAgruparMismaReferencia:.T.;TxtArticulos1:9999;TxtEpigrafe1:0D9;txtCodigoMI1:;TxtDescri1:M3;Txtalmacen1:0001;Txtalmacen2:0001;TxtArticulos2:;TxtEpigrafe2:;txtCodigoMI2:;TxtDescri2:M3;Txtfecha1:18-04-2020;Txtfecha2:18-04-2020;txtTanque:;opgDestino:1;chkInvertirSeparadores:.F.;chkPantallaPDF:0;cmbImpresoras:ALCOVER - LASERJET;txtFichero:F:\PROCONSI\FUEL_003\TMP\libro-exist-gasb.XLS;chkModoAscii:.F.;chkEMail:.F.)
+18-04-2020 21:50:52:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] FRMSICA: LEER_FTP
+18-04-2020 21:51:03:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;main)
+18-04-2020 21:51:03:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (frmproconsi.activate;screenevents.activate;main)
+18-04-2020 21:51:04:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] == CerrarFicherosEnMENU == (appfin;frmproconsi.keypress;main)
+18-04-2020 21:51:07:[JNIETO#TS01<TS>XAVI-PC#WFUEL.EXE#9076] Salida OK
