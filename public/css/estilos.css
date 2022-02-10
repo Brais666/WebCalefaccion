@@ -1170,7 +1170,7 @@ p.toggle-compra{
 }
 
 p.toggle-error{
-    color#0075c9;
+    color:#0075c9;
  background-color:#fff;
     
 }
@@ -1473,7 +1473,6 @@ p.dir{
     line-height: 1.875em;
     outline: medium none;
     padding: 1em 1em ;
-    margin-left:2em;
     width:230%;
 }
 .searchty2 {
@@ -3195,7 +3194,6 @@ p.dir{
     line-height: 1.875em;
     outline: medium none;
     padding: 1em 1em ;
-     margin-left:2em;
     width:130%;
 }
 .searchty2 {

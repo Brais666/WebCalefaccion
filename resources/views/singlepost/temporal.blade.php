@@ -46,13 +46,13 @@
         			<h3 style="color:#0075c9; padding-top:2%; padding-bottom:2%">Como conducir con seguridad si te pilla un temporal?</h3>
         		</div>
         
-        		<p class="quienes2 cont">Fuertes lluvias, temperaturas descendiendo, niebla, nieve. Estas son posibles adversidades meteorológicas que nos podemos encontrar cuando salimos a la carretera. Sobretodo durante esta época del año, pero ¿que hacemos si nos encontramos en una situación de esta magnitud? Te damos unos consejos sobre como conducir con seguridad en estos casos.</p>
+        		<p class="quienes2 cont">Fuertes lluvias, temperaturas descendiendo, niebla, nieve. Estas son posibles adversidades meteorol&oacute;gicas que nos podemos encontrar cuando salimos a la carretera. Sobretodo durante esta &eacute;poca del a&ntildeo, pero ¿que hacemos si nos encontramos en una situación de esta magnitud? Te damos unos consejos sobre como conducir con seguridad en estos casos.</p>
 
 
-                <p class="quienes2 cont">La principal recomendación es mirar el parte meteorológico antes de salir de casa y si se presenta alguna situación de esta magnitud es mejor quedarnos donde estamos y esperar a que el tiempo apacigüe. Si estas obligado a salir o ya te encuentras conduciendo cuando empieza una tormenta, te encuentras con ráfagas de viento en la carretera o la temperatura empieza a descender y hay riesgo de niebla o hielo deberías tener en cuenta los consejos que te detallamos a continuación para tener una conducción segura. 
+                <p class="quienes2 cont">La principal recomendaci&oacute;n es mirar el parte meteorológico antes de salir de casa y si se presenta alguna situación de esta magnitud es mejor quedarnos donde estamos y esperar a que el tiempo apacigüe. Si estas obligado a salir o ya te encuentras conduciendo cuando empieza una tormenta, te encuentras con ráfagas de viento en la carretera o la temperatura empieza a descender y hay riesgo de niebla o hielo deberías tener en cuenta los consejos que te detallamos a continuación para tener una conducción segura. 
                 </p>
         		
-        		<p class="quienes2 cont">Es importante realizar un mantenimiento previo en el coche antes de salir y que todo el equipamiento esté en buenas condiciones así que ten en cuenta los siguientes factores: </p>
+        		<p class="quienes2 cont">Es importante realizar un mantenimiento previo en el coche antes de salir y que todo el equipamiento est&eacute; en buenas condiciones así que ten en cuenta los siguientes factores: </p>
         		
         	
         		<ul class="quienes2 cont">
@@ -75,10 +75,10 @@
         		</ul>
         
         
-        		<h4 style="color:#0075c9" class="quienes cont">Según su finalidad</h4>
+        		<h4 style="color:#0075c9" class="quienes cont">Seg&uacute;n su finalidad</h4>
         		<p class="quienes">Según la finalidad para la que se traten los datos obtenidos a través de las cookies, podemos distinguir entre:</p>
         		<ul class="quienes">
-        			<li><b>Cookies técnicas</b>: Son aquellas que permiten al usuario la navegación a través de una página web, plataforma o aplicación y la utilización de las diferentes opciones o servicios que en ella existan como, por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, realizar el proceso de compra de un pedido, realizar la solicitud de inscripción o participación en un evento, utilizar elementos de seguridad durante la navegación, almacenar contenidos para la difusión de videos o sonido o compartir contenidos a través de redes sociales.</li>
+        			<li><b>Cookies técnicas</b>: Son aquellas que permiten al usuario la navegaci&oacute;n a través de una página web, plataforma o aplicaci&oacute;n y la utilizaci&oacute;n de las diferentes opciones o servicios que en ella existan como, por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, realizar el proceso de compra de un pedido, realizar la solicitud de inscripción o participación en un evento, utilizar elementos de seguridad durante la navegación, almacenar contenidos para la difusión de videos o sonido o compartir contenidos a través de redes sociales.</li>
         			<li><b>Cookies de personalización</b>: Son aquellas que permiten al usuario acceder al servicio con algunas características de carácter general predefinidas en función de una serie de criterios en el terminal del usuario como por ejemplo serian el idioma, el tipo de navegador a través del cual accede al servicio, la configuración regional desde donde accede al servicio, etc.</li>
         			<li><b>Cookies de análisis</b>: Son aquellas que permiten al responsable de las mismas, el seguimiento y análisis del comportamiento de los usuarios de los sitios web a los que están vinculadas. La información recogida mediante este tipo de cookies se utiliza en la medición de la actividad de los sitios web, aplicación o plataforma y para la elaboración de perfiles de navegación de los usuarios de dichos sitios, aplicaciones y plataformas, con el fin de introducir mejoras en función del análisis de los datos de uso que hacen los usuarios del servicio.</li>
         			<li><b>Cookies publicitarias: Son aquellas que permiten la gestión, de la forma más eficaz posible, de los espacios publicitarios que, en su caso, el editor haya incluido en una página web, aplicación o plataforma desde la que presta el servicio solicitado en base a criterios como el contenido editado o la frecuencia en la que se muestran los anuncios.</b></li>
@@ -87,7 +87,7 @@
         		
         			
         
-        		<h4 style="color:#0075c9" class="quienes cont">Cómo desactivar las cookies en los principales navegadores web</h4>
+        		<h4 style="color:#0075c9" class="quienes cont">C&oacute;mo desactivar las cookies en los principales navegadores web</h4>
         		<p class="quienes">Para configurar el uso de cookies, sigue las instrucciones correspondientes a tu navegador o consulta su ayuda:</p>
         		<ul class="quienes">
         			<li><a href="https://support.apple.com/es-es/HT201265">Safari</a> -https://support.apple.com/es-es/HT201265</li>
@@ -100,7 +100,7 @@
         		
         			
         
-        		<h4 style="color:#0075c9" class="quienes cont">Qué sucede si no se aceptan las cookies</h4>
+        		<h4 style="color:#0075c9" class="quienes cont">Qu&eacute; sucede si no se aceptan las cookies</h4>
         		<p class="quienes">El rechazo de las cookies puede impedir el acceso a contenidos y servicios personalizados.</p>
         		
         		
@@ -111,7 +111,7 @@
         			
         				
         		<h4 style="color:#0075c9" class="quienes cont">Contacto</h4>
-        		<p class="quienes">Para resolver cualquier duda sobre cómo utilizamos las cookies, escríbenos a la dirección de correo electrónico: <a href="mailto:info@simongrup.com" class="mailto">info@simongrup.com</a>.</p>
+        		<p class="quienes">Para resolver cualquier duda sobre cómo utilizamos las cookies, escríbenos a la direcci&oacute;n de correo electr&oacute;nico: <a href="mailto:info@simongrup.com" class="mailto">info@simongrup.com</a>.</p>
         	</div>
 	
 	

@@ -20,11 +20,12 @@ $ofertas = Oferta::whereNotNull('nombre')->get();
     <div class="carousel-inner">
         @foreach ($ofertas as $oferta)
         <?php
-            $img = '../../admin/public/images/'.$oferta->nombre.'';
+            $img = '../../../../../admin/public/images/'.$oferta->nombre.'';
+            //dd($img);
             //$img = 'https://134.122.70.106/admin/public/images/'.$oferta->nombre.'';
         ?>
          @if($i==0)<div class="item active">@else<div class="item">@endif
-          <img src="{{$img}}" alt="promoci��n" class="car-mov img-fluid" >
+              <img src="{{$img}}" alt="promoción" class="car-mov img-fluid" >
            @if(($oferta->titular != ".") && ($oferta->desc_oferta != "."))
                 <div class="carousel-caption d-none d-md-block opacity-1 ocultar-div">
                     <div class="col-sm-7 pl-1 pt-2">

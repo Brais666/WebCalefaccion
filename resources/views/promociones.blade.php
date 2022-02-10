@@ -108,7 +108,7 @@ $ofertas = Oferta::all();
                 
                 
                 <h6 class="line">Descubre todas nuestras novedades en un entorno atractivo, funcional y adaptado a todos los dispositivos m&oacute;viles. Ahora te ser&aacute; mucho m&aacute;s f&aacute;cil hacer tu 
-                <a class="subrallado" HREF="https://134.122.70.106/nueva/public/welcome">pedido de gas&oacute;leo de calefacci&oacute;n</a>
+                <a class="subrallado" HREF="welcome">pedido de gas&oacute;leo de calefacci&oacute;n</a>
                 desde tu smartphone o tablet. &#161;Podr&aacute;s llevarnos a donde quieras!</h6>
                 
 
@@ -123,7 +123,7 @@ $ofertas = Oferta::all();
                  
                 <h6 class="line">Ahora tambi&eacute;n tienes disponible tu 
                 
-                <a class="subrallado" HREF="https://134.122.70.106/nueva/public/cuenta">&aacute;rea privada de cliente</a>
+                <a class="subrallado" HREF="cuenta">&aacute;rea privada de cliente</a>
                 para que puedas controlar todos tus pedidos que has ido realizando con nosotros.</h6>
                 </div>
                 
@@ -145,7 +145,7 @@ $ofertas = Oferta::all();
                 
                 <h6 class="line">Un espacio donde podr&aacute;s consultar el mejor precio del Gas&oacute;leo de Calefacci&oacute;n de tu d&iacute;a verde y su disponibilidad en tu zona. Y si quieres financiar tu pedido, tienes disponible nuestro mejor plan din&aacute;mico de cr&eacute;dito
                 
-                <a class="subrallado" HREF="https://134.122.70.106/nueva/public/financiacion/">Vivo</a>.</h6>
+                <a class="subrallado" HREF="financiacion">Vivo</a>.</h6>
                 
                 
                 
@@ -159,7 +159,7 @@ $ofertas = Oferta::all();
                  
                 <h6 class="line">Ahora tambi&eacute;n tienes disponible tu 
                 
-                <a class="subrallado" HREF="https://134.122.70.106/nueva/public/cuenta">&aacute;rea privada de cliente</a>
+                <a class="subrallado" HREF="cuenta">&aacute;rea privada de cliente</a>
                 para que puedas controlar todos tus pedidos que has ido realizando con nosotros.</h6>
                 </div>
                 
@@ -198,7 +198,7 @@ $ofertas = Oferta::all();
                 
                 </div>
                 
-                <a class="alinear-boton-compra" target="_blank"  rel="noopener noreferrer" onclick="myFunction()"  href="https://134.122.70.106/nueva/public/welcome"><p class="toggle-compra click-me btn-compra" id=" leermenos1">Pedir gas&oacute;leo de calefac&oacute;n</p></a> 
+                <a class="alinear-boton-compra" target="_blank"  rel="noopener noreferrer" onclick="myFunction()"  href="welcome"><p class="toggle-compra click-me btn-compra" id=" leermenos1">Pedir gas&oacute;leo de calefac&oacute;n</p></a> 
                 
                 </div>
                 
@@ -320,7 +320,7 @@ $ofertas = Oferta::all();
                 
                 </div>
                 
-                <a class="alinear-boton-compra" target="_blank"  rel="noopener noreferrer" onclick="myFunction()"  href="https://134.122.70.106/nueva/public/welcome"><p class="toggle-compra click-me btn-compra" id=" leermenos1">Pedir gas&oacute;leo de calefac&oacute;n</p></a> 
+                <a class="alinear-boton-compra" target="_blank"  rel="noopener noreferrer" onclick="myFunction()"  href="welcome"><p class="toggle-compra click-me btn-compra" id=" leermenos1">Pedir gas&oacute;leo de calefac&oacute;n</p></a> 
                 
                 </div>
                 
@@ -447,7 +447,7 @@ $ofertas = Oferta::all();
                 
                 </div>
                 
-                <a class="alinear-boton-compra" target="_blank"  rel="noopener noreferrer" onclick="myFunction()"  href="https://134.122.70.106/nueva/public/welcome"><p class="toggle-compra click-me btn-compra" id=" leermenos1">Pedir gas&oacute;leo de calefac&oacute;n</p></a> 
+                <a class="alinear-boton-compra" target="_blank"  rel="noopener noreferrer" onclick="myFunction()"  href="welcome"><p class="toggle-compra click-me btn-compra" id=" leermenos1">Pedir gas&oacute;leo de calefac&oacute;n</p></a> 
                 
                 </div>
                 

@@ -508,27 +508,39 @@
 
 }</style></head>
     <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+        
         <!--*|IF:MC_PREVIEW_TEXT|*-->
+        
         <!--[if !gte mso 9]><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><![endif]-->
+        
         <!--*|END:IF|*-->
+        
         <center>
+            
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+                
                 <tr>
                     <td align="center" valign="top" id="bodyCell">
+                        
                         <!-- BEGIN TEMPLATE // -->
+                        
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td align="center" valign="top">
+                                    
                                     <!-- BEGIN PREHEADER // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+                                        
                                         <tr>
                                             <td align="center" valign="top">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
                                                     <tr>
                                                         <td valign="top" class="preheaderContainer" style="padding-top:9px; padding-bottom:9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                                                            
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                
                 <!--[if mso]>
                 <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
                 <tr>
@@ -537,6 +549,7 @@
                 <!--[if mso]>
                 <td valign="top" width="600" style="width:600px;">
                 <![endif]-->
+                
                 <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
                         
@@ -546,6 +559,7 @@
                         </td>
                     </tr>
                 </tbody></table>
+         
                 <!--[if mso]>
                 </td>
                 <![endif]-->
@@ -554,6 +568,7 @@
                 </tr>
                 </table>
                 <![endif]-->
+                       
             </td>
         </tr>
     </tbody>
@@ -563,27 +578,32 @@
                                             </td>                                            
                                         </tr>
                                     </table>
+                                    
                                     <!-- // END PREHEADER -->
                                 </td>
+                                
                             </tr>
                             <tr>
                                 <td align="center" valign="top">
                                     <!-- BEGIN HEADER // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
-                                        <tr>
+                                                                  <tr>
                                             <td align="center" valign="top">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
                                                     <tr>
                                                         <td valign="top" class="headerContainer" style="padding-top:9px; padding-bottom:9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+                                                            
+              
     <tbody class="mcnImageBlockOuter">
+       
             <tr>
                 <td valign="top" style="padding:9px" class="mcnImageBlockInner">
                     <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
                         <tbody><tr>
                             <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0;">
                                 
-                                    
-                                        <img align="left" alt="" src="https://mcusercontent.com/baa0910438c8ee1af0750308a/images/e7f4c5f0-d189-2d79-42fd-ba8ea482255d.png" width="95" style="max-width:95px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                     
+                                        <img align="left" alt="logo" src="https://mcusercontent.com/baa0910438c8ee1af0750308a/images/e7f4c5f0-d189-2d79-42fd-ba8ea482255d.png" width="95" style="max-width:95px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     
                                 
                             </td>
@@ -603,6 +623,7 @@
                             </tr>
                             <tr>
                                 <td align="center" valign="top">
+                                    
                                     <!-- BEGIN BODY // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
                                         <tr>
@@ -614,6 +635,7 @@
                                                                 <tr>
                                                                     <td valign="top" class="bodyContainer" style="padding-top:9px; padding-bottom:9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
     <tbody class="mcnTextBlockOuter">
+        
         <tr>
             <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
                 <!--[if mso]>
@@ -624,6 +646,7 @@
                 <!--[if mso]>
                 <td valign="top" width="600" style="width:600px;">
                 <![endif]-->
+                
                 <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
                         
@@ -634,6 +657,7 @@
                         </td>
                     </tr>
                 </tbody></table>
+                
                 <!--[if mso]>
                 </td>
                 <![endif]-->
@@ -642,6 +666,7 @@
                 </tr>
                 </table>
                 <![endif]-->
+                
             </td>
         </tr>
     </tbody>
@@ -656,10 +681,12 @@
                         </td>
                     </tr>
                 </tbody></table>
+                
 <!--            
                 <td class="mcnDividerBlockInner" style="padding: 18px;">
                 <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
 -->
+
             </td>
         </tr>
     </tbody>
@@ -667,7 +694,7 @@
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                <!--[if mso]>
+                    <!--[if mso]>
                 <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
                 <tr>
                 <![endif]-->
@@ -675,6 +702,8 @@
                 <!--[if mso]>
                 <td valign="top" width="600" style="width:600px;">
                 <![endif]-->
+                
+            
                 <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
                         
@@ -684,6 +713,7 @@
                         </td>
                     </tr>
                 </tbody></table>
+                
                 <!--[if mso]>
                 </td>
                 <![endif]-->
@@ -699,6 +729,7 @@
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                
                 <!--[if mso]>
                 <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
                 <tr>
@@ -707,6 +738,7 @@
                 <!--[if mso]>
                 <td valign="top" width="600" style="width:600px;">
                 <![endif]-->
+                
                 <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
                         
@@ -716,6 +748,7 @@
                         </td>
                     </tr>
                 </tbody></table>
+                
                 <!--[if mso]>
                 </td>
                 <![endif]-->
@@ -724,6 +757,7 @@
                 </tr>
                 </table>
                 <![endif]-->
+                
             </td>
         </tr>
     </tbody>
@@ -738,6 +772,7 @@
                         </td>
                     </tr>
                 </tbody></table>
+                
 <!--            
                 <td class="mcnDividerBlockInner" style="padding: 18px;">
                 <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
@@ -760,9 +795,10 @@
                 <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
                         
+                        
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #0075C9;">
                         
-                            <p data-brackets-id="66" style="color: #0075C9;"><span style="font-size:15px">Si necesitas más información o ayuda acerca de tu pedido <strong><a href="https://134.122.70.106/nueva/public/contacto" target="_blank">contáctanos</a>.</strong><br>
+                            <p data-brackets-id="66" style="color: #0075C9;"><span style="font-size:15px">Si necesitas más información o ayuda acerca de tu pedido <strong><a href="contacto" target="_blank">contáctanos</a>.</strong><br>
 Atentamente,<strong> Simon Grup.&nbsp;<br>
 <br>
 &nbsp;</strong>&nbsp;<img data-file-id="15229" height="29" src="https://mcusercontent.com/baa0910438c8ee1af0750308a/images/e7f4c5f0-d189-2d79-42fd-ba8ea482255d.png" style="border: 0px initial ; width: 50px; height: 29px; margin: 0px;" width="50"></span></p>
@@ -770,6 +806,7 @@ Atentamente,<strong> Simon Grup.&nbsp;<br>
                         </td>
                     </tr>
                 </tbody></table>
+                
                 <!--[if mso]>
                 </td>
                 <![endif]-->
@@ -792,6 +829,7 @@ Atentamente,<strong> Simon Grup.&nbsp;<br>
                         </td>
                     </tr>
                 </tbody></table>
+               
 <!--            
                 <td class="mcnDividerBlockInner" style="padding: 18px;">
                 <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />

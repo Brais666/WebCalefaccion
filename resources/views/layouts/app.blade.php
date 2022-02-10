@@ -148,11 +148,11 @@ $(document).ready(function() {
                           @csrf
                     <div class="col-md-12">
                         <div class="col-sm-6 col-xs-12 pbmov-2">
-                          <label for="poblacion" class="col-sm-12 col-xs-12 labelmov">Introduce la población</label>
+                          <label for="poblacion" class="col-sm-12 col-xs-12  labelmov">Introduce la población</label>
                           <?php
                           if(session()->has('poblacion'))
                            {?>
-                               <input type="text" class="searchty2 input2 col-sm-12 ml-2" id="poblacion" name="poblacion" placeholder="{{$pobl}}" value="{{$pobl}}">
+                               <input type="text" class="searchty2 input2 col-sm-12 " id="poblacion" name="poblacion" placeholder="{{$pobl}}" value="{{$pobl}}">
                            <?php 
                                
                            }
