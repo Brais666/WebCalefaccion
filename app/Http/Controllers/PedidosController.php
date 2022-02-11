@@ -554,9 +554,10 @@ class PedidosController extends Controller
                  
             }
            
-            if($prev == "http://calefaccion.store/pedidos")
+            if($prev == "https://calefaccion.store/pedidos")
             {
                 //dd(Auth::user()->id);
+                
                 $id = Auth::user()->id;
                 $temporal = Temporals::find($id);
                 $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
@@ -630,7 +631,7 @@ class PedidosController extends Controller
             
     //dd($objDemo);
             //Mail::to(Auth::user()->name)->send(new DemoEmail($objDemo));
-           // Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
+           Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
             Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
            // Mail::to('operador23@simongrup.com')->send(new DemoEmail($objDemo));
             //Mail::to('pedidos@simongrup.com')->send(new DemoEmail($objDemo));
@@ -656,7 +657,7 @@ class PedidosController extends Controller
                 //dd("jkbjkgh");
                 return view('pedidos.pedidos2',compact('temporal'))->with('success','Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
             }
-            else if($prev == "http://calefaccion.store/pedidofinanciado")
+            else if($prev == "https://calefaccion.store/pedidofinanciado")
             {
                 //dd($fecha2);
                 $valor = $request->get('term');

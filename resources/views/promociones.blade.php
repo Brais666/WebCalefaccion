@@ -132,7 +132,7 @@ $ofertas = Oferta::all();
                 </div>   
                 </div>
                 
-            <div class="width-columnas"><div class="swipe-promo1">
+            <div class="width-columnas rrr"><div class="swipe-promo1">
                 <div class="">
                     
                 <h3 class="margen block ocultar-mobile"></h3>
