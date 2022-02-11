@@ -631,7 +631,7 @@ class PedidosController extends Controller
             
     //dd($objDemo);
             //Mail::to(Auth::user()->name)->send(new DemoEmail($objDemo));
-           // Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
+           Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
             Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
            // Mail::to('operador23@simongrup.com')->send(new DemoEmail($objDemo));
             //Mail::to('pedidos@simongrup.com')->send(new DemoEmail($objDemo));
