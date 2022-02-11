@@ -10,7 +10,7 @@
 	        
 	                    
 	                    
-	                      <div class="col-sm-5 pt-1 ml-4">
+	                      <div class="col-sm-5 pt-1 ">
 	                      	<div class="col-sm-1"></div>
 	                      	<div class="col-sm-11">
 	                      	    
@@ -41,7 +41,7 @@
 		                      	</div>
 	                      	</div>
 	                      </div>
-	                      <div class="col-sm-5 pt-1 ml-3">
+	                      <div class="col-sm-5 pt-1">
 	                      	<div class="col-sm-1"></div>
 	                      	<div class="col-sm-11">
 	                      		<div class="row text-vivo">
@@ -69,7 +69,7 @@
 	</div>     
     <div class="row pt-2 pb-4 pbmov-2">
     	<div class="col-sm-1"></div>
-    	<div class=" col-sm-10 border text-vivo pt-2 pl-2">
+    	<div class=" col-sm-10 border text-vivo pt-2 pl-2 rrr">
     		<div class="col-sm-1"></div>
     		<div class="col-sm-10 pb-2">
     			<p><h3>¿Tienes alguna pregunta?</h3></p>
