@@ -20,7 +20,7 @@ $ofertas = Oferta::whereNotNull('nombre')->get();
     <div class="carousel-inner">
         @foreach ($ofertas as $oferta)
         <?php
-            $img = '../../../../../admin/public/images/'.$oferta->nombre.'';
+            $img = 'https://admin.calefaccion.store/images/'.$oferta->nombre.'';
             //dd($img);
             //$img = 'https://134.122.70.106/admin/public/images/'.$oferta->nombre.'';
         ?>
