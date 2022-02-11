@@ -20,5 +20,4 @@ class ComandesController extends Controller
         $title='Comandes';
         return view('User/Nascor/comandes',compact('now','title')); 
     }
-    //TEST
 }
