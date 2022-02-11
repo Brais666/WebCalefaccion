@@ -29,12 +29,12 @@ class PedidosController extends Controller
 
         $prev= url()->current();
         
-        if($prev == "http://localhost/nueva/public/pedidos")
+        if($prev == "http://calefaccion.store/pedidos")
         {
-            //dd($prev);
+            //dd("we");
             return view('pedidos.list',compact('temporal'));
         }
-        else if($prev == "http://localhost/nueva/public/pedidofinanciado")
+        else if($prev == "http://calefaccion.store/pedidofinanciado")
         {
             
             return view('pedidofinanciado.list',compact('temporal'));
@@ -106,7 +106,7 @@ class PedidosController extends Controller
                 $prev= url()->previous();
                 $request->session()->put(['codigopromo'=> 1]);
             
-                 if($prev == "http://localhost/nueva/public/pedidos")
+                 if($prev == "http://calefaccion.store/pedidos")
                         {
                                 foreach ($bienvenida as $bienvenidas)
                                 
@@ -133,7 +133,7 @@ class PedidosController extends Controller
                                     
                                     return view('pedidos.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
                         }
-                else if($prev == "http://localhost/nueva/public/pedidofinanciado")
+                else if($prev == "http://calefaccion.store/pedidofinanciado")
                         {
                                 foreach ($bienvenida as $bienvenidas)
                                 
@@ -265,7 +265,7 @@ class PedidosController extends Controller
                 $prev= url()->previous();
                 $request->session()->put(['codigopromo'=> 1]);
             
-                 if($prev == "http://localhost/nueva/public/pedidos")
+                 if($prev == "http://calefaccion.store/pedidos")
                         {
                                 foreach ($bienvenida as $bienvenidas)
                                 
@@ -292,7 +292,7 @@ class PedidosController extends Controller
                                     
                                     return view('pedidos.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
                         }
-                else if($prev == "http://localhost/nueva/public/pedidofinanciado")
+                else if($prev == "http://calefaccion.store/pedidofinanciado")
                         {
                                 foreach ($bienvenida as $bienvenidas)
                                 
@@ -405,7 +405,7 @@ class PedidosController extends Controller
                     //dd("gsgdg");
                     foreach ($fecha as $fechas)
                     {
-                        if($prev == "http://localhost/nueva/public/pedidos")
+                        if($prev == "http://calefaccion.store/pedidos")
                         {
                             
                             if(($fechas->tipo) == '%')
@@ -466,7 +466,7 @@ class PedidosController extends Controller
                                 alert("fallo en el cupón");
                            }
                         }
-                         else if($prev == "http://localhost/nueva/public/pedidofinanciado")
+                         else if($prev == "http://calefaccion.store/pedidofinanciado")
                         {
                             if(($fechas->tipo) == '%')
                             {
@@ -514,13 +514,13 @@ class PedidosController extends Controller
             else
             {
                 $prev= url()->previous();
-                dd($prev);
-                if($prev == "http://localhost/nueva/public/pedidos")
+                //dd($temporal);
+                if($prev == "http://calefaccion.store/pedidos")
                 {
                     //dd("Hallo");
                     return view('pedidos.list')->with('danger','cupón no válido');
                 }
-                else if($prev == "http://localhost/nueva/public/pedidofinanciado")
+                else if($prev == "http://calefaccion.store/pedidofinanciado")
                 {
                     //dd("Hallo2");
                     return view('pedidofinanciado.list')->with('danger','cupón no válido');
@@ -554,9 +554,10 @@ class PedidosController extends Controller
                  
             }
            
-            if($prev == "http://localhost/nueva/public/pedidos")
+            if($prev == "https://calefaccion.store/pedidos")
             {
                 //dd(Auth::user()->id);
+                
                 $id = Auth::user()->id;
                 $temporal = Temporals::find($id);
                 $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
@@ -656,7 +657,7 @@ class PedidosController extends Controller
                 //dd("jkbjkgh");
                 return view('pedidos.pedidos2',compact('temporal'))->with('success','Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
             }
-            else if($prev == "http://localhost/nueva/public/pedidofinanciado")
+            else if($prev == "https://calefaccion.store/pedidofinanciado")
             {
                 //dd($fecha2);
                 $valor = $request->get('term');
