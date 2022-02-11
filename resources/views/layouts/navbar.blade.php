@@ -10,7 +10,7 @@
   <div class="navbar-header col-sm-5 col-md-3 col-xs-3">
     <div class="col-md-3 movillogo2">
       <a class="navbar-brand align-middle" href="https://calefaccion.store">
-        <img src="images/logosg.png"></a></div>
+        <img src="images/logosg.png" alt=""></a></div>
     
   </div>
   <div class="col-md-6 col-sm-7 col-xs-8">
@@ -74,7 +74,7 @@
           <div class="hora float-right d-none d-lg-block "><h5><small>{{$hora}}</small></h5></div>
           </div>                   
                 <div class="row float-right col-lg-2 ocultar-div ocultar-div-tab">
-                  <!-- weather widget start --><img src="http://w.bookcdn.com/weather/picture/5_848_1_4_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=582&anc_id=17768"  alt="booked.net"/><!-- weather widget end -->
+                  <!-- weather widget start --><img src="https://w.bookcdn.com/weather/picture/5_848_1_4_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=582&anc_id=17768"  alt="booked.net"/><!-- weather widget end -->
                 </div> 
         </div>
         

@@ -7,7 +7,7 @@
             <div class="col-lg-2 col-sm-2 col-xs-12 ocultar-div">
                 
                   <a  href="https://134.122.70.106/nueva/public">
-                    <img src="images/Logofooter.png" class="footerimg"></a>
+                    <img src="images/Logofooter.png" alt="" class="footerimg"></a>
                 
             </div>
             <div class="col-lg-2 col-sm-3 col-xs-6 ptmov-2">
