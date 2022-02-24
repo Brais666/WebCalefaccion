@@ -10,7 +10,7 @@ $ofertas = Oferta::all();
 	<div class="col-sm-2"></div>
 	<div class="col-sm-4">
 		<div class="card">
-  			<div class="card-body movil-faq">
+  			<div class="card-body movil">
 			   <h3 class="card-title text-white ml-25">Preguntas Frecuentes</h3>
 			   <h4 class="card-subtitle mb-2 text-white text-muted subtitlefaq ocultar-div ml-3">Encuentra la información que buscas</h4>
 			</div>
@@ -34,8 +34,8 @@ $ofertas = Oferta::all();
 	</div>
 </div>	
 <div class="container">
-	<div class="row padding-faq">
-		<div class="col-sm-4  col-xs-4 border mt-2 pt-2 pl-2 pb-1 menufaq ocultar-div">
+	<div class="row pb-13">
+		<div class="col-sm-4  col-xs-4 border mt-2 pt-2 pl-2 pb-1 menufaq">
 			<ul>
 				<!--<li class="licuenta">
 					<a href="faq1">¡Cada litro cuenta!</a>

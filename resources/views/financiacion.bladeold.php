@@ -10,7 +10,7 @@
 	        
 	                    
 	                    
-	                      <div class="col-sm-5 pt-1 centrar-vivo">
+	                      <div class="col-sm-5 pt-1 ">
 	                      	<div class="col-sm-1"></div>
 	                      	<div class="col-sm-11">
 	                      	    
