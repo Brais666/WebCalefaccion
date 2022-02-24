@@ -6,8 +6,7 @@ $id = Auth::user()->id;
 $temporal = Temporals::find($id);
 $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
 $datehoy = Carbon\Carbon::now();
-
-//dd($temporal);
+//dd(session());
 
 if(!empty($temporal))
 {
@@ -42,7 +41,7 @@ else
 {
     if(!empty($total2))
     {
-        dd($total2);
+       // dd($total2);
     }
     else
     {
@@ -93,7 +92,10 @@ $totaltemp = session('totaltemp');
     }
 
 </script>-->
-
+<?
+   // dd(session());
+   
+    ?>
 @extends('layouts.app2')
 @section('title', 'SimonGrup')
 @section('content')
@@ -193,8 +195,8 @@ $totaltemp = session('totaltemp');
                                    <textarea class="form-control input" id="observaciones" name="observaciones" rows="5"></textarea>
                                </div>
                             </div>
-                                @if(!empty($temporal))
-                                    <input type="hidden" class="form-control" id="txtPoblacion" value="{{$temporal->poblacion}}" name="txtPoblacion">
+                                @if(session()->has('poblacion'))
+                                    <input type="hidden" class="form-control" id="txtPoblacion" value="{{session('poblacion')}}" name="txtPoblacion">
                                 @else
                                     <input type="hidden" class="form-control" id="txtPoblacion" value="{{$poblacion}}" name="txtPoblacion">
                                 @endif
@@ -226,23 +228,25 @@ $totaltemp = session('totaltemp');
                                 <div class="row col-sm-12 pt-2 pb-1">
                                      <div class="row pt-1">
                                       <div class="col-sm-1"></div>
-                                      <div class="col-sm-6 col-xs-7 text-blue"><p>Fecha de entrega</p></div>
-                                      <div class="col-sm-4 col-xs-5"><p class="float-right" data-toggle="tooltip" data-placement="top" title="Día de reparto"> {{$temporal->entregadia}} {{$temporal->entregadianum}}</p></div>
+                                      <div class="col-sm-6 col-xs-7 text-blue"><p>Entrega prevista</p></div>
+                                      <div class="col-sm-4 col-xs-5"><p class="float-right" data-toggle="tooltip" data-placement="top" title="Día de reparto"> {{session('entrega')}} {{session('numerodia')}}</p></div>
                                       <div class="col-sm-1"></div>
                                     </div>
                                     <hr class="blue">
                                     <div class="row pt-1">
                                     <div class="col-sm-1"></div>
                                       <div class="col-sm-7 col-xs-8 text-blue"><p>Días hasta entrega</p></div>
-                                      <div class="col-sm-3 col-xs-4"><p class="float-right">{{$temporal->dentrode}} Días</p></div>
+                                      <div class="col-sm-3 col-xs-4"><p class="float-right">{{session('diashasta')}} Días</p></div>
                                       <div class="col-sm-1"></div>
                                     </div>
                                     <hr class="blue">
-
+                                    <?php
+                                     //dd(session('poblacion'));
+                                     ?>
                                     <div class="row pt-1 mb-5 ">
                                       <div class="col-sm-1"></div>
                                       <div class="col-sm-5 text-blue col-xs-8"><p>Población</p></div>
-                                      <div class="col-sm-5 col-xs-4"><p class="float-right">{{$temporal->poblacion}}</p></div>
+                                      <div class="col-sm-5 col-xs-4"><p class="float-right">{{session('poblacion')}}</p></div>
                                       <div class="col-sm-1"></div>
                                     </div>
                                      <div class="regresar text-center pb-2">
@@ -269,7 +273,10 @@ $totaltemp = session('totaltemp');
                                 <div class="row col-sm-12 pb-1">
                                     <div class="row ">
                                       <div class="col-sm-8 col-xs-7"><p>Precio por litro</p></div>
-                                      <div class="col-sm-4 col-xs-5" name="preciol"><p class="float-right totalmini" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{$temporal->preciol}} €</p></div>
+                                      <div class="col-sm-4 col-xs-5" name="preciol"><p class="float-right totalmini" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{session('preciol')}} €</p></div>
+                                      <?php
+                                        //dd(session());
+                                        ?>
                                     </div> 
                                     
                                     @if(session('codigopromo') > 0)
@@ -282,9 +289,12 @@ $totaltemp = session('totaltemp');
                                       <div class="col-sm-4 col-xs-5 "><span class="float-right total" id="result" name="result" value="€"> {{$total}}€</span></div>
                                     </div> 
                                     @else
+                                    <?php
+                                     //dd(session());
+                                     ?>
                                         <div class="row pt-1 pb-3">
                                           <div class="col-sm-8 col-xs-7"><p>Total (IVA incl.)</p></div>
-                                          <div class="col-sm-4 col-xs-5 float-right "><span class="float-right total" id="pedido" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{$total}} € </span></small></div>
+                                          <div class="col-sm-4 col-xs-5 float-right "><span class="float-right total" id="pedido" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{session('total')}} € </span></small></div>
                                         </div>
                                     @endif
                                     

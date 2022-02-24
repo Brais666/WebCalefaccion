@@ -27,9 +27,9 @@ $ofertas = Oferta::all();
 
 
 
-<div class="pt-8 mt-2 bottom-contacto container text-center">
+<div class="mt-2 bottom-contacto container text-center">
     <div class="col-lg-1"></div>
-  <div class="">
+  <div class="col-lg-10">
       <div class="row border pt-1 pb-2">
 		<div class="col-sm-5 cont pb-2 mg-con-text">
 			<div class="card text-left ">
