@@ -1,5 +1,7 @@
 <?php
 use Carbon\Carbon;
+//dd(session());
+
 
   if(session()->has('poblacion'))
     {
@@ -198,33 +200,40 @@ if(isset($preciol2ses))
               $entregadianum = $entrega->format('j');
               $diasentrega = $entrega->diffInDays($datehoy);
               break;
-             case 'Ruta Montroig':
+              case 'Ruta Montroig':
                 switch($diahoynum)
                 {
                    case 1:
-                      $entrega = Carbon::now()->addDays(3);
+                      $entrega = Carbon::now()->addDays(2);
                       break;
-                   case 2:
+                    case 2:
                       if($dateday > 0)
                         {
                             $entrega = Carbon::now()->addDays(1);
                         }
                         else
                         {
-                            $entrega = Carbon::now()->addDays(8);
+                            $entrega = Carbon::now()->addDays(3);
                         }
                       break;
                     case 3:
-                      $entrega = Carbon::now()->addDays(7);
+                      $entrega = Carbon::now()->addDays(2);
                       break;
                     case 4:
-                      $entrega = Carbon::now()->addDays(6);
+                       if($dateday > 0)
+                        {
+                            $entrega = Carbon::now()->addDays(1);
+                        }
+                        else
+                        {
+                            $entrega = Carbon::now()->addDays(4);
+                        }
                       break;
                     case 5:
-                      $entrega = Carbon::now()->addDays(5);
+                      $entrega = Carbon::now()->addDays(3);
                       break;
                     case 6:
-                      $entrega = Carbon::now()->addDays(4);
+                      $entrega = Carbon::now()->addDays(2);
                       break;
                     default:
                       $entrega = Carbon::now()->addDays(3);
@@ -474,6 +483,9 @@ if(isset($preciol2ses))
           $diferencialitro2 =round($diferencialitro2*1000)/1000;
           session()->put(['preciol'=> $diferencialitro2]);
           session()->put(['totalfinan'=> $result * $meses]);
+          session()->put(['entrega'=> $entregadia]);
+          session()->put(['numerodia'=> $entregadianum]);
+
         }  
         
         

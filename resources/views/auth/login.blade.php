@@ -2,9 +2,9 @@
 @section('title', 'SimonGrup')
 @section('content')
             @include('layouts.headerlogin')
-<div class="container pt-2 login-caja2">
+<div class="padding-top-general container pt-2 login-caja2">
     <div class="row">
-        <div class="col-sm-10 col-xs-12 ml-9 margin-left-register">
+        <div class="col-sm-10 col-xs-12 ml-6 margin-left-register">
             <div class="card text-center border">
                 <div class="titulo-registro card-header bg-login">Te damos la bienvenida</div>
                     
@@ -74,7 +74,7 @@
                 <div class="titulo-registro card-header bg-login2">Soy nuevo/a</div>
                 
                     <p class="pt-1"></p> 
-                    <p><button type="text" class="btn btn-secondary"><a href="{{ route('register') }}" >Regístrate</a></button></p>
+                    <p><button type="text" class="btn btn-secondary"><a href="{{ route('register') }}">Regístrate</a></button></p>
                 </div>
                 
                                     <p class="pt-1"></p> 

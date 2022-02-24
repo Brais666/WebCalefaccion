@@ -147,7 +147,7 @@ $(document).ready(function() {
                         @endif
                         <div class="col-md-6 col-sm-5 col-xs-12 pbmov-2">
                           <label for="poblacion" class="col-sm-12 labelmov">Introduce la población</label>
-                          <input type="text" class="searchty input col-sm-12" id="poblacion" name="poblacion" placeholder="{{$pobl}}" id="poblacion" name="poblacion">
+                          <input type="text" class="searchty2 input col-sm-12" id="poblacion" name="poblacion" placeholder="{{$pobl}}" id="poblacion" name="poblacion">
                         </div>
                         <div class="col-md-2 col-xs-6 pbmov-2">
                                 <label for="cantidad">Cantidad</label>
