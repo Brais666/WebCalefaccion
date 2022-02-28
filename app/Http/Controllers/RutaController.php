@@ -25,8 +25,8 @@ class RutaController extends Controller
 
   public function consulta($pobl, $poblidz, $cantidad, $unidad, $meses, $nomRuta, $valor)
   {
-    if (($cantidad < 300 && $unidad == "Lts.") or ($cantidad < 150 && $unidad == "€")) {
-
+    if (($cantidad < 300 && $unidad == "Lts.") or ($cantidad < 150 && $unidad == "€"))
+    {
       throw New NotEnoughQuantityException();
     }
 
@@ -38,9 +38,12 @@ class RutaController extends Controller
 
     $diahoynum = $datehoy->dayOfWeek;
     $dateday = $datehoy->diffInMinutes($datemed, false);
-    if ($dateday > 0) {
+    if ($dateday > 0)
+    {
       $entrega = Carbon::now()->addDays(1);
-    } else {
+    }
+    else
+    {
       $entrega = Carbon::now()->addDays(2);
     }
 
@@ -55,10 +58,12 @@ class RutaController extends Controller
       case 'Ruta Valencia':
       case 'Ruta Limites 30Km':
       case 'Ruta interior Naquera':
-        if ($dateday > 0) {
+        if ($dateday > 0)
+        {
           $entrega = Carbon::now()->addDays(1);
-          //dd($entrega);
-        } else {
+        }
+        else
+        {
           $entrega = Carbon::now()->addDays(2);
         }
         $entregadia = $entrega->format('l');
@@ -68,7 +73,8 @@ class RutaController extends Controller
 
       case 'Ruta 3':
       case 'Ruta 5':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(7);
             break;
@@ -96,7 +102,8 @@ class RutaController extends Controller
         $diasentrega = $entrega->diffInDays($datehoy);
         break;
       case 'Ruta Falset':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(4);
             break;
@@ -125,14 +132,18 @@ class RutaController extends Controller
         break;
         /////        
       case 'Ruta Montroig':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(2);
             break;
           case 2:
-            if ($dateday > 0) {
+            if ($dateday > 0)
+            {
               $entrega = Carbon::now()->addDays(1);
-            } else {
+            }
+            else
+            {
               $entrega = Carbon::now()->addDays(2);
             }
             break;
@@ -157,7 +168,8 @@ class RutaController extends Controller
         $diasentrega = $entrega->diffInDays($datehoy);
         break;
       case 'Ruta 1':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(3);
             break;
@@ -186,7 +198,8 @@ class RutaController extends Controller
         break;
       case 'Ruta 2':
       case 'Ruta 4':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(3);
             break;
@@ -214,7 +227,8 @@ class RutaController extends Controller
         $diasentrega = $entrega->diffInDays($datehoy);
         break;
       case 'Ruta Montblanc':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(8);
             break;
@@ -249,7 +263,8 @@ class RutaController extends Controller
         $diasentrega = $entrega->diffInDays($datehoy);
         break;
       case 'Ruta Vilafranca':
-        switch ($diahoynum) {
+        switch ($diahoynum)
+        {
           case 1:
             $entrega = Carbon::now()->addDays(3);
             break;
@@ -284,7 +299,8 @@ class RutaController extends Controller
         break;
     }
 
-    switch ($entregadia) {
+    switch ($entregadia)
+    {
       case 'Monday':
         $entregadia = 'Lunes';
         break;
@@ -308,13 +324,8 @@ class RutaController extends Controller
         break;
     }
 
-
-    //$provincia = "Tarragona";
-    //dd($provincia);
-    //$entregaprox = $entregadia + $entregadianum;
-    //dd($diasentrega);
-
-    if ($pobl) {
+    if ($pobl)
+    {
       $datehoy = Carbon::now();
       $datehoy2 = Carbon::now()->format('l');
       $diahoy = Carbon::now()->format('j');
@@ -345,11 +356,11 @@ class RutaController extends Controller
         throw new RouteNotDefinedException();
       }
 
-
       $poblidz = $poblacion->idzona;
 
 
-      switch ($poblidz) {
+      switch ($poblidz)
+      {
         case 000:
           $pueblo = $pobl;
 
@@ -369,9 +380,12 @@ class RutaController extends Controller
           $provincia = "Guadalajara";
           break;
         case 004:
-          if ($poblacion->nombreruta == "Ruta LLeida") {
+          if ($poblacion->nombreruta == "Ruta LLeida")
+          {
             $provincia = "Lleida";
-          } else {
+          } 
+          else 
+          {
             $provincia = "Tarragona";
           }
           break;
@@ -379,12 +393,12 @@ class RutaController extends Controller
           $provincia = "Valencia";
           break;
       }
-      //dd($provincia);
       $postal = Ruta::where('codigopost', '=', $pobl)->first();
       $user = Auth::user();
 
 
-      if (!is_null($poblacion)) {
+      if (!is_null($poblacion))
+      {
         $pobzone = "#" . $poblacion->idzona;
         $cp = $poblacion->codigopost;
 
@@ -392,33 +406,48 @@ class RutaController extends Controller
         $tarifa2 = Tarifas::where('rango1', '=', 400)->where('zona', '=', $poblacion->idzona)->latest('created_at', 'asc')->first();
         $tarifa3 = Tarifas::where('rango1', '=', 1000)->where('zona', '=', $poblacion->idzona)->latest('created_at', 'asc')->first();
 
-        if ($cantidad <= 200) {
+        if ($cantidad <= 200)
+        {
           $comision = 0.03;
-        } else if ($cantidad >= 200) {
+        }
+        else if ($cantidad >= 200)
+        {
           $comision = 0.03;
-        } else if ($cantidad >= 300) {
+        }
+        else if ($cantidad >= 300)
+        {
           $comision = 0.02;
-        } else if ($cantidad >= 400) {
+        }
+        else if ($cantidad >= 400)
+        {
           $comision = 0.015;
-        } else if ($cantidad >= 500) {
+        }
+        else if ($cantidad >= 500)
+        {
           $comision = 0.01;
         }
 
         $interes = 0.341447;
 
-        //
-        //dd($cantidad);
-        if ($cantidad < 400) {
+        if ($cantidad < 400)
+        {
           $preciol2 = $tarifa1->precio;
-        } elseif (($cantidad < 1000) && ($cantidad > 399)) {
+        }
+        elseif (($cantidad < 1000) && ($cantidad > 399))
+        {
           $preciol2 = $tarifa2->precio;
-        } elseif (($cantidad > 999)) {
+        }
+        elseif (($cantidad > 999)) 
+        {
           $preciol2 = $tarifa3->precio;
         }
-        if ($unidad == 'Lts.') {
+        if ($unidad == 'Lts.')
+        {
           $cantidad2 = $cantidad;
           $total = $cantidad2 * $preciol2;
-        } else {
+        }
+        else
+        {
           $total = $cantidad;
           $cantidad2 = $cantidad / $preciol2;
           $cantidad2 = round($cantidad2 * 1000) / 1000;
@@ -426,7 +455,8 @@ class RutaController extends Controller
 
         $result = (($preciol2 + $comision) * ($cantidad2)) * ($interes);
 
-        switch ($valor) {
+        switch ($valor)
+        {
           case 0.341447:
           default:
             $meses = 3;
@@ -462,10 +492,13 @@ class RutaController extends Controller
         $meses = 3;
         $diferencia = ($result * $meses) - $total;
 
-        if ($preciol2 == 0) {
+        if ($preciol2 == 0)
+        {
           $diferencialitro = 0;
           $diferencialitro2 = 0;
-        } else {
+        }
+        else
+        {
           $diferencialitro = ($diferencia / $preciol2) / $cantidad;
           $diferencialitro = round($diferencialitro * 1000) / 1000;
           $diferencialitro2 = $diferencialitro + $preciol2;
@@ -476,30 +509,32 @@ class RutaController extends Controller
 
         
 
-        switch ($nomRuta) {
+        switch ($nomRuta)
+        {
           case 'Ruta Centro':
           case 'Ruta Madrid':
           case 'Ruta Guadalajara':
           case 'Ruta Valencia':
           case 'Ruta Limites 30Km':
           case 'Ruta interior Naquera':
-            if ($dateday > 0) {
+            if ($dateday > 0)
+            {
               $entrega = Carbon::now()->addDays(1);
               $diasentrega = $entrega->diffInDays($datehoy);
-              //dd($entrega);
-            } else {
+            } else
+            {
               $entrega = Carbon::now()->addDays(2);
               $diasentrega = 2;
             }
             $entregadia = $entrega->format('l');
             $entregadianum = $entrega->format('j');
             $diasentrega = $entrega->diffInDays($datehoy);
-            //dd($diasentrega);
             break;
 
           case 'Ruta 3':
           case 'Ruta 5':
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
                 $entrega = Carbon::now()->addDays(7);
                 break;
@@ -527,9 +562,11 @@ class RutaController extends Controller
             $diasentrega = $entrega->diffInDays($datehoy);
             break;
           case 'Ruta Falset':
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
                 } else {
                   $entrega = Carbon::now()->addDays(4);
@@ -542,9 +579,12 @@ class RutaController extends Controller
                 $entrega = Carbon::now()->addDays(2);
                 break;
               case 4:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(5);
                 }
 
@@ -565,14 +605,18 @@ class RutaController extends Controller
             break;
           case 'Ruta Montroig':
 
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
                 $entrega = Carbon::now()->addDays(3);
                 break;
               case 2:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(8);
                 }
                 break;
@@ -595,14 +639,17 @@ class RutaController extends Controller
             $entregadia = $entrega->format('l');
             $entregadianum = $entrega->format('j');
             $diasentrega = $entrega->diffInDays($datehoy);
-            //dd($entrega);
             break;
           case 'Ruta 1':
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(3);
                 }
 
@@ -632,7 +679,8 @@ class RutaController extends Controller
             break;
           case 'Ruta 2':
           case 'Ruta 4':
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
                 $entrega = Carbon::now()->addDays(3);
                 break;
@@ -640,9 +688,12 @@ class RutaController extends Controller
                 $entrega = Carbon::now()->addDays(2);
                 break;
               case 3:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(5);
                 }
 
@@ -657,9 +708,12 @@ class RutaController extends Controller
                 $entrega = Carbon::now()->addDays(5);
                 break;
               default:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(4);
                 }
 
@@ -671,11 +725,15 @@ class RutaController extends Controller
             break;
           case 'Ruta Montblanc':
           case 'Ruta LLeida':
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(8);
                 }
 
@@ -705,7 +763,8 @@ class RutaController extends Controller
             $diasentrega = $entrega->diffInDays($datehoy);
             break;
           case 'Ruta Vilafranca':
-            switch ($diahoynum) {
+            switch ($diahoynum)
+            {
               case 1:
                 $entrega = Carbon::now()->addDays(3);
                 break;
@@ -713,9 +772,12 @@ class RutaController extends Controller
                 $entrega = Carbon::now()->addDays(2);
                 break;
               case 3:
-                if ($dateday > 0) {
+                if ($dateday > 0)
+                {
                   $entrega = Carbon::now()->addDays(1);
-                } else {
+                }
+                else
+                {
                   $entrega = Carbon::now()->addDays(8);
                 }
                 break;
@@ -745,7 +807,8 @@ class RutaController extends Controller
         }
 
 
-        switch ($entregadia) {
+        switch ($entregadia)
+        {
           case 'Monday':
             $entregadia = 'Lunes';
             break;
@@ -769,9 +832,8 @@ class RutaController extends Controller
             break;
         }
 
-        //dd($entregadia);
-        if (isset($user)) {
-          //dd($diasentrega);
+        if (isset($user))
+        {
           $temporal = new Temporals([
             'user' => Auth::user()->id,
             'email' => Auth::user()->email,
@@ -787,8 +849,9 @@ class RutaController extends Controller
 
           ]);
           $temporal->save();
-          //dd( $cantidad2);
-        } else {
+        } 
+        else
+        {
           $nomRuta = $poblacion->nombreruta;
 
           $temporal = new Temporals([
@@ -805,33 +868,41 @@ class RutaController extends Controller
             'provincia' => $provincia,
           ]);
           $temporal->save();
-          //dd($preciol2);
         }
         return compact('entregadia', 'entregadianum', 'diasentrega', 'pobl', 'provincia','preciol2', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad');
-      } elseif (!is_null($postal)) {
-
+      }
+      elseif (!is_null($postal))
+      {
         $tarifa1 = Tarifas::where('rango1', '=', 0)->where('zona', '=', $postal->idzona)->latest('created_at', 'asc')->first();
         $tarifa2 = Tarifas::where('rango1', '=', 400)->where('zona', '=', $postal->idzona)->latest('created_at', 'asc')->first();
         $tarifa3 = Tarifas::where('rango1', '=', 1000)->where('zona', '=', $postal->idzona)->latest('created_at', 'asc')->first();
 
-        if ($cantidad < 400) {
+        if ($cantidad < 400)
+        {
           $preciol2 = $tarifa1->precio;
-        } elseif (($cantidad < 1000) && ($cantidad > 399)) {
+        }
+        elseif (($cantidad < 1000) && ($cantidad > 399))
+        {
           $preciol2 = $tarifa2->precio;
-        } elseif (($cantidad > 999)) {
+        }
+        elseif (($cantidad > 999))
+        {
           $preciol2 = $tarifa3->precio;
         }
 
-        if ($unidad == 'Lts.') {
+        if ($unidad == 'Lts.')
+        {
           $cantidad2 = $cantidad;
-        } else {
+        }
+        else
+        {
           $cantidad2 = $cantidad / $preciol2;
           $cantidad2 = round($cantidad2 * 1000) / 1000;
         }
 
         $nomRuta = $postal->nombreruta;
-        //dd($valor);
-        switch ($valor) {
+        switch ($valor)
+        {
           case 0.341447:
           default:
             $meses = 3;
@@ -865,7 +936,8 @@ class RutaController extends Controller
             break;
         }
 
-        if (isset($user)) {
+        if (isset($user))
+        {
           $temporal = new Temporals([
             'user' => Auth::user()->id,
             'email' => Auth::user()->email,
@@ -880,9 +952,10 @@ class RutaController extends Controller
             'provincia' => $provincia,
             'meses' => $meses,
           ]);
-          dd("hola3");
           $temporal->save();
-        } else {
+        }
+        else
+        {
           $temporal = new Temporals([
             'user' => '666666',
             'email' => 'notemail@no.com',
@@ -904,10 +977,10 @@ class RutaController extends Controller
 
         return compact('entregadia', 'entregadianum', 'diasentrega', 'pobl', 'provincia','preciol2', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad');
       } else {
-        throw new RouteNotFoundException();
+        throw new RouteNotDefinedException();
       }
     } else {
-      throw new RouteNotFoundException();
+      throw new RouteNotDefinedException();
     }
   }
 
@@ -932,7 +1005,7 @@ class RutaController extends Controller
     try
     {
       $consulta = $this->consulta($pobl, $poblidz, $cantidad, $unidad, $meses, $nomRuta, $valor);
-      // dd($consulta);
+
       $request->session()->put(['entregadia' => $consulta['entregadia']]);
       $request->session()->put(['entregadianum' => $consulta['entregadianum']]);
       $request->session()->put(['diasentrega' => $consulta['diasentrega']]);
@@ -960,7 +1033,8 @@ class RutaController extends Controller
     }
   }
 
-  public function deleteSession(Request $request) {
+  public function deleteSession(Request $request)
+  {
     $request->session()->forget('entregadia');
     $request->session()->forget('entregadianum');
     $request->session()->forget('diasentrega');
