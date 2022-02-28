@@ -13,8 +13,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>*|MC:SUBJECT|*</title>
         
+
+        <title>Gas&oacute;leo de calefacci&oacute;n<title>
+        
+        
+
     <style type="text/css">
         p{
             margin:10px 0;
@@ -507,6 +511,11 @@
         }
 
 }</style>
+
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
     <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
         
@@ -687,8 +696,8 @@
                                                                                                     <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; text-align: left;">
                                                                                                     
                                                                                                         <!--<span style="font-size:16px">Hola, </span>{{ $demo->receiver }}-->
-                                                                                                        Hola, {{ $demo->receiver }}<br>
-                                                                                                        Gracias por tu pedido. Te mandaremos otro e-mail cuando enviemos tu(s) producto(s). La fecha estimada de entrega se indica a continuación. Visita Mis pedidos en <a href="calefaccion.store/cuenta">nuestra web </a>para consultar el estado de tu pedido o realizar cambios.
+                                                                                                        Hola {{ $demo->receiver }},<br>
+                                                                                                        Gracias por tu pedido, recibirás otro e-mail cuando sea gestionado.<br> La fecha estimada de entrega se indica en el apartado detalles del pedido .<br> Visita Mis pedidos en <a href="calefaccion.store/cuenta">nuestra web </a>para consultar el estado de tu pedido o realizar cambios.
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </tbody>
@@ -787,12 +796,12 @@
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; text-align: left;">
-                                                                                                            <span style="font-size:14px">  Pedido:( {{ $demo->demo_one }} )
+                                                                                                            <span style="font-size:14px">  Pedido: ( {{ $demo->demo_one }} )
                                                                                                                 Nombre:{{ $demo->demo_two }}<br>
-                                                                                                                                            Dirección:{{ $demo->demo_four }}<br>
-                                                                                                                                            Localidad:{{ $demo->demo_five }}<br>
-                                                                                                                                            Provincia:{{ $demo->demo_six }}<br>
-                                                                                                                                            Código Postal:{{ $demo->demo_seven }}
+                                                                                                                                            Dirección: {{ $demo->demo_four }}<br>
+                                                                                                                                            Localidad: {{ $demo->demo_five }}<br>
+                                                                                                                                            Provincia: {{ $demo->demo_six }}<br>
+                                                                                                                                            Código Postal: {{ $demo->demo_seven }}
                                                                                                             </span>
                                                                                                         </td>
                                                                                                     </tr>
@@ -811,13 +820,13 @@
                                                                                                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; text-align: left;">
                                                                                                                                                                             
                                                                                                             <span style="font-size:14px">
-                                                                                                                                         Estado:<span style="color:#ffcc00">{{ $demo->demo_nine }}</span><br>
-                                                                                                                                         Entrega dentro de:{{ $demo->demo_fourteen }}<br>
-                                                                                                                                         Producto:{{ $demo->demo_ten }}<br>
-                                                                                                                                         Cantidad:{{ $demo->demo_eleven }}<br>
-                                                                                                                                         Precio/litro:{{$demo->demo_thirteen}}
+                                                                                                                                         Estado: <span style="color:#ffcc00">{{ $demo->demo_nine }}</span><br>
+                                                                                                                                         Entrega dentro de: {{ $demo->demo_fourteen }}<br>
+                                                                                                                                         Producto: {{ $demo->demo_ten }}<br>
+                                                                                                                                         Cantidad: {{ $demo->demo_eleven }} Litros<br>
+                                                                                                                                         Precio/litro: {{$demo->demo_thirteen}}
                                                                                                                                             <br>
-                                                                                                                                         <strong><span style="color:#0075c9">Total:{{ $demo->demo_twelve }}</span></strong>
+                                                                                                                                         <strong><span style="color:#0075c9">Total: {{ $demo->demo_twelve }}</span></strong>
                                                                                                             </span>
                                                                                                         </td>
                                                                                                     </tr>
@@ -835,7 +844,7 @@
                                                                                     </tr>
                                                                                 </tbody>
                                                                         </table>
-                                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
                                                                             <tbody class="mcnDividerBlockOuter">
                                                                                 <tr>
                                                                                     <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 15px 18px 0px;">
@@ -874,13 +883,13 @@
                                                                                                     <tr>
                                                                                                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #0075C9;">
                                                                                                                 <p data-brackets-id="66" style="color: #0075C9;">
-                                                                                                                     <span style="font-size:15px">
-                                                                                                                     Esperamos volver a verte pronto
+                                                                                                                     
+                                                                                                                    <span style="font-size:15px">Si necesitas más información o ayuda acerca de tu pedido <strong><a href="https://calefaccion.store/contacto" target="_blank">contáctanos</a>.
+                                                                                                                        <span style="font-size:15px">
+                                                                                                                     Esperamos volver a verte pronto<img src=" images/kisspng-emoji-wink-emoticon-smiley-sticker-emoji-5abb3429b0d378.9928214415222180257243">
                                                                                                                  </span><br>
-                                                                                                                    <span style="font-size:15px">Si necesitas más información o ayuda acerca de tu pedido <strong><a href="https://calefaccion.store/contacto" target="_blank">contáctanos</a>.</strong><br>
-                                                                                                                    Atentamente,<strong> Simon Grup.&nbsp;<br>
                                                                                                                     <br>
-                                                                                                                    &nbsp;</strong>&nbsp;<img data-file-id="15229" height="29" src="https://mcusercontent.com/baa0910438c8ee1af0750308a/images/e7f4c5f0-d189-2d79-42fd-ba8ea482255d.png" style="border: 0px initial ; width: 50px; height: 29px; margin: 0px;" width="50"></span>
+                                                                                                                    <center>&nbsp;</strong>&nbsp;<img data-file-id="15229" height="29" src="https://mcusercontent.com/baa0910438c8ee1af0750308a/images/e7f4c5f0-d189-2d79-42fd-ba8ea482255d.png" style="border: 0px initial ; width: 50px; height: 29px; margin: 0px;" width="50"></span></center>
                                                                                                                                                     </p>
                                                                                                         </td>
                                                                                                     </tr>

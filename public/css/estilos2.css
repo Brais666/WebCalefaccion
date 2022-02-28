@@ -3786,6 +3786,10 @@ textarea{
 
 }
 
+.foc{
+    outline:none;
+}
+
 .padding-contacto{
     padding-right: 7%;
 }

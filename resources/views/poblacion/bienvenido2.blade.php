@@ -3,7 +3,7 @@ use App\Temporals;
 use Carbon\Carbon;
 $id = Auth::user()->id;
 
-dd(session());
+//dd(session());
 if (isset($id))
 {
      $temporal = Temporals::find($id);
