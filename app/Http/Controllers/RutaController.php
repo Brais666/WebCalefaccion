@@ -345,7 +345,7 @@ class RutaController extends Controller
     }
   }
 
-  public function consulta($pobl, $poblidz, $cantidad, $unidad, $meses, $valor)
+  public function consulta($pobl, $cantidad, $unidad)
   {
     if (($cantidad < 300 && $unidad == "Lts.") or ($cantidad < 150 && $unidad == "€")) {
       throw new NotEnoughQuantityException();
@@ -387,9 +387,9 @@ class RutaController extends Controller
     $entrega = $this->datesRutes($nomRuta, $dateday, $datehoy, $diahoynum);
     $entregadia = ucfirst(Carbon::create($entrega['entrega'])->locale('es_ES')->dayName);
 
-    $poblidz = $poblacion->idzona;
+    $poblIdZone = $poblacion->idzona;
 
-    switch ($poblidz) {
+    switch ($poblIdZone) {
       case 000:
         $pueblo = $pobl;
 
@@ -523,14 +523,11 @@ class RutaController extends Controller
     ]);
 
     $pobl = $request->input('poblacion');
-    $poblidz = "";
     $cantidad = $request->input('cantidad');
     $unidad = $request->input('select');
-    $meses = $request->input('term');
-    $valor = $request->get('term');
 
     try {
-      $consulta = $this->consulta($pobl, $poblidz, $cantidad, $unidad, $meses, $valor);
+      $consulta = $this->consulta($pobl, $cantidad, $unidad);
 
       // dd($consulta);
 
