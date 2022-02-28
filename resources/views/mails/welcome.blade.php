@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>*|MC:SUBJECT|*</title>
+    <title>www.gasoleodecalefaccion.com</title>
         
     <style type="text/css">
     p{
@@ -715,7 +715,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; line-height: 125%; text-align: left;">
                         
-                            <span style="font-size:15px">A partir de ahora, ya puedes realizar tus pedidos de gasóleo de calefacción en nuestras plataformas digitales. ¡Bienvenido!</span>
+                            <span style="font-size:15px">A partir de ahora, ya puedes realizar tus pedidos de gasóleo de calefacción en nuestras plataformas digitales. &#161;Bienvenido!</span>
                         </td>
                     </tr>
                 </tbody></table>
@@ -901,7 +901,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #0075C9;line-height: 150%;">
                         
-                            <div style="text-align: center;"><span style="font-size:15px"><strong>¿Quieres darte de baja de Simon Grup gasóleo de calefacción?</strong></span></div>
+                            <div style="text-align: center;"><span style="font-size:15px"><strong>&#191;Quieres darte de baja de Simon Grup gasóleo de calefacción?</strong></span></div>
 
 <hr color="#0075c9" size="1">
 <div style="text-align: center;"><span style="font-size:14px">Si decides dar de baja tu usuario, recuerda que puedes registrarte de nuevo cuando lo necesites. Estaremos encantados de volver a darte la bienvenida.</span></div>

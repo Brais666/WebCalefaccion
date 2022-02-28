@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>*|MC:SUBJECT|*</title>
+        <title>Gas&oacute;leo de calefacci&oacute;n<title>
         
         
 
