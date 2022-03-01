@@ -71,22 +71,24 @@ class RutaController extends Controller
     }
   }
 
+   // This calculation right now won't consider schedule on weekend after Thursday midday. 
   public function datesRutes($nomRuta, $dateDay, $dateHoy, $diaHoyNum)
   {
-
     $frequencia = $this->frequenciaRuta($nomRuta);
     $offset = 1;
+    // Add extra day when user check after midday 
     if ($diaHoyNum < 5 && $dateDay < 0) {
       if ($dateDay < 0) {
         $offset += 1;
       } 
     } else if ($diaHoyNum > 4 || $diaHoyNum == 4 && $dateDay < 0) {
+      // After thursday midday the next possible day is Tuesday
       $offset = 9 - $diaHoyNum;
     }
     
+    // Finding the next day available on the route to deliver
     $found = false;
     $index =  $diaHoyNum + $offset;
-    // dd($diaHoyNum);
     if ($index > 7) {
       $index = $index-7;
     }
@@ -142,8 +144,6 @@ class RutaController extends Controller
     $entregadia = ucfirst(Carbon::create($entrega)->locale('es_ES')->dayName);
     $entregadianum = $entrega->format('j');
     $diasentrega = $entrega->diffInDays($dateHoy);
-
-    
 
     $poblIdZone = $poblacion->idzona;
 
@@ -288,8 +288,6 @@ class RutaController extends Controller
 
     try {
       $consulta = $this->consulta($pobl, $cantidad, $unidad);
-
-      // dd($consulta);
 
       $request->session()->put(['entregadia' => $consulta['entregadia']]);
       $request->session()->put(['entregadianum' => $consulta['entregadianum']]);
