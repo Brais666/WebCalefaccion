@@ -7,7 +7,7 @@
 ?>
 <div class="row navfont">
     <div class="col-xs-2 movillogo2 pt-2">
-      <a class="align-middle" href="https://134.122.70.106/nueva/public">
+      <a class="align-middle" href="http://localhost/nueva/public">
         <img src="images/logosg.png">
       </a>
     </div>

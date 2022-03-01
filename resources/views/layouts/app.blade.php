@@ -1,16 +1,15 @@
 <?php
 $cantidad2=0;
-//dd($total);
+
  if(session()->has('cantidad'))
 {
     $cantidad2 = session('cantidad');
-    //dd("$cantidad2");
+    
 }
 
 if(session()->has('unidad'))
 {
     $unidad = session('unidad');
-    //dd("$cantidad2");
 }
 
 
@@ -18,7 +17,7 @@ if(session()->has('unidad'))
 if(session()->has('poblacion'))
 {
     $pobl = session('poblacion');
-    //dd("$pobl");
+    
 }
 
 if(isset($request))
