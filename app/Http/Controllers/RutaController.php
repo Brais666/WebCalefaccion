@@ -29,7 +29,7 @@ class RutaController extends Controller
    * @return \Illuminate\Http\Response
    */
 
-  public function datesRutes($nomRuta, $dateday, $datehoy, $diahoynum)
+  public function frequenciaRuta($nomRuta)
   {
     switch ($nomRuta) {
       case 'Ruta Centro':
@@ -38,311 +38,74 @@ class RutaController extends Controller
       case 'Ruta Valencia':
       case 'Ruta Limites 30Km':
       case 'Ruta interior Naquera':
-        switch ($diahoynum) {
-          case 1:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(2);
-            }
-            break;
-          case 2:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(2);
-            }
-            break;
-          case 3:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(2);
-            }
-            break;
-          case 4:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(4);
-            }
-            break;
-          case 5:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(3);
-            } else {
-              $entrega = Carbon::now()->addDays(4);
-            }
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [1, 1, 1, 1, 1, 0, 0];
         break;
-
       case 'Ruta 3':
       case 'Ruta 5':
-        switch ($diahoynum) {
-          case 1:
-            $entrega = Carbon::now()->addDays(7);
-            break;
-          case 2:
-            $entrega = Carbon::now()->addDays(6);
-            break;
-          case 3:
-            $entrega = Carbon::now()->addDays(5);
-            break;
-          case 4:
-            $entrega = Carbon::now()->addDays(4);
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(8);
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [1, 0, 0, 0, 0, 0, 0];
         break;
 
       case 'Ruta Falset':
-        switch ($diahoynum) {
-          case 1:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(4);
-            }
-            break;
-          case 2:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          case 3:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          case 4:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(5);
-            }
-
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(4);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [0, 1, 0, 0, 1, 0, 0];
         break;
       case 'Ruta Montroig':
-        switch ($diahoynum) {
-          case 1:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          case 2:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(3);
-            }
-            break;
-          case 3:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          case 4:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(4);
-            }
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [1, 0, 1, 0, 1, 0, 0];
         break;
       case 'Ruta 1':
-        switch ($diahoynum) {
-          case 1:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(3);
-            }
-
-            break;
-          case 2:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          case 3:
-            $entrega = Carbon::now()->addDays(6);
-            break;
-          case 4:
-            $entrega = Carbon::now()->addDays(5);
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(4);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [0, 1, 0, 1, 0, 0, 0];
         break;
       case 'Ruta 2':
       case 'Ruta 4':
-        switch ($diahoynum) {
-          case 1:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          case 2:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          case 3:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(5);
-            }
-
-            break;
-          case 4:
-            $entrega = Carbon::now()->addDays(4);
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(5);
-            break;
-          default:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(4);
-            }
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [1, 0, 0, 1, 0, 0, 0];
         break;
       case 'Ruta Montblanc':
       case 'Ruta LLeida':
-        switch ($diahoynum) {
-          case 1:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(8);
-            }
-
-            break;
-          case 2:
-            $entrega = Carbon::now()->addDays(7);
-            break;
-          case 3:
-            $entrega = Carbon::now()->addDays(6);
-            break;
-          case 4:
-            $entrega = Carbon::now()->addDays(5);
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(4);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-        }
-
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [0, 1, 0, 0, 0, 0, 0];
         break;
       case 'Ruta Vilafranca':
-        switch ($diahoynum) {
-          case 1:
-            $entrega = Carbon::now()->addDays(3);
-            break;
-          case 2:
-            $entrega = Carbon::now()->addDays(2);
-            break;
-          case 3:
-            if ($dateday > 0) {
-              $entrega = Carbon::now()->addDays(1);
-            } else {
-              $entrega = Carbon::now()->addDays(8);
-            }
-            break;
-          case 4:
-            $entrega = Carbon::now()->addDays(7);
-            break;
-          case 5:
-            $entrega = Carbon::now()->addDays(6);
-            break;
-          case 6:
-            $entrega = Carbon::now()->addDays(5);
-            break;
-          default:
-            $entrega = Carbon::now()->addDays(4);
-            break;
-        }
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+        return [0, 0, 0, 1, 0, 0, 0];
         break;
-      default:
-        $entrega = Carbon::now()->addDays(2);
-        $entregadia = $entrega->format('l');
-        $entregadianum = $entrega->format('j');
-        $diasentrega = $entrega->diffInDays($datehoy);
-        return compact('entrega', 'entregadia', 'entregadianum', 'diasentrega');
+      case 'Ruta Torredembarra':
+        return [0, 0, 0, 0, 1, 0, 0];
         break;
     }
+  }
+
+  public function datesRutes($nomRuta, $dateDay, $dateHoy, $diaHoyNum)
+  {
+
+    $frequencia = $this->frequenciaRuta($nomRuta);
+    $offset = 1;
+    if ($diaHoyNum < 5 && $dateDay < 0) {
+      if ($dateDay < 0) {
+        $offset += 1;
+      } 
+    } else if ($diaHoyNum > 4 || $diaHoyNum == 4 && $dateDay < 0) {
+      $offset = 9 - $diaHoyNum;
+    }
+    
+    $found = false;
+    $index =  $diaHoyNum + $offset;
+    // dd($diaHoyNum);
+    if ($index > 7) {
+      $index = $index-7;
+    }
+    while (!$found) {
+      if ($frequencia[$index-1] == 1) {
+        $found = true;
+      }
+      else {
+        $index += 1;
+        if ($index > 7) {
+          $index = 1;
+        }
+        $offset += 1;
+      }
+    }
+    $entrega = clone($dateHoy);
+    $entrega = $entrega->addDay($offset);
+    
+    return $entrega;
   }
 
   public function consulta($pobl, $cantidad, $unidad)
@@ -367,25 +130,20 @@ class RutaController extends Controller
     $nomRuta = $poblacion->nombreruta;
 
     $preciol2 = 0;
-    $datehoy = Carbon::now();
-    $datehoy2 = Carbon::now()->format('l');
-    $diahoy = Carbon::now()->format('j');
-    $datemed = $datehoy->format('Y-m-d 12:00:00');
+    $dateHoy = Carbon::now()->addDay(4); 
+    
+    $datemed = $dateHoy->format('Y-m-d 12:00:00');
 
-    $diahoynum = $datehoy->dayOfWeek;
-    $dateday = $datehoy->diffInMinutes($datemed, false);
-    if ($dateday > 0) {
-      $entrega = Carbon::now()->addDays(1);
-    } else {
-      $entrega = Carbon::now()->addDays(2);
-    }
-
-    $entregadia = $entrega->format('l');
+    $diaHoyNum = $dateHoy->dayOfWeekIso;
+    $dateDay = $dateHoy->diffInMinutes($datemed, false);
+    
+    $entrega = $this->datesRutes($nomRuta, $dateDay, $dateHoy, $diaHoyNum);
+    
+    $entregadia = ucfirst(Carbon::create($entrega)->locale('es_ES')->dayName);
     $entregadianum = $entrega->format('j');
-    $diasentrega = $entrega->diffInDays($datehoy);
+    $diasentrega = $entrega->diffInDays($dateHoy);
 
-    $entrega = $this->datesRutes($nomRuta, $dateday, $datehoy, $diahoynum);
-    $entregadia = ucfirst(Carbon::create($entrega['entrega'])->locale('es_ES')->dayName);
+    
 
     $poblIdZone = $poblacion->idzona;
 
@@ -509,7 +267,9 @@ class RutaController extends Controller
         ]);
         $temporal->save();
       }
-      return compact('entregadia', 'entregadianum', 'diasentrega', 'pobl', 'provincia', 'preciol2', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad');
+
+      $valor = 3;
+      return compact('entregadia', 'entregadianum', 'diasentrega', 'pobl', 'provincia', 'preciol2', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad', 'valor');
   }
 
   public function index(Request $request)
