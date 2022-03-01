@@ -9,7 +9,7 @@
   <div class="col-md-2 col-xs-12"></div>
   <div class="navbar-header col-sm-5 col-md-3 col-xs-3">
     <div class="col-md-3 movillogo2">
-      <a class="navbar-brand align-middle" href="https://calefaccion.store">
+      <a class="navbar-brand align-middle" href="http://localhost/nueva/public">
         <img src="images/logosg.png" alt=""></a></div>
     
   </div>
