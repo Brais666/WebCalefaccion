@@ -903,7 +903,7 @@ if(session()->has('poblacion'))
                         <div class="row pt-1">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-7 text-blue col-xs-6 text-blue mlmov-3"><p>Fecha de entrega</p></div>
-                          <div class="col-sm-4"><p class="float-right" data-toggle="tooltip" data-placement="top" title="Día de reparto"> {{$entregadia}} {{$entregadianum}}</p></div
+                          <div class="col-sm-4"><p class="float-right" data-toggle="tooltip" data-placement="top" title="Día de reparto"> {{$entregadia}} {{$entregadianum}}</p></div>
                         </div>
                         <hr class="blue">
                         <div class="row pt-1">
