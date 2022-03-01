@@ -130,7 +130,7 @@ class RutaController extends Controller
     $nomRuta = $poblacion->nombreruta;
 
     $preciol2 = 0;
-    $dateHoy = Carbon::now()->addDay(4); 
+    $dateHoy = Carbon::now(); 
     
     $datemed = $dateHoy->format('Y-m-d 12:00:00');
 
