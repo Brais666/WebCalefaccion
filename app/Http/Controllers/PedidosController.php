@@ -101,7 +101,6 @@ class PedidosController extends Controller
             
             /*if(($codigopromo == 'bienvenidavale') && $bienvenida2 > 0 && !empty($bienvenida)  )
             {
-                dd($bienvenida);
                 $prev= url()->previous();
                 $request->session()->put(['codigopromo'=> 1]);
             
@@ -494,7 +493,7 @@ class PedidosController extends Controller
                             }
                            else
                            {
-                               dd("HOL");
+                               
                                 alert("fallo en el cupón");
                            }
                            
@@ -504,7 +503,7 @@ class PedidosController extends Controller
                 else
                 {
                     
-                    dd("HOL2");
+                   
                     return view('pedidos.list')->with('danger','cupón no válido');
                 }
             
@@ -513,22 +512,19 @@ class PedidosController extends Controller
             else
             {
                 $prev= url()->previous();
-                //dd($temporal);
+                
                 if($prev == "http://localhost/nueva/public/pedidos")
                 {
-                    //dd("Hallo");
+
                     return view('pedidos.list')->with('danger','cupón no válido');
                 }
                 else if($prev == "http://localhost/nueva/public/pedidofinanciado")
                 {
-                    //dd("Hallo2");
+                    
                     return view('pedidofinanciado.list')->with('danger','cupón no válido');
                 }
             }
              
-             
-            
-            //dd($codpromo);
           
             
         }
@@ -538,9 +534,8 @@ class PedidosController extends Controller
         }
         else
         {
-            //dd($request);
             $request->session()->put(['codigopromo'=> 0]);
-            //dd(session());
+
             $prev= url()->previous();
             
             if($request->get('tel')!== null)
@@ -555,7 +550,6 @@ class PedidosController extends Controller
            
             if($prev == "http://localhost/nueva/public/pedidos")
             {
-                //dd(Auth::user()->id);
                 
                 $id = Auth::user()->id;
                 $temporal = Temporals::find($id);
@@ -566,10 +560,8 @@ class PedidosController extends Controller
                     $id = 666666;
                     $temporal = Temporals::find($id);
                     $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
-                    //dd($temporal);
                 }
                 
-                //dd($temporal);
                 $pedido = new Pedidos([
                 'session_token'=> $request->get('txtSession'),
                 'codigocliente' => $request->get('txtCodCli'),
@@ -596,7 +588,7 @@ class PedidosController extends Controller
                 'telefono' => $telefono,
 
             ]);
-               // dd($pedido);
+
             $pedido->save();
             
             $id = auth()->user()->id;
@@ -609,7 +601,6 @@ class PedidosController extends Controller
             $user->address = $request->get('Direccion');
             $user->CP = $request->get('CP');
                 
-           //dd($user->CP);
             $user->update();
 
             $objDemo = new \stdClass();
@@ -628,7 +619,7 @@ class PedidosController extends Controller
             $objDemo->sender = 'Simongrup S.l.';
             $objDemo->receiver = Auth::user()->name;
             
-    //dd($objDemo);
+    
             //Mail::to(Auth::user()->name)->send(new DemoEmail($objDemo));
            Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
             Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
@@ -637,8 +628,6 @@ class PedidosController extends Controller
             
             $id =3594;
             $temporal = Temporals::latest('created_at' )->first();
-            //$temporal = Temporals::find($id);
-            //dd($temporal);
             
             $temporal->delete();
             $request->session()->forget('poblacion');
@@ -653,14 +642,11 @@ class PedidosController extends Controller
             $request->session()->forget('dni');
             $request->session()->forget('telefono');
            
-                //dd("jkbjkgh");
                 return view('pedidos.pedidos2',compact('temporal'))->with('success','Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
             }
             else if($prev == "http://localhost/nueva/public/pedidofinanciado")
             {
-                //dd($fecha2);
                 $valor = $request->get('term');
-               //dd($valor);
                  switch($valor)
               {
                 case 0.341447:
@@ -696,13 +682,9 @@ class PedidosController extends Controller
                 break;
               }
               
-             // dd($request);
               $cantidad = intval($request->get('txtCantidad'));
               
              $preciol = floatval(session('preciol'));
-              //dd(session());
-              //dd(session('diferencialitro2'));
-    //mira
 
                if($cantidad <= 200)
                {
@@ -727,14 +709,11 @@ class PedidosController extends Controller
 
                $interes = 0.341447;
 
-               //$result= (($preciol+$comision)*($cantidad))*($valor);
                
-                //$valor = (float)$valor;
-                
                $nresult = $preciol + $comision;
                
                $total =  $cantidad * $nresult ;
-               //dd($preciol);
+            
                $total = $total * $valor;
                
                //$total = round($total*100)/100;
@@ -748,14 +727,14 @@ class PedidosController extends Controller
                 
                 
                  if($request->get('tel')!== null)
-                    {
-                        $telefono= $request->get('tel');
-                    }
-                    else{
-                        $telefono= Auth::user()->telefono;
-                    }
+                 {
+                    $telefono= $request->get('tel');
+                 }
+                 else
+                 {
+                    $telefono= Auth::user()->telefono;
+                 }
                 
-               //dd($cuotas);
                 $pedido = new Pedidos([
                 'session_token'=> $request->get('txtSession'),
                 'codigocliente' => $request->get('txtCodCli'),
@@ -782,8 +761,6 @@ class PedidosController extends Controller
                 'telefono' => $telefono,
 
             ]);
-               //dd(session());
-               //dd($pedido); 
                
             $pedido->save();
 
@@ -803,8 +780,7 @@ class PedidosController extends Controller
             $objDemo->sender = 'Simongrup S.l.';
             $objDemo->receiver = 'Adnan Basic';*/
             
-           // $prev= url()->previous();
-            dd("hola");
+          
             Mail::to($data['email'])->send(new DemoEmail($objDemo));
             Mail::to("sofia.shevchuk8@gmail.com")->send(new DemoEmail($objDemo));
             Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
@@ -814,8 +790,7 @@ class PedidosController extends Controller
             $id = 1;
             $temporal = Temporals::find($id);
             
-            //$temporal->delete();
-            //dd(session());
+            
             $request->session()->forget('poblacion');
             $request->session()->forget('cantidad');
             $request->session()->forget('unidad');
@@ -824,15 +799,14 @@ class PedidosController extends Controller
             $request->session()->forget('meses');
             $request->session()->forget('result');
             $request->session()->forget('nomRuta');
-            //dd("hhh");
-            //dd(session());
+           
 
              
                 return view('pedidofinanciado.pedidos2',compact('temporal'))->with('success','Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
             }
             return view('pedidos.list',compact('temporal'))->with('danger','cupón no válido');
         }  
-        //dd($request);
+        
     }
 
 

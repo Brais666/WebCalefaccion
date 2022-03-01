@@ -111,19 +111,6 @@ Route::get('/welcome', function () {
 
     Route::view('/Admin', 'admin');
 
-////rutas admin///////////
-
-/*Route::get('/Admin', function () {
-        return view('Admin.welcome');
-        });
-
-Route::get('Admin/welcome', function () {
-    return view('Admin.welcome');
-});
-
-Route::get('/Admin/User/home', function () {
-    return view('Admin.User.home');
-});*/
 
 Route::get('logout', function ()
 {
