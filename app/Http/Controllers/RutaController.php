@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Ruta;
 use App\Tarifas;
-use App\Temporals;
 use App\Poblacion;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -71,22 +70,24 @@ class RutaController extends Controller
     }
   }
 
+   // This calculation right now won't consider schedule on weekend after Thursday midday. 
   public function datesRutes($nomRuta, $dateDay, $dateHoy, $diaHoyNum)
   {
-
     $frequencia = $this->frequenciaRuta($nomRuta);
     $offset = 1;
+    // Add extra day when user check after midday 
     if ($diaHoyNum < 5 && $dateDay < 0) {
       if ($dateDay < 0) {
         $offset += 1;
       } 
     } else if ($diaHoyNum > 4 || $diaHoyNum == 4 && $dateDay < 0) {
+      // After thursday midday the next possible day is Tuesday
       $offset = 9 - $diaHoyNum;
     }
     
+    // Finding the next day available on the route to deliver
     $found = false;
     $index =  $diaHoyNum + $offset;
-    // dd($diaHoyNum);
     if ($index > 7) {
       $index = $index-7;
     }
@@ -108,28 +109,58 @@ class RutaController extends Controller
     return $entrega;
   }
 
-  public function consulta($pobl, $cantidad, $unidad)
+  public function consulta($nombrePoblacion, $cantidad, $unidad)
   {
     if (($cantidad < 300 && $unidad == "Lts.") or ($cantidad < 150 && $unidad == "€")) {
       throw new NotEnoughQuantityException();
     }
 
-    $poblacion = Ruta::where('poblacion', '=', $pobl)->first();
-    if (is_null($poblacion)) {
-      $pueblo = $pobl;
-      $poblacion = new Poblacion([
-        'nombre' => $pobl,
+    $ruta = Ruta::where('poblacion', '=', $nombrePoblacion)->first();
+    if (is_null($ruta)) {
+      $poblacionNoDefinida = new Poblacion([
+        'nombre' => $nombrePoblacion,
         'cantidad' => $cantidad,
         'unidad' => $unidad,
       ]);
-      $poblacion->save();
+      $poblacionNoDefinida->save();
 
       throw new RouteNotDefinedException();
     }
 
-    $nomRuta = $poblacion->nombreruta;
+    $poblIdZone = $ruta->idzona;
 
-    $preciol2 = 0;
+    switch ($poblIdZone) {
+      case 000:
+        $poblacionNoDefinida = new Poblacion([
+          'nombre' => $nombrePoblacion,
+          'cantidad' => $cantidad,
+          'unidad' => $unidad,
+        ]);
+        $poblacionNoDefinida->save();
+
+        throw new RouteDefineInFutureException;
+        break;
+      case 001:
+        $provincia = "Madrid";
+        break;
+      case 002:
+        $provincia = "Guadalajara";
+        break;
+      case 004:
+        if ($ruta->nombreruta == "Ruta LLeida") {
+          $provincia = "Lleida";
+        } else {
+          $provincia = "Tarragona";
+        }
+        break;
+      default:
+        $provincia = "Valencia";
+        break;
+    }
+
+    $nomRuta = $ruta->nombreruta;
+
+    $precioLitro = 0;
     $dateHoy = Carbon::now(); 
     
     $datemed = $dateHoy->format('Y-m-d 12:00:00');
@@ -143,50 +174,15 @@ class RutaController extends Controller
     $entregadianum = $entrega->format('j');
     $diasentrega = $entrega->diffInDays($dateHoy);
 
-    
-
-    $poblIdZone = $poblacion->idzona;
-
-    switch ($poblIdZone) {
-      case 000:
-        $pueblo = $pobl;
-
-        $poblacion = new Poblacion([
-          'nombre' => $pobl,
-          'cantidad' => $cantidad,
-          'unidad' => $unidad,
-        ]);
-        $poblacion->save();
-
-        throw new RouteDefineInFutureException;
-        break;
-      case 001:
-        $provincia = "Madrid";
-        break;
-      case 002:
-        $provincia = "Guadalajara";
-        break;
-      case 004:
-        if ($poblacion->nombreruta == "Ruta LLeida") {
-          $provincia = "Lleida";
-        } else {
-          $provincia = "Tarragona";
-        }
-        break;
-      default:
-        $provincia = "Valencia";
-        break;
-    }
-
-    $postal = Ruta::where('codigopost', '=', $pobl)->first();
+    // $postal = Ruta::where('codigopost', '=', $poblacion)->first();
     $user = Auth::user();
 
-    $pobzone = "#" . $poblacion->idzona;
-      $cp = $poblacion->codigopost;
+    $pobzone = "#" . $ruta->idzona;
+      $cp = $ruta->codigopost;
 
-      $tarifa1 = Tarifas::where('rango1', '=', 0)->where('zona', '=', $poblacion->idzona)->latest('created_at', 'asc')->first();
-      $tarifa2 = Tarifas::where('rango1', '=', 400)->where('zona', '=', $poblacion->idzona)->latest('created_at', 'asc')->first();
-      $tarifa3 = Tarifas::where('rango1', '=', 1000)->where('zona', '=', $poblacion->idzona)->latest('created_at', 'asc')->first();
+      $tarifa1 = Tarifas::where('rango1', '=', 0)->where('zona', '=', $ruta->idzona)->latest('created_at', 'asc')->first();
+      $tarifa2 = Tarifas::where('rango1', '=', 400)->where('zona', '=', $ruta->idzona)->latest('created_at', 'asc')->first();
+      $tarifa3 = Tarifas::where('rango1', '=', 1000)->where('zona', '=', $ruta->idzona)->latest('created_at', 'asc')->first();
 
       if ($cantidad <= 200) {
         $comision = 0.03;
@@ -203,73 +199,45 @@ class RutaController extends Controller
       $interes = 0.341447;
 
       if ($cantidad < 400) {
-        $preciol2 = $tarifa1->precio;
+        $precioLitro = $tarifa1->precio;
       } elseif (($cantidad < 1000) && ($cantidad > 399)) {
-        $preciol2 = $tarifa2->precio;
+        $precioLitro = $tarifa2->precio;
       } elseif (($cantidad > 999)) {
-        $preciol2 = $tarifa3->precio;
+        $precioLitro = $tarifa3->precio;
       }
       if ($unidad == 'Lts.') {
         $cantidad2 = $cantidad;
-        $total = $cantidad2 * $preciol2;
+        $total = $cantidad2 * $precioLitro;
       } else {
         $total = $cantidad;
-        $cantidad2 = $cantidad / $preciol2;
+        $cantidad2 = $cantidad / $precioLitro;
         $cantidad2 = round($cantidad2 * 1000) / 1000;
       }
 
-      $result = (($preciol2 + $comision) * ($cantidad2)) * ($interes);
+      $result = (($precioLitro + $comision) * ($cantidad2)) * ($interes);
 
       $meses = 3;
       $diferencia = ($result * $meses) - $total;
 
-      if ($preciol2 == 0) {
+      if ($precioLitro == 0) {
         $diferencialitro = 0;
         $diferencialitro2 = 0;
       } else {
-        $diferencialitro = ($diferencia / $preciol2) / $cantidad;
+        $diferencialitro = ($diferencia / $precioLitro) / $cantidad;
         $diferencialitro = round($diferencialitro * 1000) / 1000;
-        $diferencialitro2 = $diferencialitro + $preciol2;
+        $diferencialitro2 = $diferencialitro + $precioLitro;
         $diferencialitro2 = round($diferencialitro2 * 1000) / 1000;
       }
 
       if (isset($user)) {
-        $temporal = new Temporals([
-          'user' => Auth::user()->id,
-          'email' => Auth::user()->email,
-          'poblacion' => $pobl,
-          'cantidad' => $cantidad2,
-          'unidad' => $unidad,
-          'preciol' => $preciol2,
-          'codigopost' => $cp,
-          'entregadia' => $entregadia,
-          'entregadianum' => $entregadianum,
-          'dentrode' => $diasentrega,
-          'provincia' => $provincia,
 
-        ]);
-        $temporal->save();
       } else {
-        $nomRuta = $poblacion->nombreruta;
+        $nomRuta = $ruta->nombreruta;
 
-        $temporal = new Temporals([
-          'user' => '666666',
-          'email' => 'notemail@no.com',
-          'poblacion' => $pobl,
-          'cantidad' => $cantidad2,
-          'unidad' => $unidad,
-          'preciol' => $preciol2,
-          'codigopost' => $cp,
-          'entregadia' => $entregadia,
-          'entregadianum' => $entregadianum,
-          'dentrode' => $diasentrega,
-          'provincia' => $provincia,
-        ]);
-        $temporal->save();
       }
 
       $valor = 3;
-      return compact('entregadia', 'entregadianum', 'diasentrega', 'pobl', 'provincia', 'preciol2', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad', 'valor');
+      return compact('entregadia', 'entregadianum', 'nombrePoblacion', 'diasentrega', 'provincia', 'precioLitro', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad', 'valor', 'cp');
   }
 
   public function index(Request $request)
@@ -282,25 +250,25 @@ class RutaController extends Controller
       'select' => 'required|string|min:1',
     ]);
 
-    $pobl = $request->input('poblacion');
+    $nombrePoblacion = $request->input('poblacion');
     $cantidad = $request->input('cantidad');
     $unidad = $request->input('select');
 
     try {
-      $consulta = $this->consulta($pobl, $cantidad, $unidad);
-
-      // dd($consulta);
+      $consulta = $this->consulta($nombrePoblacion, $cantidad, $unidad);
 
       $request->session()->put(['entregadia' => $consulta['entregadia']]);
       $request->session()->put(['entregadianum' => $consulta['entregadianum']]);
       $request->session()->put(['diasentrega' => $consulta['diasentrega']]);
-      $request->session()->put(['pobl' => $consulta['pobl']]);
+      $request->session()->put(['poblacion' => $nombrePoblacion]);
       $request->session()->put(['provincia' => $consulta['provincia']]);
-      $request->session()->put(['preciol' => $consulta['preciol2']]);
+      $request->session()->put(['precioLitro' => $consulta['precioLitro']]);
       $request->session()->put(['total' => $consulta['total']]);
       $request->session()->put(['diferencialitro' => $consulta['diferencialitro']]);
       $request->session()->put(['diferencialitro2' => $consulta['diferencialitro2']]);
       $request->session()->put(['total' => $consulta['total']]);
+      $request->session()->put(['cp' => $consulta['cp']]);
+      $request->session()->put(['cantidad' => $consulta['cantidad']]);
 
       return view('bienvenido', $consulta);
     } catch (RouteNotDefinedException $e) {
@@ -317,11 +285,13 @@ class RutaController extends Controller
     $request->session()->forget('entregadia');
     $request->session()->forget('entregadianum');
     $request->session()->forget('diasentrega');
-    $request->session()->forget('pobl');
+    $request->session()->forget('poblacion');
     $request->session()->forget('provincia');
-    $request->session()->forget('preciol');
+    $request->session()->forget('precioLitro');
     $request->session()->forget('total');
     $request->session()->forget('diferencialitro2');
+    $request->session()->forget('codigopromo');
+    $request->session()->forget('totaltemp');
   }
 
   /**
