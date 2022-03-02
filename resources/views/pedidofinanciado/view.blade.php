@@ -1,6 +1,3 @@
-<?php
-    //dd($temporal);
-    ?>
 @extends('layouts.appfinan')
 @section('title', 'SimonGrup')
 @section('content')
