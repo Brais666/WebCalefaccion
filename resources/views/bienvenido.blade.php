@@ -20,13 +20,13 @@ if ($cantidad2 <= 200) {
 
 $interes = 0.341447;
 
-if (isset($preciol2)) {
-  $preciol2 = $preciol2;
+if (isset($precioLitro)) {
+  $precioLitro = $precioLitro;
 } else {
-  $preciol2 = 0;
+  $precioLitro = 0;
 }
 
-$result = (($preciol2 + $comision) * ($cantidad2)) * ($interes);
+$result = (($precioLitro + $comision) * ($cantidad2)) * ($interes);
 
 $result = round($result * 100) / 100;
 
@@ -34,13 +34,13 @@ $meses = 3;
 
 $diferencia = ($result * $meses) - $total;
 
-if ($preciol2 == 0) {
+if ($precioLitro == 0) {
   $diferencialitro = 0;
   $diferencialitro2 = 0;
 } else {
-  $diferencialitro = ($diferencia / $preciol2) / $cantidad;
+  $diferencialitro = ($diferencia / $precioLitro) / $cantidad;
   $diferencialitro = round($diferencialitro * 1000) / 1000;
-  $diferencialitro2 = $diferencialitro + $preciol2;
+  $diferencialitro2 = $diferencialitro + $precioLitro;
   $diferencialitro2 = round($diferencialitro2 * 1000) / 1000;
   session()->put(['preciol' => $diferencialitro2]);
   session()->put(['totalfinan' => $result * $meses]);
@@ -52,12 +52,12 @@ if ($preciol2 == 0) {
   /* Funcion suma. */
   function SumarAutomatico(valor) {
     var cantidad = "<?php echo $cantidad2 ?>";
-    var preciol2 = "<?php echo $preciol2 ?>";
+    var precioLitro = "<?php echo $precioLitro ?>";
     var comision = "<?php echo $comision ?>";
     var total = "<?php echo $total ?>";
 
     $comision = parseFloat(comision);
-    $preciol2 = parseFloat(preciol2);
+    $precioLitro = parseFloat(precioLitro);
     $cantidad = parseFloat(cantidad);
     $total = parseFloat(total);
 
@@ -101,7 +101,7 @@ if ($preciol2 == 0) {
     /* Variable generando la suma. */
     //$result= (($preciol+$comision)*($cantidad2))*($valor);
 
-    $1result = $preciol2 + $comision;
+    $1result = $precioLitro + $comision;
     $2result = $1result * $cantidad;
     $result = $2result * $valor;
     $valor = Math.round($valor * 1000) / 1000;
@@ -111,10 +111,10 @@ if ($preciol2 == 0) {
 
     $diferencia = Math.round($diferencia * 100) / 100;
 
-    $diferencia2 = $diferencia / $preciol2
+    $diferencia2 = $diferencia / $precioLitro
 
     $diferencialitro = $diferencia2 / $cantidad;
-    $diferencialitro2 = $diferencialitro + $preciol2;
+    $diferencialitro2 = $diferencialitro + $precioLitro;
 
     $diferencialitro2 = Math.round($diferencialitro2 * 100) / 100;
     $totalfinan = $result2 * $meses;
@@ -133,101 +133,6 @@ if ($preciol2 == 0) {
 @section('title', 'SimonGrup')
 @section('content')
 <div class="container">
-  @if (auth()->check())
-  <form class="pt-2" action="#" method="POST" id="pedido">
-    <div class="form-group">
-      @csrf
-      <div class="col-sm-12 pb-1 mb-bienv col-xs-12">
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <div class="col-sm-12 border pt-2 pb-1">
-              <div class="row pt-1">
-                <div class="col-lg-1 col-md-1"></div>
-                <div class="col-lg-5 col-md-6 col-xs-7 text-blue">
-                  <p>Fecha de entrega</p>
-                </div>
-                <div class="col-lg-5 col-md-5 col-xs-5">
-                  <p class="float-left" data-toggle="tooltip" data-placement="top" title="Día de reparto">{{$entregadia}} {{$entregadianum}} </p>
-                </div>
-              </div>
-              <hr class="blue">
-              <div class="row pt-1">
-                <div class="col-lg-1 col-md-1"></div>
-                <div class="col-lg-5 col-md-6 col-xs-7 text-blue">
-                  <p>Días hasta entrega</p>
-                </div>
-                <div class="col-lg-5 col-md-5 col-xs-5">
-                  <?php dd($diasentrega) ?>
-                  <p class="float-left">{{$diasentrega}} Días</p>
-                </div>
-
-              </div>
-              <hr class="blue">
-              <div class="row pt-1 mb-5">
-                <div class="col-lg-1 col-md-1"></div>
-                <div class="col-lg-5 col-md-6 col-xs-7 text-blue">
-                  <p>Población</p>
-                </div>
-                <div class="col-lg-5 col-md-5 col-xs-5">
-                  <?php
-                  if (session()->has('poblacion')) { ?>
-                    <p class="float-left">{{$poblses}}</p>
-                </div>
-              <?php
-
-                  } else {
-              ?>
-                <p class="float-left">{{$pobl}}</p>
-              </div>
-            <?php
-
-                  }
-            ?>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xs-12 pt-mov pttab-1">
-          <div class="col-sm-12 border">
-            <div class="row pt-2 mr-3">
-              <div class="col-sm-1"></div>
-              <div class="col-sm-6 col-xs-7">
-                <p>Precio por litro</p>
-              </div>
-              <div class="col-sm-4 col-xs-5 float-right" name="preciol">
-                <?php
-                if (session()->has('preciol')) { ?>
-                  <p class="float-right total" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{$preciol2ses}} €</p>
-              </div>
-            <?php
-
-                } else {
-            ?>
-            <?php
-                }
-            ?>
-            <div class="col-sm-1"></div>
-            </div>
-            <div class="row mr-3">
-              <div class="col-sm-1"></div>
-              <div class="col-sm-6 col-xs-9">
-                <p>Total</p>
-              </div>
-              <div class="col-sm-4 col-xs-3 float-right"><span class="float-right totalmini" id="pedido" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{$total}} € </span></div>
-              <div class="col-sm-1"></div>
-            </div>
-            <div class="row mb-3 pt-2 pb-2 pbtab-2 text-center foc">
-              @if($total == 0)
-              <button type="submit" class="btn btnheight buttoncons" name="medio" id="medio" data-toggle="tooltip" data-placement="top" title="Tooltip on top"> <a href="#" class="btn blue no-margin" style="color:white;" disabled>Hacer Pedido</a></button>
-              @else
-              <button type="submit" class="btn btnheight buttoncons xs-buttons" data-toggle="tooltip" data-placement="top" title="hacer pedido"> <a href="{{route('pedidos.store')}}" class="btn blue no-margin " style="color:white;">Hacer Pedido</a></button>
-              @endif
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-@else
 <form class="pt-1">
   <div class="form-group">
     @csrf
@@ -263,7 +168,7 @@ if ($preciol2 == 0) {
                 <p>Población</p>
               </div>
               <div class="col-sm-5 col-xs-5">
-                <p class="float-left">{{$pobl}}</p>
+                <p class="float-left">{{$nombrePoblacion}}</p>
               </div>
 
             </div>
@@ -277,7 +182,7 @@ if ($preciol2 == 0) {
                 <p>Precio por litro</p>
               </div>
               <div class="col-sm-4 col-xs-5 float-right" name="preciol">
-                <p class="float-right total" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{$preciol2}} €</p>
+                <p class="float-right total" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{$precioLitro}} €</p>
               </div>
               <div class="col-sm-1"></div>
             </div>
@@ -290,12 +195,7 @@ if ($preciol2 == 0) {
               <div class="col-sm-1"></div>
             </div>
             <div class="row mb-3 pt-2 pb-2 text-center">
-              @if($total == 0)
-              <button type="submit" class="btn btnheight buttoncons xs-buttons" name="medio" id="medio" data-toggle="tooltip" data-placement="top" title="No se puede hacer pedido de 0"> <a href="#" class="btn blue no-margin" style="color:white;" disabled>Hacer Pedido</a></button>
-              @else
-              <button type="submit" class="btn btnheight buttoncons xs-buttons " data-toggle="tooltip" data-placement="top" title="hacer pedido"> <a href="{{ url('/login?redirect_to='.url()->full())}}" class="btn blue no-margin " style="color:white;">Hacer Pedido</a></button>
-              @endif
-
+              <button type="submit" class="btn btnheight buttoncons xs-buttons " data-toggle="tooltip" data-placement="top" title="hacer pedido"> <a href="{{ route('pedidos.store') }}" class="btn blue no-margin " style="color:white;">Hacer Pedido</a></button>
             </div>
           </div>
         </div>
@@ -303,7 +203,6 @@ if ($preciol2 == 0) {
     </div>
   </div>
 </form>
-@endif
 <input type="hidden" class="row " tabindex="-1" id="foc"></input>
 <div class="form-group bg-info">
   <div class="col-sm-12 col-xs-12 mb-5 pt-1 ">
@@ -351,19 +250,11 @@ if ($preciol2 == 0) {
             </div>
           </div>
           <div class="row pt-1">
-            @if(isset($preciol2ses))
-            <div class="col-sm-1"></div>
-            <div class="col-sm-6 col-xs-7">
-              <p>Precio por litro</p>
-            </div>
-            <div class="col-sm-4 col-xs-5 total"><span class=" float-right" id="diferencialitro">{{$diferencialitro1}} €</span></div>
-            @else
-            <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
             <div class="col-sm-6 col-xs-7">
               <p>Precio por litro</p>
             </div>
             <div class="col-sm-4 col-xs-5 total"><span class=" float-right" id="diferencialitro">{{$diferencialitro2}} €</span></div>
-            @endif
           </div>
           <div class="row pt-1">
             <div class="col-sm-1"></div>

@@ -1,9 +1,3 @@
-<?php
-    $prev= url()->current();
-    $prev2 = url()->previous();
-   //dd($pedidos);
-   //dd(session());
-?>
 @extends('layouts.appfaq2')
 @section('title', 'SimonGrup')
 @section('content')
@@ -48,9 +42,9 @@
                                 <td >{{$pedidos->producto}}</td>
                                 <td>{{$pedidos->cantidad}} Lts.</td>
                                 <td>{{$pedidos->preciol}}€/l</td>
-                                @if($prev == "http://calefaccion.store/pedidos.view")
+                                @if($pedidos->totalfinan !== 0)
                                     <td>{{$pedidos->total}}€</td>
-                                @elseif($prev == "http://calefaccion.store/pedidofinanciado.view")
+                                @else
                                     <td>{{$pedidos->totalfinan}}€</td>
                                 @endif
                             </tr> 
@@ -93,9 +87,9 @@
                                 <td class="ohnemargin">{{$pedidos->producto}}</td>
                                 <td class="ohnemargin">{{$pedidos->cantidad}} Lts.</td>
                                 <td class="ohnemargin">{{$pedidos->preciol}}€/l</td>
-                                @if($prev == "http://calefaccion.store/pedidos.view") 
+                                @if($pedidos->totalfinan !== 0)
                                     <td class="ohnemargin">{{$pedidos->total}}€  </td>
-                                @elseif($prev == "http://calefaccion.store/pedidofinanciado.view") 
+                                @else
                                     <td class="ohnemargin">{{$pedidos->total}}*3 €</td> 
                                 @endif
                             </tr> 
