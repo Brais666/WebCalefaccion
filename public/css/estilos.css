@@ -181,8 +181,7 @@ display: flex;
     
 }
 .ancho{
-    width:40%;
-    display: flex;
+     width:100%;
 }
 
 .subrallado-contacto{

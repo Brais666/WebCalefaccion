@@ -58,7 +58,7 @@ $ofertas = Oferta::all();
 			<div class="card text-center ">
 			  <div class="card-body">
 				<p class="card-title text-blue"><i class="fab fa-whatsapp fa-3x"></i></p>
-				<div class="col-sm-12 text-blue"><a href="https://api.whatsapp.com/send?phone=34652946533" target="_blank">949 247 034</a></div>
+				<div class="col-sm-12 text-blue"><a href="https://wa.link/kphx3l" target="_blank">600 492 947</a></div>
 			  </div>
 		    </div>
 		</div>
@@ -67,8 +67,11 @@ $ofertas = Oferta::all();
 			<div class="card text-center ">
 			  <div class="card-body">
 			    <p class="card-title text-blue"><i class="fas fa-mobile-alt fa-3x text-ble"></i></p>
-			    <div class="col-sm-12 text-blue">949 247 034</div>
-			  	<div class="col-sm-12 text-blue">(Madrid)</div>
+			    <div class="col-sm-12 text-blue">949 247 034 (Madrid)</div>
+			  	
+			  	   <div class="col-sm-12 text-blue">977 773 800 (Catalunya)</div>
+			  
+
 			  </div>
 			</div>			
 		</div>
@@ -77,15 +80,8 @@ $ofertas = Oferta::all();
 		
 		<div class="flex">
 		
-		<div class="ancho ancho2 col-sm-3 cont  pb-2">
-			<div class="card text-center ">
-			  <div class="card-body">
-			    <p class="card-title text-blue"><i class="fas fa-mobile-alt fa-3x text-blue"></i></p>
-			     <div class="col-sm-12 text-blue">977 773 800</div>
-			  	<div class="col-sm-12 text-blue">(Cataluña)</div>
-			  </div>
-			</div>			
-		</div>
+		
+		
 		<div class="ancho ancho2 col-sm-4 cont  pb-2">
 			<div class="card text-center ">
 			  <div class="card-body">
