@@ -16,11 +16,7 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse col-sm-auto text-primary mltab-10">
     <ul class="nav navbar-nav">
       <!--<li class="nav-item" id="tab-unclick"><a href="pedidos.unclick">Pedido 1-Click</a></li>-->
-      @if (auth()->check())
-        <li class="nav-item movil hazpedmov" id="tab-precios"><a href="precios"> Pedidos</a></li>
-      @else
-        <li class="nav-item movil hazpedmov" id="tab-precios"><a href="precios"> Pedidos</a></li>
-      @endif
+      <li class="nav-item movil hazpedmov" id="tab-precios"><a href="{{ url('/') }}"> Pedidos</a></li>
       <li class="nav-item movil hazpedmov" id="tab-financiacion"><a href="financiacion">Financiación</a></li>
       <li class="nav-item movil hazpedmov" id="tab-promociones"><a href="promociones">Promociones</a></li>
       <!--<li class="nav-item" id="tab-simon"><a href="#">Simon Coins</a></li>-->

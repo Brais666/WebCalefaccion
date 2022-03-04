@@ -196,8 +196,6 @@ class RutaController extends Controller
         $comision = 0.01;
       }
 
-      $interes = 0.341447;
-
       if ($cantidad < 400) {
         $precioLitro = $tarifa1->precio;
       } elseif (($cantidad < 1000) && ($cantidad > 399)) {
@@ -214,7 +212,9 @@ class RutaController extends Controller
         $cantidad2 = round($cantidad2 * 1000) / 1000;
       }
 
-      $result = (($precioLitro + $comision) * ($cantidad2)) * ($interes);
+      $valor = 0.3417;
+
+      $result = (($precioLitro + $comision) * ($cantidad2)) * ($valor);
 
       $meses = 3;
       $diferencia = ($result * $meses) - $total;
@@ -236,8 +236,21 @@ class RutaController extends Controller
 
       }
 
-      $valor = 3;
-      return compact('entregadia', 'entregadianum', 'nombrePoblacion', 'diasentrega', 'provincia', 'precioLitro', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad', 'valor', 'cp');
+      $comision = 0.03;
+      if ($cantidad <= 300)
+      {
+          $comision = 0.02;
+      }
+      else if ($cantidad <= 400)
+      {
+          $comision = 0.015;
+      }
+      else if ($cantidad <= 500)
+      {
+          $comision = 0.01;
+      }
+      
+      return compact('entregadia', 'entregadianum', 'nombrePoblacion', 'diasentrega', 'provincia', 'precioLitro', 'total', 'diferencialitro', 'diferencialitro2', 'diferencia', 'cantidad', 'valor', 'cp', 'comision');
   }
 
   public function index(Request $request)
@@ -255,7 +268,7 @@ class RutaController extends Controller
     $unidad = $request->input('select');
 
     try {
-      $consulta = $this->consulta($nombrePoblacion, $cantidad, $unidad);
+      $consulta = $this->consulta($nombrePoblacion, intval($cantidad), $unidad);
 
       $request->session()->put(['entregadia' => $consulta['entregadia']]);
       $request->session()->put(['entregadianum' => $consulta['entregadianum']]);
@@ -263,7 +276,6 @@ class RutaController extends Controller
       $request->session()->put(['poblacion' => $nombrePoblacion]);
       $request->session()->put(['provincia' => $consulta['provincia']]);
       $request->session()->put(['precioLitro' => $consulta['precioLitro']]);
-      $request->session()->put(['total' => $consulta['total']]);
       $request->session()->put(['diferencialitro' => $consulta['diferencialitro']]);
       $request->session()->put(['diferencialitro2' => $consulta['diferencialitro2']]);
       $request->session()->put(['total' => $consulta['total']]);

@@ -1,0 +1,22 @@
+.text-financiado {
+    color: #C22820 !important;
+}
+
+.button-financiado {
+    color: white;
+    background-color: #C22820 !important;
+}
+
+
+.input-financiado {
+    border:solid 1px rgba(226, 75,75,0.2);
+}
+
+.line-separation {
+    border-top: solid 0.5px rgba(226, 75,75,0.2) !important;
+    background-color: rgba(226, 75,75,0.2) !important;
+}
+
+.bg-info{
+    background-color: rgba(226, 75,75,0.1);
+}
