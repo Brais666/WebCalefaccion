@@ -673,7 +673,7 @@ margin-left:11%;
 }
 
 hr{
-    background-color: #0075C9 !important;
+    background-color: #0075C9 ;
     height :1px;
 }
 
@@ -688,6 +688,10 @@ hr{
 }
 
 .text-blue {
+    color: #0075C9 !important;
+}
+
+.text-financiado {
     color: #0075C9 !important;
 }
 
@@ -1564,7 +1568,7 @@ p.dir{
 }
 
 .bg-info{
-     background-color: rgba(0,117,201,0.1) !important;
+     background-color: rgba(0,117,201,0.1);
 }
 
 .bg-vivo{
@@ -1669,10 +1673,6 @@ p.dir{
     border:solid 0.1em #93DE48;
     font-size:0.815em;
     
-}
-
-.inputfinan{
-    border:solid 1px rgba(226, 75,75,0.2);
 }
 
 
@@ -3517,7 +3517,7 @@ p.dir{
     background-color: white;
 }
 .bg-info{
-     background-color: rgba(0,117,201,0.1) !important;
+     background-color: rgba(0,117,201,0.1);
 }
 
 .input{

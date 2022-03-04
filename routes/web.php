@@ -22,10 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/precios', function () {
-    return view('precios');
-});
-
 Route::get('/contacto', function () {
     return view('contacto');
 });
@@ -91,15 +87,13 @@ Route::get("financ", function () {
 });
 
 Route::get('/bienvenido', [RutaController::class, 'index']);
-Route::get('pedidos', [PedidosController::class, 'index']);
 
 Route::get('pedidos.view', 'PedidosController@show');
 
+Route::resource('pedido', 'PedidosController');
 // Resources
-Route::resource('pedidofinanciado', 'PedidosController');
-Route::resource('consulta', 'NorutaController');
-Route::resource('consulta2', 'CasirutaController');
-Route::resource('pedidos', 'PedidosController');
+// Route::resource('consulta', 'NorutaController');
+// Route::resource('consulta2', 'CasirutaController');
 
 Auth::routes();
 
@@ -111,10 +105,12 @@ Route::get('logout', function () {
 })->name('logout');
 
 Route::get('cuenta', function () {
-            return view('User.cuenta');
+    return view('User.cuenta');
 });
 
 Route::group(['middleware' => ['web', 'auth']], function () {
+    // Route::post('pedido', 'PedidosController@');
+    // Route::post('pedido.store', 'PedidosController@store');
     Route::get('User.cuenta', 'UserController@update');
 });
 

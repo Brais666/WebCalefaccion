@@ -1,6 +1,9 @@
 @extends('layouts.app2')
 @section('title', 'SimonGrup')
 @section('content')
+@if ($pedidoFinanciado)
+<link href="{{ asset('css/financiado.css') }}" rel="stylesheet">
+@endif
 <div class="col-sm-2"></div>
 <div class="container-fluid border col-sm-8 col-xs-11 mt-2 mlmov-1 mb-2 pb-2">
     <div class="row pt-2 ml-2 mlmov-2">
@@ -23,7 +26,7 @@
         </ul>
     </div>
     @endif
-    <form id="formulario" action="{{ route('pedidos.store') }}" method="POST">
+    <form id="formulario" action="{{ url('pedido') }}" method="POST">
         @csrf
         <div class="form-row ml-2 mr-2">
             <div class="col-lg-6 pb-2">
@@ -33,24 +36,23 @@
 
 
                         @if(session()->has('address'))
-                        <input type="text" class="form-control input" id="Direccion" name="Direccion" value="{{session('address')}}">
+                        <input type="text" class="form-control input input-financiado" id="Direccion" name="Direccion" value="{{session('address')}}">
                         @else
-                        <input type="text" class="form-control input" id="Direccion" name="Direccion" value="{{Auth::user()->address}}">
+                        <input type="text" class="form-control input input-financiado" id="Direccion" name="Direccion" value="{{Auth::user()->address}}">
                         @endif
                     </div>
                     <div class="form-group col-lg-5">
 
                         <label for="tel">Teléfono contacto:</label>
 
-                        <input type="tel" class="form-control input" id="tel" value="{{$telefono}}" name="tel" pattern="[0-9]{9}">
-                        <input type="hidden" class="form-control" id="CP" value="{{$cp}}" name="CP">
+                        <input type="tel" class="form-control input input-financiado" id="tel" value="{{$telefono}}" name="tel" pattern="[0-9]{9}">
                     </div>
                 </div>
                 <div class="row">
                     @if(isset(Auth::user()->dni))
                     <div class="form-group col-lg-4">
                         <label for="Dni">DNI / CIF:</label>
-                        <input type="text" class="form-control input" id="Dni" name="Dni" value="{{Auth::user()->dni}}" readonly="true"></input>
+                        <input type="text" class="form-control input input-financiado" id="Dni" name="Dni" value="{{Auth::user()->dni}}" readonly="true"></input>
                     </div>
                     @else
                     @if(session()->has('dni'))
@@ -69,27 +71,40 @@
 
                     <div class="form-group col-lg-8">
                         <label for="txtEmail">Email:</label>
-                        <input type="text" class="form-control input" id="txtEmail" name="txtEmail" value="{{$email}}" readonly="true">
+                        <input type="text" class="form-control input input-financiado" id="txtEmail" name="txtEmail" value="{{$email}}" readonly="true">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="col-lg-12">
                     <label for="observaciones">¿Tienes alguna indicación? Escríbela aquí</label>
-                    <textarea class="form-control input" id="observaciones" name="observaciones" rows="5"></textarea>
+                    <textarea class="form-control input input-financiado" id="observaciones" name="observaciones" rows="5"></textarea>
                 </div>
             </div>
             <input type="hidden" class="form-control" id="txtPoblacion" value="{{ $poblacion }}" name="txtPoblacion">
         </div>
 
-        <hr class="blue2">
+        <hr class="blue2 line-separation">
         <div class="row pt-2">
             <h5 class="ml-4">Resumen del Pedido</h5>
             <div class="col-sm-6 col-xs-12">
                 <div class="row col-sm-12 pt-2 pb-1">
+                    @if ($pedidoFinanciado)
                     <div class="row pt-1">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-6 col-xs-7 text-blue">
+                        <div class="col-sm-6 col-xs-7 text-financiado">
+                            <p>Financiado a</p>
+                        </div>
+                        <div class="col-sm-4 col-xs-5">
+                        <p class="float-right" data-toggle="tooltip" data-placement="top" title="Messes financiación"> {{ $meses }} meses</p>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <hr class="red2">
+                    @endif
+                    <div class="row pt-1">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-6 col-xs-7 text-financiado">
                             <p>Entrega prevista</p>
                         </div>
                         <div class="col-sm-4 col-xs-5">
@@ -97,10 +112,10 @@
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
-                    <hr class="blue">
+                    <hr class="blue line-separation">
                     <div class="row pt-1">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-7 col-xs-8 text-blue">
+                        <div class="col-sm-7 col-xs-8 text-financiado">
                             <p>Días hasta entrega</p>
                         </div>
                         <div class="col-sm-3 col-xs-4">
@@ -108,10 +123,10 @@
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
-                    <hr class="blue">
+                    <hr class="blue ">
                     <div class="row pt-1 mb-5 ">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-5 text-blue col-xs-8">
+                        <div class="col-sm-5 text-financiado col-xs-8">
                             <p>Población</p>
                         </div>
                         <div class="col-sm-5 col-xs-4">
@@ -120,7 +135,7 @@
                         <div class="col-sm-1"></div>
                     </div>
                     <div class="regresar text-center pb-2">
-                        <button type="submit" class="btn buttoncons"><a href="bienvenido" style="color:white;">Volver atrás</a></button>
+                        <button type="submit" class="btn buttoncons button-financiado"><a href="bienvenido" style="color:white;">Volver atrás</a></button>
                     </div>
                 </div>
             </div>
@@ -145,7 +160,7 @@
                             <p>Precio por litro</p>
                         </div>
                         <div class="col-sm-4 col-xs-5" name="preciol">
-                            <p class="float-right totalmini" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{session('precioLitro')}} €</p>
+                            <p class="float-right totalmini" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro" id="precioLitro">{{ round($precioLitro, 3) }} €</p>
                         </div>
                     </div>
 
@@ -154,20 +169,20 @@
                         <div class="col-sm-8 col-xs-7">
                             <p>Total (IVA incl.)</p>
                         </div>
-                        <div class="col-sm-4 col-xs-5 float-right text-muted"><small><span class="float-right total offer" id="pedido" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{ $total }} € </span></small></div>
+                        <div class="col-sm-4 col-xs-5 float-right text-muted"><small><span class="float-right total offer" id="pedido" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{ round($total, 2) }} € </span></small></div>
                     </div>
                     <div class="row pb-2 pt-1">
                         <div class="col-sm-8 col-xs-7">
                             <p>Total con cupón aplicado</p>
                         </div>
-                        <div class="col-sm-4 col-xs-5 "><span class="float-right total" id="result" name="result" value="€"> {{ $precioCuponAplicado }}€</span></div>
+                        <div class="col-sm-4 col-xs-5 "><span class="float-right total" id="result" name="result" value="€"> {{ round($precioCuponAplicado, 2) }}€</span></div>
                     </div>
                     @else
                     <div class="row pt-1 pb-3">
                         <div class="col-sm-8 col-xs-7">
                             <p>Total (IVA incl.)</p>
                         </div>
-                        <div class="col-sm-4 col-xs-5 float-right "><span class="float-right total" id="pedido" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{ $total }} € </span></small></div>
+                        <div class="col-sm-4 col-xs-5 float-right "><span class="float-right total" id="result" data-toggle="tooltip" data-placement="top" title="Precio a pagar total">{{ round($total, 2)  }} € </span></small></div>
                     </div>
                     @endif
 
@@ -187,7 +202,7 @@
                         </div>
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4 regresar mlmov-6">
-                            <button type="submit" name="btTutorial" DISABLED class="btn buttoncons" data-toggle="tooltip" data-placement="top" title="Acepta las condiciones de servicio">Validar pedido</button>
+                            <button type="submit" name="btTutorial" DISABLED class="btn buttoncons button-financiado" data-toggle="tooltip" data-placement="top" title="Acepta las condiciones de servicio">Validar pedido</button>
                         </div>
                         <div class="col-sm-4"></div>
                     </div>
@@ -224,20 +239,5 @@
         });
     });
 </script>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("formulario").addEventListener('submit', validarFormulario);
-    });
-
-    function validarFormulario(evento) {
-        evento.preventDefault();
-        var usuario = document.getElementById('exampleCheck1');
-        document.write(usuario.checked);
-        if (document.getElementById('exampleCheck1').checked) {
-            swal('Tienes que aceptar las condiciones de servicio', );
-        }
-</script>
-
 
 @endsection
