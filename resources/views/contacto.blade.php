@@ -34,7 +34,7 @@ $ofertas = Oferta::all();
 		<div class="col-sm-5 cont pb-2 mg-con-text">
 			<div class="card text-left ">
 			  <div class="card-body">
-			    <h2 style="font-size:20px;" class="card-title text-blue title-contacto "><b>驴Tienes alguna duda o sugerencia?</b></h2>
+			    <h2 style="font-size:20px;" class="card-title text-blue title-contacto "><b>¿Tienes alguna duda o sugerencia?</b></h2>
 			    <p class="card-text text-blue ">Contacta con nosotros para que podamos solucionar cualquier duda o sugerencia que puedas tener con tu pedido o nuestros productos.</p>
 			  </div>
 			</div>					
