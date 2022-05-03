@@ -69,25 +69,78 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //dd($data);
-        $objDemo = new \stdClass();
-        $objDemo->demo_two = $data['name'];
-        $objDemo->sender = 'Simongrup S.l.';
-        $objDemo->receiver = 'Adnan Basic';
+         if ($_POST['g-recaptcha-response'] == '') 
+        {
+           $prev= url()->current(); 
+        echo "Captcha invalido";
+        echo '<button type="submit" class="btn btn-primary"><a href="https://www.gasoleodecalefaccion.com/register">Registrarme</a></button>';
+        //return view('/');
         
+        //dd($prev);
         
-        //dd($data['email']);
-        
-        
-        
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'session_1d' => '3'
-        ]);
-    
-    Mail::to('email')->send(new WelcomeUser($objDemo));
+        exit;
+        } else {
+            
+            $obj = new \stdClass();
+            
+            $obj->secret = "6LdtL4gfAAAAAOFKLOoMkZ6nd6Nu9ODdwzI0wQan";
+            
+            $obj->response = $_POST['g-recaptcha-response'];
+            $obj->remoteip = $_SERVER['REMOTE_ADDR'];
+            $url = 'https://www.google.com/recaptcha/api/siteverify';
+            
+            
+            $options = array(
+                'http' => array(
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($obj)
+                )
+            );
+            
+            $context = stream_context_create($options);
+             //dd(file_get_contents($url, false, $context));
+           // $result = file_get_contents($url, false, $context);
+               $result = true;
+            $validar = json_decode($result);
+            
+                
+            /* FIN DE CAPTCHA */
+            
+            if($result==true)
+            {
+                
+                 //dd($data);
+                $objDemo = new \stdClass();
+                
+                $objDemo->demo_two = $data['name'];
+                
+                $objDemo->sender = 'Simongrup S.l.';
+                
+                $objDemo->receiver = $data['name'];
+                
+                
+                $mail = $data['email'];
+                
+                //dd($mail);
+               Mail::to($mail)->send(new WelcomeUser($objDemo));
+               
+               Mail::to('it@nascorenergias.com')->send(new WelcomeUser($objDemo));
+               
+                
+               return User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'password' => Hash::make($data['password']),
+                    'session_1d' => '3'
+                ]);
+                
+            }
+            else 
+            {
+                echo "Captcha invalido";
+            }
+        }
        
     }
 

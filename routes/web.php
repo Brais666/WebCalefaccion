@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/precios', function () {
+        return view('precios');
+        });
+
 Route::get('/contacto', function () {
     return view('contacto');
 });
@@ -49,6 +53,7 @@ Route::get('/faq4', function () {
     return view('faq4');
 });
 
+/////////////////
 
 Route::get('/financiacion', function () {
     return view('financiacion');
@@ -78,9 +83,6 @@ Route::get('/quienessomos', function () {
     return view('quienessomos');
 });
 
-Route::get('/singlepost/temporal', function () {
-    return view('singlepost/temporal');
-});
 
 Route::get("financ", function () {
     return View::make("grisfinanc.financ");

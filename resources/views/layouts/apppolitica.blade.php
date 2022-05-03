@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link rel="canonical"href=https://www.gasoleodecalefaccion.com/condiciones" />
+    <meta
+  name="description"
+  content="Consulta los términos y condiciones y política de privacidad de Simon Grup, gasóleo de calefacción al mejor precio de tu zona.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/nueva/public/images/9998Simon Grup.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../images/9998Simon Grup.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
  
     <title>@yield('title')</title>
  
@@ -34,12 +37,11 @@ $(document).ready(function() {
 </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
     <!-- fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-      
 </head>
 <body class="bg-info">
     <div class="row bg-white ocultar-div fixed-top">
@@ -48,13 +50,13 @@ $(document).ready(function() {
     <div class="row bg-white ocultar-div fixed-top3">
         @include('layouts.navbarsur')
     </div>
-    <div class="row bg-white ocultar-div-tab ocultar-div-desk ">
+    <div class="row bg-white ocultar-div-tab ocultar-div-desk fixed-top4">
          @include('layouts.navbarmovil')
     </div>
     <div class="row bg-white noml">
         @include('layouts.headerlogin')
     </div>
-    <div class="pt-8">
+    <div class="mb-5">
             @yield('content')  
           
     </div>

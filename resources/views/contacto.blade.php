@@ -4,13 +4,13 @@ use App\Oferta;
 $ofertas = Oferta::all();	
 ?>
 @extends('layouts.appfaq2')
-@section('title', 'SimonGrup')
+@section('title', 'Contacto Simon Grup')
 @section('content')
 
 <div class="ocultar-div ocultar-div-tab bg-faq apartado row pb-1 mb-5">
 	<div class="col-sm-2 ocultar-div"></div>
 	<div class="  margin-contacto">
-		<h3 class="text-white "><b>Contacta con Nosotros</b></h3>
+		<h1 style="font-size:30px;" class="text-white "><b>Contacta con Nosotros</b></h1>
 	</div>
 </div>
 
@@ -19,7 +19,7 @@ $ofertas = Oferta::all();
 	<div class="col-sm-4 columna">
 		<div class="card">
   			<div class="card-body">
-			   <h3 class="card-title text-white ml-25">Contacta con Nosotros</h3>
+			   <h1 style="font-size:30px;" class="card-title text-white ml-25">Contacta con Nosotros</h1>
 			</div>
 		</div>
 	</div>
@@ -34,7 +34,7 @@ $ofertas = Oferta::all();
 		<div class="col-sm-5 cont pb-2 mg-con-text">
 			<div class="card text-left ">
 			  <div class="card-body">
-			    <h4 class="card-title text-blue title-contacto "><b>¿Tienes alguna duda o sugerencia?</b></h4>
+			    <h2 style="font-size:20px;" class="card-title text-blue title-contacto "><b>驴Tienes alguna duda o sugerencia?</b></h2>
 			    <p class="card-text text-blue ">Contacta con nosotros para que podamos solucionar cualquier duda o sugerencia que puedas tener con tu pedido o nuestros productos.</p>
 			  </div>
 			</div>					
@@ -46,15 +46,15 @@ $ofertas = Oferta::all();
 			    <p class="card-text"></p>
 			    <p class="card-text"></p>
 			  </div>
-			  <img src="{{ asset('images/contacto-400x275 .jpg') }}" alt="contacto" class=" img-contacto">
+			  <img src="{{ asset('images/contacto-400x275 .jpg') }}" alt="contacto simongrup" class=" img-contacto">
 			</div>			 
 		</div>
 	    <hr class="blue-contacto">
 	    
 	  <div class="caja-flex">
-	    <div class="flex padding-contacto">
+	    <div class="flex">
 	        
-		<div class="padding-contacto ancho ancho2 col-sm-2 cont  pb-2">
+		<div class="ancho ancho2 col-sm-2 cont  pb-2">
 			<div class="card text-center ">
 			  <div class="card-body">
 				<p class="card-title text-blue"><i class="fab fa-whatsapp fa-3x"></i></p>
@@ -80,13 +80,12 @@ $ofertas = Oferta::all();
 		
 		<div class="flex">
 		
-		
-		
+	
 		<div class="ancho ancho2 col-sm-4 cont  pb-2">
 			<div class="card text-center ">
 			  <div class="card-body">
 			    <p class="card-title text-blue"><i class="flex fas fa-paper-plane fa-3x text-blue"></i></p>
-			    <a class="subrallado-contacto" HREF="https://134.122.70.106/nueva/public/cuenta">pedidos@simongrup.com</a>
+			    <a class="subrallado-contacto" HREF="mailto:atencionalcliente@simongrup.com?Subject=Contacto%web%20Gasóleo%20de%20Calefacción">atencionalcliente@simongrup.com</a>
 			    
 			    <!--<button type="button" class="btn buttoncons" data-toggle="modal" data-target="#exampleModal">pedidos@simongrup.com</button>
 			    <!-- Modal -->
@@ -106,8 +105,8 @@ $ofertas = Oferta::all();
 			                            <input name="nombre" required type="text" id="nombre" class="form-control" placeholder="Tu nombre">
 			                        </div>
 			                        <div class="form-group">
-			                            <label for="correo">Correo electrónico</label>
-			                            <input name="correo" required type="email" id="correo" class="form-control" placeholder="Tu correo electrónico">
+			                            <label for="correo">Correo electr贸nico</label>
+			                            <input name="correo" required type="email" id="correo" class="form-control" placeholder="Tu correo electr贸nico">
 			                        </div>
 			                        <div class="form-group">
 			                            <label for="mensaje">Mensaje</label>

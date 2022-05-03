@@ -1,5 +1,5 @@
 @extends('layouts.appfinan')
-@section('title', 'SimonGrup')
+@section('title', 'Financiación Vivo')
 @section('content')
 <div class="container pt-2">
     

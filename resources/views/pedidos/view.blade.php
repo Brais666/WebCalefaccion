@@ -1,8 +1,10 @@
 @extends('layouts.appfaq2')
 @section('title', 'SimonGrup')
 @section('content')
-
-<div class="container pt-2 pb-13">         
+@if ($pedidoFinanciado)
+<link href="{{ asset('css/financiado.css') }}" rel="stylesheet">
+@endif
+<div class="container pt-11 pb-9">         
         <div class="row border pt-2">
              
             
@@ -146,7 +148,7 @@
                        </div>
                 </div>
                 <div class="row pt-1 pb-2 text-center">
-                        <button type="submit" class="btn buttoncons"><a href="bienvenido" style="color:white">Volver a inicio</a></button>
+                        <button type="submit" class="btn buttoncons button-financiado"><a href="/nueva/public" style="color:white">Volver a inicio</a></button>
                 </div>
         </div>
 </div>

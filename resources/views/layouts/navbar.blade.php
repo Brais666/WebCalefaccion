@@ -5,23 +5,25 @@
   $anohoy = Carbon\Carbon::now()->format('Y');
   $hora = Carbon\Carbon::now()->isoFormat('H:mm a');
 ?>
-<nav class="navbar navbar-default bg-white col-xs-12 navfont" role="navigation" >
-  <div class="col-md-2 col-xs-12"></div>
-  <div class="navbar-header col-sm-5 col-md-3 col-xs-3">
+<nav class="pt-1 navbar navbar-default bg-white navfont" role="navigation" >
+  <div class="navbar-header col-md-6 plr-8 ">
     <div class="col-md-3 movillogo2">
-      <a class="navbar-brand align-middle" href="http://localhost/nueva/public">
-        <img src="images/logosg.png" alt=""></a></div>
+      <a class="align-middle" href="https://www.gasoleodecalefaccion.com">
+        <img src="/nueva/public/images/logosg.png" alt="logo simongrup" height="56px" width="95px"></a></div>
     
   </div>
-  <div class="col-md-6 col-sm-7 col-xs-8">
-   <ul class="nav navbar-nav navbar-right ">
-    <li><form class="navbar-form navbar-left" role="search">     
+  <div class="col-md-6 prr-5">
+   <ul class="nav navbar-nav navbar-right nav-flex" style="display: flex;align-items: center;height: 9vh;">
+    <li><form class="navbar-form navbar-left" role="search" style="margin-top: 0px;">     
      @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" style="width: max-content";>
                     @auth
-                      <div class="row">
-                        <div class="col-lg-9 col-sm-5 col-xs-1 pt-1 movillogo text-center"><a href="{{ route('logout') }}"><b><span class="material-icons">logout</span><br>Cerrar sesi&oacute;n</b></a></div>
-                        <div class="col-lg-3 col-sm-5 col-xs-1 pt-1 mlmov-3 movillogo text-center"><a href="cuenta"><b><span class="material-icons">account_circle</span><br>{{ Auth::user()->name }}</b></a></div>
+                      <div class="row" style="display: flex; justify-content: space-between;">
+                        
+                        <div class=" pt-1 mlmov-3 movillogo text-center"><a style="display: flex;align-items: flex-end;padding-bottom: 20px;padding-right: 20px;" href="cuenta"><b><br>{{ Auth::user()->name }}</b><span class="material-icons"style="padding-inline: 10px;">account_circle</span></a></div>
+
+                        <div class=" pt-1 movillogo text-center"><a style="display: flex; align-items: flex-end; padding-bottom: 20px;" href="{{ route('logout') }}"><b><br>Cerrar sesi&oacute;n</b><span class="material-icons"style="padding-inline: 10px;">logout</span></a></div>
+
                       </div>
                               
                         <!-- Modal -->
@@ -54,27 +56,44 @@
                           </div>
                         </div>-->
                     @else
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-5 col-xs-1 pt-1 movillogo text-center"><a href="{{ route('login') }}"><b><span class="material-icons">login</span><br>Iniciar Sesi&oacute;n</b></a></div>
+                    <div class="text-vivo row">
+                        <div class="col-md-12pt-1 movillogo text-center"><a class="text-blue" style="display: flex; align-items: flex-end;" href="{{ route('login') }}"><b><br>Iniciar Sesi&oacute;n</b><span class="text-blue material-icons" style="padding-inline: 10px;">login</span></a></div>
                         <!--<div class="col-lg-4 col-sm-5 col-xs-1 pt-1 mlmov-3 movillogo text-center"><a href="{{ route('register') }}" ><b><span class="material-icons">app_registration</span><br>Registrarse</b></a></div>-->
                     </div>
+
+
                         
                     @endauth
                 </div>
      @endif
     </form></li>
-      <li class="pl-1">
-        <div class="navbar-form navbar-left pt-1 ocultar-div ocultar-div-tab">
+      <!--<li class="">
+        <div class="navbar-form navbar-left pt-2 ocultar-div ocultar-div-tab col-md-6">
           <div>
 
             <small>
-            Tarragona, España
+            Tarragona, Espa単a
             </small>
           </div>
-          <div class="hora float-right d-none d-lg-block "><h5><small>{{$hora}}</small></h5></div>
-          </div>                   
-                <div class="row float-right col-lg-2 ocultar-div ocultar-div-tab">
-                  <!-- weather widget start --><img src="https://w.bookcdn.com/weather/picture/5_848_1_4_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=582&anc_id=17768"  alt="booked.net"/><!-- weather widget end -->
+          
+          </div>  
+       </li>-->
+       <li>
+                <div class="col-md-6 ocultar-div ocultar-div-tab">
+                  <!-- weather widget start --<img src="https://w.bookcdn.com/weather/picture/5_848_1_4_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=582&anc_id=17768"  alt="booked.net"/><!-- weather widget end -->
+<!--<a class="weatherwidget-io" href="https://forecast7.com/es/40d46n3d75/spain/" data-label_1="" data-label_2="" data-font="Roboto" data-mode="Current" data-days="3" data-theme="pure" data-textcolor="#0075c9" data-highcolor="#0075c9" data-lowcolor="#0075c9" data-suncolor="#0075c9" data-mooncolor="#0075c9" data-cloudcolor="#0075c9" data-raincolor="#0075c9" data-snowcolor="#0075c9" style="text-indent: -299rem;display: block;position: relative;height: 98px;padding: 0px;overflow: hidden;text-align: left;width: 44vw;max-width: 38.75rem;"><iframe id="weatherwidget-io-0" class="weatherwidget-io-frame" title="Weather Widget" scrolling="no" frameborder="0" width="100%" src="https://weatherwidget.io/w/" style="display: block; position: absolute; top: 0px; height: 86px;"></iframe></a>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>!-->
+
+
+<a class="weatherwidget-io" href="https://forecast7.com/es/40d42n3d70/madrid/" data-font="Roboto" data-mode="Current" data-days="3" data-theme="original" data-basecolor="#fff" data-textcolor="#0075c9" data-highcolor="#0075c9" data-lowcolor="#0075c9" data-suncolor="#0075c9" data-mooncolor="#0075c9" data-cloudcolor="#0075c9" data-cloudfill="#0075c9" data-raincolor="#0075c9" data-snowcolor="#0075c9" style="text-indent: -299rem;display: block;position: relative;height: 98px;padding: 0px;overflow: hidden;text-align: left;width: 44vw;max-width: 22.75rem;margin-right: 8rem;background-color: none;">Madrid, Spain<iframe id="weatherwidget-io-0" class="weatherwidget-io-frame" title="Weather Widget" scrolling="no" frameborder="0" width="100%" src="https://weatherwidget.io/w/" style="display: block; position: absolute; top: 0px; height: 98px;"></iframe></a>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
                 </div> 
         </div>
         

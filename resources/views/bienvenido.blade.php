@@ -20,7 +20,16 @@
   }
 </script>
 <script src="{{ asset('js/financiacion.js')}}"></script>
-
+ 
+ <!--quitar y poner en el controllerRuta-->
+<?php
+   if(session()->has('provincia'))
+    {
+        $prov = session('provincia');
+       
+    }
+?>
+<!-- end -->
 
 @extends('layouts.app')
 @section('title', 'SimonGrup')
@@ -36,7 +45,7 @@
               <div class="row pt-1">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5 text-blue col-xs-7 text-blue">
-                  <p>Fecha de entrega</p>
+                  <p>Entrega prevista</p>
                 </div>
                 <div class="col-sm-5 col-xs-5">
                   <p class="float-left" data-toggle="tooltip" data-placement="top" title="Día de reparto"> {{$entregadia}} {{$entregadianum}}</p>
@@ -71,9 +80,11 @@
             <div class="col-sm-12 border">
               <div class="row pt-2 mr-3">
                 <div class="col-sm-1"></div>
-                <div class="col-sm-6 col-xs-7">
-                  <p>Precio por litro</p>
-                </div>
+                @if(($prov == "Guadalajara") || ($prov == "Madrid"))
+                  <div class="col-sm-6 col-xs-7"><p>Precio por litro<span class="text-blue text-muted">*</span></p></div>
+                @else
+                  <div class="col-sm-6 col-xs-7"><p>Precio por litro</p></div>
+                @endif
                 <div class="col-sm-4 col-xs-5 float-right" name="preciol">
                   <p class="float-right total" data-toggle="tooltip" data-placement="top" title="Precio que cuesta cada litro">{{ $precioLitro }} €</p>
                 </div>
@@ -168,7 +179,7 @@
             <div class="row" id="jua">
               <div class="col-sm-12 col-xs-12 text-center" id="detalles2"><span class="material-icons text-vivo toggle"><b>arrow_drop_down</b></span></div>
             </div>
-            <div class="row tabindex=" -1"">
+            <div class="row" tabindex=" -1">
               <a href="#jua" onclick="myFunction()">
                 <p class="text-center toggle">Detalles</p>
               </a>

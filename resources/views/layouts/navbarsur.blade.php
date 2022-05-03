@@ -1,28 +1,22 @@
 <nav class="navbar navbar-default bg-white text-center navfont " id="navbarsur" role="navigation" >
   <hr class="blue2 ocultar-div">
-  <div class="col-md-2">
-    
-  </div>
-  <div class="navbar-header col-sm-2 lista">
-    <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Desplegar navegación</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <!--<a class="navbar-brand align-middle" href="http://www.simongrup.com">SimonGrup</a>-->
-  </div>
-  <div class="collapse navbar-collapse navbar-ex1-collapse col-sm-auto text-primary mltab-10">
-    <ul class="nav navbar-nav">
+  
+  
+  <div class="collapse navbar-collapse navbar-ex1-collapse col-sm-auto text-primary ">
+    <ul class="nav navbar-nav nav2">
       <!--<li class="nav-item" id="tab-unclick"><a href="pedidos.unclick">Pedido 1-Click</a></li>-->
-      <li class="nav-item movil hazpedmov" id="tab-precios"><a href="{{ url('/') }}"> Pedidos</a></li>
+      @if (auth()->check())
+        <li class="nav-item movil hazpedmov" id="tab-precios"><a href="precios"> Pedidos</a></li>
+      @else
+        <li class="nav-item movil hazpedmov" id="tab-precios"><a href="precios"> Pedidos</a></li>
+      @endif
       <li class="nav-item movil hazpedmov" id="tab-financiacion"><a href="financiacion">Financiación</a></li>
       <li class="nav-item movil hazpedmov" id="tab-promociones"><a href="promociones">Promociones</a></li>
       <!--<li class="nav-item" id="tab-simon"><a href="#">Simon Coins</a></li>-->
       <!--<li class="nav-item movil hazpedmov" id="tab-app"><a href="#">App</a></li>-->
       <li class="nav-item movil hazpedmov" id="tab-blog"><a href="blog">Blog</a></li>
-      <li class="nav-item movil hazpedmov" id="tab-faq"><a href="faq1">Preguntas frecuentes</a></li>
+      
+      <li class="nav-item movil hazpedmov" id="tab-faq"><a href="faq">Preguntas frecuentes</a></li>
       <li class="nav-item movil hazpedmov" id="tab-contacto"><a href="contacto">Contacto</a></li>
       <!--<li class="nav-item movil hazpedmov" id="tab-quienessomos"><a href="quienessomos">Nosotros</a></li>-->
       

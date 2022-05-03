@@ -1,11 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link rel="canonical" href="https://www.gasoleodecalefaccion.com/faq" />
+    <meta
+  name="description"
+  content="Consulta las preguntas frecuentes sobre nuestra web. Simon Grup venta online de gasoil de calefacci贸n en Madrid y Cataluña.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../public/images/9998Simon Grup.ico">
+    <link rel="icon" type="image/png" href="../images/9998Simon Grup.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
     <title>@yield('title')</title>

@@ -1,16 +1,17 @@
+
 @extends('layouts.appfaq2')
 @section('title', 'SimonGrup')
 @section('content')
             @include('layouts.headerlogin')
-<div class="padding-top-general container pt-2">
+<div class="padding-top-general container pt-11">
     <div class="row">
         <div class="col-sm-10 col-xs-12 ml-6 margin-left-register">
             <div class="card text-center border">
-                <div class="titulo-registro card-header text-white bg-login">Registro</div>
+                <div class="titulo-registro card-header text-white bg-login"><h1 style="font-size:18px;">Registro</div></h1>
 
                 <div class="card-body pt-2">
                     <form class="form-horizontal" method="POST" action='{{ url("register") }}' aria-label="{{ __('Register') }}">
-                    
+                        @csrf
                         {{ csrf_field() }}
 
                         <div class="form-row">
@@ -27,6 +28,7 @@
                                             <strong>{{ $errors->first('name') }}</strong>
                                         </span>
                                     @endif
+                                    
                                 </div>
                             </div>
 
@@ -69,12 +71,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div >
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4 g-recaptcha pb-1" data-sitekey="6LdtL4gfAAAAAKpmljKE0dWq4NaOmAJVC5rPeHMm"></div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                            
+                        
 
                         <div class="form-group">
                             <div class="col-md-4 col-md-offset-4 flex-columnas width-btn">
                                 <button type="submit" class="btn btn-primary">
-                                    Registro
+                                    Registrarme
                                 </button>
+                                
                             </div>
 
                              
@@ -87,4 +97,5 @@
     </div>
 </div>
 @include('layouts/cookies')
+
 @endsection

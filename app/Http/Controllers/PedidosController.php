@@ -326,7 +326,7 @@ class PedidosController extends Controller
                 $request->session()->forget('telefono');
                 $request->session()->forget('codigopromo');
 
-                return view('pedidos.pedidos2')->with('success', 'Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
+                return view('pedidos.pedidos2', compact('pedidoFinanciado'))->with('success', 'Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
             }
         } catch (CouponNotValidException $e) {
             return view('pedidos.list', compact('total', 'cantidad', 'poblacion', 'email', 'telefono', 'cp', 'meses'))->with('danger', 'cupón no válido');
@@ -344,8 +344,10 @@ class PedidosController extends Controller
         $userName = Auth::user()->name;
 
         $pedidos = Pedidos::where('nombre', 'like', $userName)->latest('created_at', 'desc')->first();
+        
+        $pedidoFinanciado = session('financiado');
 
-        return view('pedidos.view', compact('pedidos'));
+        return view('pedidos.view', compact('pedidos','pedidoFinanciado'));
     }
 
 

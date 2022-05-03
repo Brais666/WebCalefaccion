@@ -20,3 +20,33 @@
 .bg-info{
     background-color: rgba(226, 75,75,0.1);
 }
+
+hr.blue2{
+   border-top: 0.5px rgba(226, 75,75,0.2);
+   background-color: rgba(226, 75,75,0.2) !important;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-left:  0px;
+   width: 100%;
+}
+
+hr.blue{
+   border:  1px rgba(226, 75,75,0.2);
+   background-color: rgba(226, 75,75,0.2) !important;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   padding-left: 1em;
+   width: 80%;
+}
+
+
+.foot{
+    background-color: #C22820;
+    color:white;
+    font-size:0.9em;
+    text-decoration:none;
+}
+
+.bg-info{
+     background-color: rgba(226, 75,75,0.2) !important;
+}
