@@ -21,15 +21,15 @@ $ofertas = Oferta::all();
     </div>
   </div>
   <div class="col-sm-3 col-xs-9 pt-2 ml-7 ocultar-mobile">
-    <select class="form-control mlmov-4">                        
-            <a href="#diasv"><option selected>¿Qué es la Agrupación de Pedidos Verdes?</option></a>
-            <a href="#diasven"><option >¿Cómo puedo beneficiarme de la Agrupación de Pedidos Verdes?</option></a>
-            <option >¿Por qué con la Agrupación de Pedidos Verdes el gasoil es más barato?</option>
-            <option >¿Qué ventajas obtengo al hacer un Pedido Agrupado?</option>
-            <option >Ejemplos de Pedidos Agrupado de Gasoil Calefacción</option>
-            <option >¿Cuál es el pedido mínimo de Gasóleo de Calefacción?</option>
-            <option >¿Si hacemos un pedido agrupado, cómo especificamos la cantidad individual a servir?</option>
-            <option >¿Podemos agrupar pedidos aunque nuestros domicilios se encuentren en calles o poblaciones distintas?</option>
+    <select class="form-control mlmov-4" onchange="window.location.href=this.value;">                        
+            <option selected value="{{ url('faq2') }}">¿Qué es la Agrupación de Pedidos Verdes?</option>
+            <option value="{{ url('faq2') }}">¿Cómo puedo beneficiarme de la Agrupación de Pedidos Verdes?</option>
+            <option value="{{ url('faq2') }}">¿Por qué con la Agrupación de Pedidos Verdes el gasoil es más barato?</option>
+            <option value="{{ url('faq2').'#pedidoagrupado'}}">¿Qué ventajas obtengo al hacer un Pedido Agrupado?</option>
+            <option value="{{ url('faq2').'#pedidoagrupadogc'}}">Ejemplos de Pedidos Agrupado de Gasoil Calefacción</option>
+            <option value="{{ url('faq2').'#pedidominimo'}}">¿Cuál es el pedido mínimo de Gasóleo de Calefacción?</option>
+            <option value="{{ url('faq2').'#pedidos'}}">¿Si hacemos un pedido agrupado, cómo especificamos la cantidad individual a servir?</option>
+            <option value="{{ url('faq2').'#pedidos'}}">¿Podemos agrupar pedidos aunque nuestros domicilios se encuentren en calles o poblaciones distintas?</option>
         </select>
   </div>
 </div>  
@@ -58,8 +58,8 @@ $ofertas = Oferta::all();
     <div class="col-sm-7 col-xs-8 border mt-2 pt-2 pl-2 containerfaq">
       <div class="card pt-1" >
               <div class="card-body" >
-                 <section id="diasv">
-                     <h3 class="card-title titlefaq">¿Qué es la Agrupación de Pedidos Verdes?</h3>
+                 <section>
+                     <h3 class="card-title titlefaq" id="pedidoagrupado">¿Qué es la Agrupación de Pedidos Verdes?</h3>
                 <p class="card-text">Es nuestro programa de descuento por volumen de litros para pedidos conjuntos.</p>
                  </section>
                 
@@ -67,19 +67,19 @@ $ofertas = Oferta::all();
             </div>
             <div class="card pt-2" >
               <div class="card-body" id="diasven">
-                <h3 class="card-title titlefaq">¿Cómo puedo beneficiarme de la Agrupación de Pedidos Verdes?</h3>
+                <h3 class="card-title titlefaq" >¿Cómo puedo beneficiarme de la Agrupación de Pedidos Verdes?</h3>
                 <p class="card-text">Realizando un pedido agrupado de Gasoil Calefacción de entre un mínimo de dos y un máximo de diez agrupados.</p>
               </div>
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">¿Por qué con la Agrupación de Pedidos Verdes el gasoil es más barato?</h3>
+                <h3 class="card-title titlefaq" >¿Por qué con la Agrupación de Pedidos Verdes el gasoil es más barato?</h3>
                 <p class="card-text">Porque al aumentar el volumen total de litros del pedido podemos ofrecer precios más bajos ya que nuestra tarifa de precios es escalada.</p>
               </div>
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">¿Qué ventajas obtengo al hacer un Pedido Agrupado?</h3>
+                <h3 class="card-title titlefaq" id="pedidoagrupadogc">¿Qué ventajas obtengo al hacer un Pedido Agrupado?</h3>
                 <p class="card-text">Comprar tu gasoil de calefacción al precio de un volumen de litros mucho mayor y por consiguiente mucho más barato. Por ejemplo, si hacéis un pedido conjunto entre 4 vecinos por un total de 2.800 litros, comprareis al precio de 2.800 litros aunque a cada vecino se le sirva una cantidad inferior a ese total, pues lo importante, es que entre todos sumáis 2.800l.</p>
                 <p class="card-text">Tabla de pedidos agrupados:</p>
                 <ul>
@@ -102,7 +102,7 @@ $ofertas = Oferta::all();
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h5 class="card-title titlefaq">Ejemplos de Pedidos Agrupado de Gasoil Calefacción</h5>
+                <h5 class="card-title titlefaq" id="pedidominimo">Ejemplos de Pedidos Agrupado de Gasoil Calefacción</h5>
                 <p class="card-text">Ejemplo suponiendo que el precio por litro de gasoil calefacción estuviera a 0.68€ litro para 2 Agrupados:</p>
                 <ul>
                     <li>Agrupado 1: 300 litros / 0.68 litro</li>
@@ -144,7 +144,7 @@ $ofertas = Oferta::all();
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">¿Podemos agrupar pedidos aunque nuestros domicilios se encuentren en calles o poblaciones distintas?</h3>
+                <h3 class="card-title titlefaq" id="pedidos">¿Podemos agrupar pedidos aunque nuestros domicilios se encuentren en calles o poblaciones distintas?</h3>
                 <p class="card-text">Sí, sólo que las entregas podrían producirse en días distintos si las localidades pertenecen a rutas de reparto distintas.</p>
               </div>
             </div>

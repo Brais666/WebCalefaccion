@@ -21,13 +21,13 @@ $ofertas = Oferta::all();
     </div>
   </div>
   <div class="col-sm-3 col-xs-9 pt-2 ml-7 ocultar-mobile">
-    <select class="form-control mlmov-4">                        
-            <a href="#diasv"><option selected>¿Qué es el plan de crédito VIVO?</option></a>
-            <a href="#diasven"><option >¿Para qué sirve el plan de crédito VIVO?</option></a>
-            <option >¿Qué ventajas tengo al financiar mi pedido con VIVO?</option>
-            <option >¿En cuántas cuotas puedo financiar mi pedido?</option>
-            <option >¿Cobráis comisión por el servicio de financiación?</option>
-            <option >Ejemplo de financiación</option>
+    <select class="form-control mlmov-4" onchange="window.location.href=this.value;">                        
+            <option selected value="{{ url('faq3') }}">¿Qué es el plan de crédito VIVO?</option>
+            <option value="{{ url('faq3') }}">¿Para qué sirve el plan de crédito VIVO?</option>
+            <option value="{{ url('faq3') }}">¿Qué ventajas tengo al financiar mi pedido con VIVO?</option>
+            <option value="{{ url('faq3').'#cuotas' }}">¿En cuántas cuotas puedo financiar mi pedido?</option>
+            <option value="{{ url('faq3').'#comision' }}">¿Cobráis comisión por el servicio de financiación?</option>
+            <option value="{{ url('faq3').'#ejemplo' }}">Ejemplo de financiación</option>
             
         </select>
   </div>
@@ -65,20 +65,20 @@ $ofertas = Oferta::all();
               </div>
             </div>
             <div class="card pt-2" >
-              <div class="card-body" id="diasven">
+              <div class="card-body" id="cuotas">
                 <h3 class="card-title titlefaq">¿Para qué sirve el plan de crédito VIVO?</h3>
                 <p class="card-text">Sirve para financiar tu pedido de gasoil de calefacción de modo que puedas comprar para toda la temporada una o varias veces y pagar en cómodas cuotas. Algo así como una tarifa plana.</p>
               </div>
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">¿Qué ventajas tengo al financiar mi pedido con VIVO?</h3>
+                <h3 class="card-title titlefaq" id="comision">¿Qué ventajas tengo al financiar mi pedido con VIVO?</h3>
                 <p class="card-text">A diferencia de otros servicios de financiación VIVO te permite disponer de crédito inmediatamente después de haberlo liquidado. Si por ejemplo financias tu pedido en 3 cuotas, cunado abones la primera, ésta ya estará disponible si deseas volver a financiar un nuevo pedido sin tener que hacer de nuevas gestiones de apertura o papeleo.</p>
               </div>
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">¿En cuántas cuotas puedo financiar mi pedido?</h3>
+                <h3 class="card-title titlefaq" >¿En cuántas cuotas puedo financiar mi pedido?</h3>
                 <p class="card-text">Puedes financiar tu gasoil de calefacción de 3 a un máximo de 12 cuotas.</p>
               </div>
             </div>
@@ -90,7 +90,7 @@ $ofertas = Oferta::all();
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">Ejemplo de financiación</h3>
+                <h3 class="card-title titlefaq" id="ejemplo">Ejemplo de financiación</h3>
                 <p class="card-text">A continuación puede ver un ejemplo de financiación con 3 cuotas:</p>
                 <ul>
                     <li>Precio litro: <b>0.67€/l</b>.</li>

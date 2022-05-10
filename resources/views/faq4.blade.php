@@ -21,11 +21,11 @@ $ofertas = Oferta::all();
 		</div>
 	</div>
 	<div class="col-sm-3 col-xs-9 pt-2 ml-7 ocultar-mobile">
-		<select class="form-control mlmov-4">                        
-            <a href="#diasv"><option selected>¿Qué es la promoción 10 euros de descuento por tu cumpleaños?</option></a>
-            <a href="#diasven"><option >¿Qué sucede si mi cumpleaños es en Julio?</option></a>
-            <option >Aún no soy cliente de gasoleodecalefaccion.com ¿Puedo participar en la promoción?</option>
-            <option >Términos y condiciones de la promoción 10€ dto. por cumpleaños</option>
+		<select class="form-control mlmov-4" onchange="window.location.href=this.value;">                        
+            <option selected value="{{ url('faq4') }}">¿Qué es la promoción 10 euros de descuento por tu cumpleaños?</option>
+            <option value="{{ url('faq4') }}">¿Qué sucede si mi cumpleaños es en Julio?</option>
+            <option value="{{ url('faq4').'#ped' }}">Aún no soy cliente de gasoleodecalefaccion.com ¿Puedo participar en la promoción?</option>
+            <option value="{{ url('faq4').'#ped' }}">Términos y condiciones de la promoción 10€ dto. por cumpleaños</option>
             
             
         </select>
@@ -80,7 +80,7 @@ $ofertas = Oferta::all();
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq">Términos y condiciones de la promoción 10€ dto. por cumpleaños</h3>
+                <h3 class="card-title titlefaq" id="ped">Términos y condiciones de la promoción 10€ dto. por cumpleaños</h3>
                 <p class="card-text">Oferta acumulable sólo con el DIA VERDE para clientes que ya figuren en nuestra base de datos y tengan al menos un pedido en su histórico. Oferta válida para pedidos realizados entre el 19 de abril de 2019 y el 19 de abril de 2020 para un sólo uso por persona y cumpleaños. Sólo podrán adherirse a esta oferta aquellos clientes que sean titulares en el histórico de compras de Simon Grup, Gasomad Energía, Pratsoils o Simonoil y acrediten su fecha de nacimiento.</p>
               </div>
             </div>
