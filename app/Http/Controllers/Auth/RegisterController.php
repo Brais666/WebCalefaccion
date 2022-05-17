@@ -83,7 +83,7 @@ class RegisterController extends Controller
             
             $obj = new \stdClass();
             
-            $obj->secret = "6LdtL4gfAAAAAOFKLOoMkZ6nd6Nu9ODdwzI0wQan";
+            $obj->secret = "6LdRiN8fAAAAAASKMozBcpf0qSsvhdv7nLNrRRrH";
             
             $obj->response = $_POST['g-recaptcha-response'];
             $obj->remoteip = $_SERVER['REMOTE_ADDR'];
