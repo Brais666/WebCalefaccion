@@ -7,22 +7,22 @@
             <div class="col-lg-2 col-sm-2 col-xs-12 ocultar-div">
                 
                   <a  href="/precios" title="logo simongrup">
-                    <img src="/nueva/public/images/Logofooter.png" alt="logo simongrup" height="56px" width="95px" class="footerimg"></a>
+                    <img src="{{asset('images/Logofooter.png')}}" alt="logo simongrup" height="56px" width="95px" class="footerimg"></a>
                 
             </div>
             <div class="col-lg-2 col-sm-3 col-xs-6 ptmov-2">
                 <ul class="footli">
                     <li><h5><b>Para tu pedido</b></h5></li>
-                    <li class="pb-1"><a href="/precios" style="color:white">Pedidos</a></li>
-                    <li class="pb-1"><a href="/financiacion" style="color:white">Financiaci&oacute;n</a></li>
-                    <li class="pb-1"><a href="/faq" style="color:white">Preguntas frecuentes</a></li>
+                    <li class="pb-1"><a href="precios" style="color:white">Pedidos</a></li>
+                    <li class="pb-1"><a href="financiacion" style="color:white">Financiaci&oacute;n</a></li>
+                    <li class="pb-1"><a href="faq" style="color:white">Preguntas frecuentes</a></li>
                 </ul>
             </div>
            <div class="col-lg-3 col-sm-3 col-xs-6 ptmov-2">
                  <ul class="footli">
                    <li><a href="/contacto" style="color:white"><h5><b>Contacto</b></h5></a></li>
                     <!--<li class="pb-1"><a href="quienessomos" style="color:white">Sobre nosotros</a></li>!-->
-                    <li class="pb-1"><a href="/contacto" style="color:white">Contacto</a></li>
+                    <li class="pb-1"><a href="contacto" style="color:white">Contacto</a></li>
                     
                     <!--<li ><h6><b>Sobre nosotros</b></h6></li>
                     <li class="pb-1"><a href="quienessomos" style="color:white">Sobre nosotros</a></li>
@@ -59,7 +59,7 @@
                   </div>
             </div>
             <div class="margin-footer2 col-xs-5 ocultar-div-tab ocultar-div-desk footerredes">
-                    <a class="margin-footer " href="/precios" title="logo simongrup" ><img src="/images/Logofooter.png" height="56px" width="95px" alt="logo simongrup" class="footerimg"></a>
+                    <a class="margin-footer " href="precios" title="logo simongrup" ><img src="{{asset('images/Logofooter.png')}}" height="56px" width="95px" alt="logo simongrup" class="footerimg"></a>
             </div>
         </div>
             <div class="col-lg-auto">
@@ -78,16 +78,16 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-6 col-sm-7 col-xs-12">
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="/condiciones">Condiciones de servicio</a>
+                    <a style="color:white;"href="condiciones">Condiciones de servicio</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="/terminos">Términos y condiciones</a>
+                    <a style="color:white;"href="terminos">Términos y condiciones</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="/privacidad">Política de privacidad</a>
+                    <a style="color:white;"href="privacidad">Política de privacidad</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="/info">Política de cookies</a>
+                    <a style="color:white;"href="info">Política de cookies</a>
                 </div>
                 <div class="col-lg-auto"></div>
             </div>
@@ -99,13 +99,13 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-5 col-sm-7 col-xs-12">
                 <div class="col-lg-4 col-sm-4 col-xs-4 float-left">
-                    <a style="color:white;"href="/terminos">Términos y condiciones</a>
+                    <a style="color:white;"href="terminos">Términos y condiciones</a>
                 </div>
                 <div class="col-lg-4 col-sm-4 col-xs-4 float-left">
-                    <a style="color:white;"href="/privacidad">Política de privacidad</a>
+                    <a style="color:white;"href="privacidad">Política de privacidad</a>
                 </div>
                 <div class="col-lg-4 col-sm-4 col-xs-4 float-left">
-                    <a style="color:white;"href="/info">Política de cookies</a>
+                    <a style="color:white;"href="info">Política de cookies</a>
                 </div>
                 <div class="col-lg-auto"></div>
             </div>

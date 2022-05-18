@@ -7,8 +7,8 @@
 ?>
 <div class="row navfont">
     <div class="col-xs-4 movillogo2 pt-1">
-      <a class="align-middle" href="https://www.gasoleodecalefaccion.com/precios">
-        <img src="images/logosg.png" alt="logo simongrup" height="56px" width="95px">
+      <a class="align-middle" href="{{ url("") }}">
+        <img src="{{asset('images/logosg.png')}}" alt="logo simongrup" height="56px" width="95px">
       </a>
     </div>
 

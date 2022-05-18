@@ -8,8 +8,8 @@
 <nav class="pt-1 navbar navbar-default bg-white navfont" role="navigation" >
   <div class="navbar-header col-md-6 plr-8 ">
     <div class="col-md-3 movillogo2">
-      <a class="align-middle" href="https://www.gasoleodecalefaccion.com">
-        <img src="/nueva/public/images/logosg.png" alt="logo simongrup" height="56px" width="95px"></a></div>
+      <a class="align-middle" href="{{ url("") }}">
+        <img src="{{asset('images/logosg.png')}}" alt="logo simongrup" height="56px" width="95px"></a></div>
     
   </div>
   <div class="col-md-6 prr-5">
@@ -25,36 +25,6 @@
                         <div class=" pt-1 movillogo text-center"><a style="display: flex; align-items: flex-end; padding-bottom: 20px;" href="{{ route('logout') }}"><b><br>Cerrar sesi&oacute;n</b><span class="material-icons"style="padding-inline: 10px;">logout</span></a></div>
 
                       </div>
-                              
-                        <!-- Modal -->
-                        <!--<div class="modal fade" data-backdrop="static" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title text-center" id="exampleModalLabel">Mi Cuenta</h4>
-                                
-                              </div>
-                              <div class="modal-body">
-                                <ul class="ulnd">
-                                  <li><a href="cuenta">Mis datos</a></li>
-                                  <li><a href="#">Mis direcciones</a></li>
-                                  <li><a href="#">Mis pedidos</a></li>
-                                  <li><a href="#">Mi consumo</a></li>
-                                  <li><a href="#">Mi gasto</a></li>
-                                  <li><a href="#">Mi agente</a></li>
-                                  <li><a href="#">Mis tickets</a></li>
-                                  
-                                </ul>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>-->
                     @else
                     <div class="text-vivo row">
                         <div class="col-md-12pt-1 movillogo text-center"><a class="text-blue" style="display: flex; align-items: flex-end;" href="{{ route('login') }}"><b><br>Iniciar Sesi&oacute;n</b><span class="text-blue material-icons" style="padding-inline: 10px;">login</span></a></div>
@@ -67,27 +37,9 @@
                 </div>
      @endif
     </form></li>
-      <!--<li class="">
-        <div class="navbar-form navbar-left pt-2 ocultar-div ocultar-div-tab col-md-6">
-          <div>
-
-            <small>
-            Tarragona, Espa単a
-            </small>
-          </div>
-          
-          </div>  
-       </li>-->
        <li>
                 <div class="col-md-6 ocultar-div ocultar-div-tab">
-                  <!-- weather widget start --<img src="https://w.bookcdn.com/weather/picture/5_848_1_4_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=582&anc_id=17768"  alt="booked.net"/><!-- weather widget end -->
-<!--<a class="weatherwidget-io" href="https://forecast7.com/es/40d46n3d75/spain/" data-label_1="" data-label_2="" data-font="Roboto" data-mode="Current" data-days="3" data-theme="pure" data-textcolor="#0075c9" data-highcolor="#0075c9" data-lowcolor="#0075c9" data-suncolor="#0075c9" data-mooncolor="#0075c9" data-cloudcolor="#0075c9" data-raincolor="#0075c9" data-snowcolor="#0075c9" style="text-indent: -299rem;display: block;position: relative;height: 98px;padding: 0px;overflow: hidden;text-align: left;width: 44vw;max-width: 38.75rem;"><iframe id="weatherwidget-io-0" class="weatherwidget-io-frame" title="Weather Widget" scrolling="no" frameborder="0" width="100%" src="https://weatherwidget.io/w/" style="display: block; position: absolute; top: 0px; height: 86px;"></iframe></a>
-
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>!-->
-
-
+                  
 <a class="weatherwidget-io" href="https://forecast7.com/es/40d42n3d70/madrid/" data-font="Roboto" data-mode="Current" data-days="3" data-theme="original" data-basecolor="#fff" data-textcolor="#0075c9" data-highcolor="#0075c9" data-lowcolor="#0075c9" data-suncolor="#0075c9" data-mooncolor="#0075c9" data-cloudcolor="#0075c9" data-cloudfill="#0075c9" data-raincolor="#0075c9" data-snowcolor="#0075c9" style="text-indent: -299rem;display: block;position: relative;height: 98px;padding: 0px;overflow: hidden;text-align: left;width: 44vw;max-width: 22.75rem;margin-right: 8rem;background-color: none;">Madrid, Spain<iframe id="weatherwidget-io-0" class="weatherwidget-io-frame" title="Weather Widget" scrolling="no" frameborder="0" width="100%" src="https://weatherwidget.io/w/" style="display: block; position: absolute; top: 0px; height: 98px;"></iframe></a>
 
 <script>
