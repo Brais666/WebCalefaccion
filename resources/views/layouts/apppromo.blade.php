@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <head>
-    <link rel="canonical"href=https://www.gasoleodecalefaccion.com/promociones" />
+    <link rel="canonical"href="https://www.gasoleodecalefaccion.com/promociones" />
     <meta
   name="description"
   content="Descubre las &uacute;ltimas novedades y promociones de Simon Grup. Gas&oacute;leo de calefacci&oacute;n al mejor precio en Madrid y Catalu&ntilde;a.">

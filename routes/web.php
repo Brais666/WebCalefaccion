@@ -115,4 +115,3 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     // Route::post('pedido.store', 'PedidosController@store');
     Route::get('User.cuenta', 'UserController@update');
 });
-

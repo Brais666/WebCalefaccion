@@ -18,7 +18,9 @@ $i= 0;
     <div class="carousel-inner">
         @foreach ($ofertas as $oferta)
         <?php
-            $img = 'https://admin.gasoleodecalefaccion.com/images/'.$oferta->nombre.'';
+            //$img = 'https://admin.calefaccion.store/images/'.$oferta->nombre.'';
+            //dd($img);
+            $img = '/adminp/public/images/'.$oferta->nombre.'';
         ?>
          @if($i==0)<div class="item active">@else<div class="item">@endif
           <img src="{{$img}}" alt="promoci贸n" class="car-mov img-fluid">
