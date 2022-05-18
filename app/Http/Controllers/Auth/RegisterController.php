@@ -74,9 +74,6 @@ class RegisterController extends Controller
            $prev= url()->current(); 
         echo "Captcha invalido";
         echo '<button type="submit" class="btn btn-primary"><a href="https://www.gasoleodecalefaccion.com/register">Registrarme</a></button>';
-        //return view('/');
-        
-        //dd($prev);
         
         exit;
         } else {

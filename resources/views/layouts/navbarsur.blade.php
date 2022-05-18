@@ -1,7 +1,5 @@
 <nav class="navbar navbar-default bg-white text-center navfont " id="navbarsur" role="navigation" >
   <hr class="blue2 ocultar-div">
-  
-  
   <div class="collapse navbar-collapse navbar-ex1-collapse col-sm-auto text-primary ">
     <ul class="nav navbar-nav nav2">
       <!--<li class="nav-item" id="tab-unclick"><a href="pedidos.unclick">Pedido 1-Click</a></li>-->
@@ -19,10 +17,6 @@
       <li class="nav-item movil hazpedmov" id="tab-faq"><a href="faq">Preguntas frecuentes</a></li>
       <li class="nav-item movil hazpedmov" id="tab-contacto"><a href="contacto">Contacto</a></li>
       <!--<li class="nav-item movil hazpedmov" id="tab-quienessomos"><a href="quienessomos">Nosotros</a></li>-->
-      
-      
-      
-      
     </ul>
   </div>
 </nav>
