@@ -22,7 +22,7 @@
             <img src="images/nube1.png" id="nube1">
             
             <img src="images/camion.png" id="camion">
-            <img src="images/web.png" id="web">
+            <img src="images/web.png" id="png">
             <img src="images/nubenieve.png" id="nubenieve">
     
             <img src="images/nubefondo.png" id="nubefondo">

@@ -6,7 +6,7 @@ $ofertas = Oferta::all();
 ?>
 
 @extends('layouts.appfaq')
-@section('title', 'SimonGrup')
+@section('title', 'Cuenta de usuario Simon Grup')
 @section('content')
 <div class="row bg-faq pt-1 pb-1 fixed-top4">
     <div class="col-sm-2"></div>

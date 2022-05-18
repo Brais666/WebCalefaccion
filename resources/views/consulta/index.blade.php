@@ -2,6 +2,9 @@
 @section('title', 'SimonGrup')
 @section('content')
 <div class="container border">
+    <?php
+    //dd("de");
+    ?>
     <div class="row "> 
         @if ($message = Session::get('success'))
            <div class="row pt-1">
@@ -30,7 +33,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtNombre">Nombre y apellidos:</label>
+                        <label for="txtNombre">Nombre y apellidos:</label>
                         <input type="text" class="form-control input" id="txtNombre" name="txtNombre" placeholder="Nombre y apellidos">
                       </div>
                       <div class="col-sm-3">  
@@ -40,7 +43,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtEmail">E-mail:</label>
+                        <label for="txtEmail">E-mail:</label>
                         <input type="email" class="form-control input" id="txtEmail" name="txtEmail" placeholder="E-mail" >
                       </div>
                       <div class="col-sm-3">       
@@ -50,7 +53,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtTelefono">Teléfono de contacto:</label>
+                        <label for="txtTelefono">Teléfono de contacto:</label>
                         <input type="text" class="form-control input" id="txtTelefono" name="txtTelefono" placeholder="Teléfono de contacto">
                         </div>
                       <div class="col-sm-3">       
@@ -60,7 +63,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtPoblacion">Población:</label>
+                        <label for="txtPoblacion">Población:</label>
                         <input type="text" class="form-control input" id="txtPoblacion" name="txtPoblacion" placeholder="Población">
                       </div>
                       <div class="col-sm-3">                      

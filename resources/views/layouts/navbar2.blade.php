@@ -9,7 +9,7 @@
   <div class="col-md-2 col-xs-12"></div>
   <div class="navbar-header col-sm-5 col-md-3 col-xs-3">
     <div class="col-md-3 movillogo2">
-      <a class="navbar-brand align-middle" href="https://134.122.70.106/nueva/public">
+      <a class="navbar-brand align-middle" href="https://gasoleodecalefaccion.com">
         <img src="../images/logosg.png"></a></div>
     
   </div>
@@ -21,7 +21,7 @@
                     @auth
                       <div class="row">
                         <div class="col-lg-8 col-sm-5 col-xs-1 pt-1 movillogo text-center"><a href="{{ route('logout') }}"><b><span class="material-icons">logout</span><br>Cerrar sesi&oacute;n</b></a></div>
-                        <div class="col-lg-4 col-sm-5 col-xs-1 pt-1 mlmov-3 movillogo text-center"><a href="cuenta"><b><span class="material-icons">account_circle</span><br>Cuenta</b></a></div>
+                        <div class="col-lg-4 col-sm-5 col-xs-1 pt-1 mlmov-3 movillogo text-center"><a href="/cuenta"><b><span class="material-icons">account_circle</span><br>Cuenta</b></a></div>
                       </div>
                               
                     @else

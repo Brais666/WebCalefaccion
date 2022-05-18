@@ -33,8 +33,7 @@ $(document).ready(function() {
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
     <!-- fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 </head>
 <body class="bg-info">
     <div class="row bg-white ocultar-div fixed-top">

@@ -1,14 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <meta
+  name="description"
+  content="Inicia sesi&oacute;n en tu &aacute;rea privada de Simon Grup y disfruta del gas&oacute;leo de calefacci&oacute;n al mejor precio.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../public/images/9998Simon Grup.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/9998Simon Grup.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1 , width=320, height=device-height">
  
-    <title>@yield('title')</title>
+    <title>Contacto Simon Grup</title>
  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,7 +18,18 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script  src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 
-
+<script type="text/javascript">
+    function evitarSpam() {
+        // Si el campo está vacío, envía el formulario.
+        if(!document.getElementById("controlspam").value) { 
+            return true;
+        } 
+         // Si el campo tiene algún valor, es un spam bot
+        else {
+            return false;
+        }
+    }
+</script>
 
     <script type='text/javascript'>
 $(document).ready(function() {
@@ -32,6 +45,8 @@ $(document).ready(function() {
  }
 });
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css" />
@@ -53,7 +68,7 @@ $(document).ready(function() {
     <div class="row bg-white noml">
         @include('layouts.headerlogin')
     </div>
-    <div class="pt-8">
+    <div>
             @yield('content')  
           
     </div>

@@ -26,7 +26,7 @@
                             <div class="row">
                                 <p class="col-xs-11 text-danger">
                                     En breve se pondrá en ruta y podrás realizar pedidos!</p>
-                            </div
+                            </div>
                             <p><b>Lo sentimos pero aún no distribuimos en esta población.<br>
                         Si lo deseas, déjanos tus datos de contacto y te avisaremos cuando este servicio esté disponible en tu zona.</b></p>
                       </div>

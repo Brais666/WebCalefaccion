@@ -7,10 +7,10 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class WelcomeUser extends Mailable
+class Confirmacion extends Mailable
 {
     use Queueable, SerializesModels;
-
+     
     /**
      * The demo object instance.
      *
@@ -27,7 +27,7 @@ class WelcomeUser extends Mailable
     {
         $this->demo = $demo;
     }
-
+ 
     /**
      * Build the message.
      *
@@ -36,8 +36,8 @@ class WelcomeUser extends Mailable
     public function build()
     {
         return $this->from('atencionalcliente@simongrup.com')
-                    ->view('mails.welcome')
-                    ->text('mails.welcome_plain')
+                    ->view('mails.Confirmacion')
+                    ->text('mails.Confirmacion_plain')
                       ->attach(public_path('/images').'/SIMON_GRUP.png', [
                               'as' => 'SIMON_GRUP.png',
                               'mime' => 'image/png',
