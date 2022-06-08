@@ -16,25 +16,6 @@ class CasirutaController extends Controller
      */
     public function index(Request $request)
     {
-        /*$pobl=$request->get('poblacion');
-               
-        if ($request->get('poblacion')) {
-            //$poblacion = Ruta::where('poblacion', '=', Input::get('poblacion'));
-            //$postal = Ruta::where('codigopost', '=', Input::get('poblacion'))->first();
-            //if (($poblacion > 0) || ($postal >0))
-            //{
-           // }
-            //else
-            //{
-               return view ('bienvenido') ;
-            //}
-
-            
-        }
-        else
-        {
-           return view('consulta.index');
-        }  */
         return view('consulta2.index');
         
     }
@@ -79,7 +60,7 @@ class CasirutaController extends Controller
         //dd($noruta);
 
         $noruta->save();
-        return redirect('consulta2')->with('success', 'Datos enviados correctamente');
+        return view('welcome')->with('success', 'Datos enviados correctamente');
     }
 
     /**

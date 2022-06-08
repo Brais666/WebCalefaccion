@@ -79,7 +79,7 @@ class NorutaController extends Controller
 
         $noruta->save();
         //dd($noruta);
-        return redirect('consulta')->with('success', 'Datos enviados correctamente');
+        return view('welcome')->with('success', 'Datos enviados correctamente');
     }
 
     /**
