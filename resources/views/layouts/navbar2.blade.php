@@ -9,7 +9,7 @@
   <div class="col-md-2 col-xs-12"></div>
   <div class="navbar-header col-sm-5 col-md-3 col-xs-3">
     <div class="col-md-3 movillogo2">
-      <a class="navbar-brand align-middle" href="https://134.122.70.106/nueva/public">
+      <a class="navbar-brand align-middle" href="{{ url("") }}">
         <img src="../images/logosg.png"></a></div>
     
   </div>
@@ -21,7 +21,7 @@
                     @auth
                       <div class="row">
                         <div class="col-lg-8 col-sm-5 col-xs-1 pt-1 movillogo text-center"><a href="{{ route('logout') }}"><b><span class="material-icons">logout</span><br>Cerrar sesi&oacute;n</b></a></div>
-                        <div class="col-lg-4 col-sm-5 col-xs-1 pt-1 mlmov-3 movillogo text-center"><a href="cuenta"><b><span class="material-icons">account_circle</span><br>Cuenta</b></a></div>
+                        <div class="col-lg-4 col-sm-5 col-xs-1 pt-1 mlmov-3 movillogo text-center"><a href="/cuenta"><b><span class="material-icons">account_circle</span><br>Cuenta</b></a></div>
                       </div>
                               
                     @else
@@ -39,14 +39,11 @@
           <div>
 
             <small>
-            Tarragona, Espa…ga
+            Tarragona, España
             </small>
           </div>
           <div class="hora float-right d-none d-lg-block "><h5><small>{{$hora}}</small></h5></div>
           </div>                   
-                <div class="row float-right col-lg-2 ocultar-div ocultar-div-tab">
-                  <!-- weather widget start --><img src="http://w.bookcdn.com/weather/picture/5_848_1_4_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=582&anc_id=17768"  alt="booked.net"/><!-- weather widget end -->
-                </div> 
         </div>
         
       </li>

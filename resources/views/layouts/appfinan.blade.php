@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <?php
  $pobl=0;
  $cantidad2=0;
  ?>
-<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <meta name="description" content="Financia tu pedido de gasoil calefacci贸n con Vivo, un plan de cr茅dito din谩mico. Llena tu dep贸sito y fracciona el pago durante toda la temporada.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">

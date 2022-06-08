@@ -7,15 +7,15 @@
             <div class="col-lg-2 col-sm-2 col-xs-12 ocultar-div">
                 
                   <a  href="https://134.122.70.106/nueva/public">
-                    <img src="images/Logofooter.png" class="footerimg"></a>
+                    <img src="/images/Logofooter.png" class="footerimg" alt="logo simongrup"></a>
                 
             </div>
             <div class="col-lg-2 col-sm-3 col-xs-6 ptmov-2">
                 <ul class="footli">
                     <li><h6><b>Para tu pedido</b></h6></li>
-                    <li class="pb-1"><a href="precios" style="color:white">Pedidos</a></li>
-                    <li class="pb-1"><a href="financiacion" style="color:white">Financiaci&oacute;n</a></li>
-                    <li class="pb-1"><a href="faq" style="color:white">Preguntas frecuentes</a></li>
+                    <li class="pb-1"><a href="/precios" style="color:white">Pedidos</a></li>
+                    <li class="pb-1"><a href="/financiacion" style="color:white">Financiaci&oacute;n</a></li>
+                    <li class="pb-1"><a href="/faq" style="color:white">Preguntas frecuentes</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-6 ptmov-2">
@@ -32,12 +32,12 @@
                     <b>Síguenos en</b>
                    </div> 
                     <div class=" pt-1 ">
-                            <div class="flex-between">
-                                <a href="https://www.facebook.com/simongruptrade/" style="color:white"><i class="fab fa-facebook-f fa-2x"></i></a>
+                            <div>
+                                <a href="https://www.facebook.com/simongruptrade/" style="color:white;padding-left:0.2em"><i class="fab fa-facebook-f fa-2x"></i></a>
                             
-                                <a href="https://www.linkedin.com/company/simon-grup/mycompany/" style="color:white"><i class="fab fa-linkedin fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/company/simon-grup/mycompany/" style="color:white;padding-left:0.2em"><i class="fab fa-linkedin fa-2x"></i></a>
                             
-                                 <a href="https://web.whatsapp.com/send?l=es&amp;phone=34600492947&amp" style="color:white" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+                                 <a href="https://web.whatsapp.com/send?l=es&amp;phone=34600492947&amp" style="color:white;padding-left:0.2em" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
                             
                         <!-- <a href="https://api.whatsapp.com/send?phone=34600492947" style="color:white" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>!-->
        
@@ -53,7 +53,7 @@
                   </div>
             </div>
             <div class="margin-footer2 col-xs-5 ocultar-div-tab ocultar-div-desk footerredes">
-                    <a class="margin-footer " href="https://134.122.70.106/nueva/public"><img src="images/Logofooter.png" class="footerimg"></a>
+                    <a class="margin-footer " href="https://134.122.70.106/nueva/public"><img src="/images/Logofooter.png" class="footerimg" alt="logo simongrup"></a>
             </div>
         </div>
             <div class="col-lg-auto">
@@ -72,16 +72,16 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-6 col-sm-7 col-xs-12">
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="condiciones">Condiciones de servicio</a>
+                    <a style="color:white;"href="/condiciones">Condiciones de servicio</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="terminos">Términos y condiciones</a>
+                    <a style="color:white;"href="/terminos">Términos y condiciones</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="privacidad">Política de privacidad</a>
+                    <a style="color:white;"href="/privacidad">Política de privacidad</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="info">Política de cookies</a>
+                    <a style="color:white;"href="/info">Política de cookies</a>
                 </div>
                 <div class="col-lg-auto"></div>
             </div>
@@ -93,16 +93,16 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-6 col-sm-7 col-xs-12">
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="condiciones">Condiciones de servicio</a>
+                    <a style="color:white;"href="/condiciones">Condiciones de servicio</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="terminos">Términos y condiciones</a>
+                    <a style="color:white;"href="/terminos">Términos y condiciones</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="privacidad">Política de privacidad</a>
+                    <a style="color:white;"href="/privacidad">Política de privacidad</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="info">Política de cookies</a>
+                    <a style="color:white;"href="/info">Política de cookies</a>
                 </div>
                 <div class="col-lg-auto"></div>
             </div>

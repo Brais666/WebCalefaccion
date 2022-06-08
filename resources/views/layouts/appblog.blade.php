@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="../image/png" href="../../public/images/9998Simon Grup.ico">
+    <link rel="icon" type="../image/png" href="../../images/9998Simon Grup.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
     <title>@yield('title')</title>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 $meses =0;
 if (!isset($pobl))
@@ -11,7 +12,6 @@ if (!isset($cantidad))
  $pobla="";
  $cantidad2=0;
  ?>
-<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">

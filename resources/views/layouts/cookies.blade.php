@@ -6,6 +6,9 @@ if(isset($_REQUEST['politica-cookies'])) {
     setcookie('politica', '1', $caducidad);
 }
  if (!isset($_REQUEST['politica-cookies']) && !isset($_COOKIE['politica'])): ?>
+    <head>
+    <link rel="canonical"href="https://www.gasoleodecalefaccion.com/info" />
+</head>
     <div class="row cookies ocultar-div oclutar-div-tab navfont">
         <div class="row">
             <div class="col-sm-8 col-xs-12">¿Aceptas nuestra <a href="info" style="color: white;text-decoration:underline;">política de Cookies</a>? Si continúas navegando entendemos que aceptas nuestras cookies.</div>

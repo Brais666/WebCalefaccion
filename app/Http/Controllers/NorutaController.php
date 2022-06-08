@@ -76,11 +76,10 @@ class NorutaController extends Controller
             'poblacion'=> $request->get('txtPoblacion')
             
         ]);
-        //dd($noruta);
 
         $noruta->save();
         //dd($noruta);
-        return redirect('consulta')->with('success', 'Datos enviados correctamente');
+        return view('welcome')->with('success', 'Datos enviados correctamente');
     }
 
     /**

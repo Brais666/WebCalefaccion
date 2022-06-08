@@ -5,41 +5,108 @@ namespace App\Http\Controllers;
 use Session;
 use App\Pedidos;
 use App\User;
-use App\Temporals;
 use App\Oferta;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\DemoEmail;
 use Illuminate\Support\Facades\Mail;
+use Exception;
+
+class CouponNotValidException extends Exception
+{
+};
 
 class PedidosController extends Controller
 {
+    public function interesesFromMonth($meses) 
+    {
+        $intereses = 0.341447;
+        switch ($meses) {
+            case 3:
+                $intereses = 0.341447;
+                break;
+            case 4:
+                $intereses = 0.256987;
+                break;
+            case 5:
+                $intereses = 0.206313;
+                break;
+            case 6:
+                $intereses = 0.172531;
+                break;
+            case 7:
+                $intereses = 0.148403;
+                break;
+            case 8:
+                $intereses = 0.130307;
+                break;
+            case 9:
+                $intereses = 0.116234;
+                break;
+            case 10:
+                $intereses = 0.104976;
+                break;
+            case 11:
+                $intereses = 0.095766;
+                break;
+            case 12:
+                $intereses = 0.088092;
+                break;
+        }
+        return $intereses;    
+    }
+
+    public function precioTotal($total, $precioLitro, $pedidoFinanciado, $cantidad, $meses)
+    {
+        $comision = 0.03;
+        if ($cantidad <= 300) {
+            $comision = 0.02;
+        } else if ($cantidad <= 400) {
+            $comision = 0.015;
+        } else if ($cantidad <= 500) {
+            $comision = 0.01;
+        }
+        
+        $intereses = $this->interesesFromMonth($meses);
+
+        $total = session('total');
+        if ($pedidoFinanciado) {
+            $totalMes = ($precioLitro + $comision) * $cantidad * $intereses;
+            $total = ($totalMes * $meses);
+            
+        } 
+        return $total;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {   
-
+    {
         $id = Auth::user()->id;
-        $temporal = Temporals::find($id);
-        $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
+        $telefono = Auth::user()->telefono;
+        $cp = session('cp');
+        $precioLitro = session('precioLitro');
+        $cantidad = session('cantidad');
+        $poblacion = session('poblacion');
+        $email = auth()->user()->email;
+        $pedidoFinanciado = ($request->get('financiado') == true);
+        $meses = $request->get('meses');
 
-        $prev= url()->current();
+        $request->session()->put(['financiado' => $pedidoFinanciado]);
+        $request->session()->put(['meses' => $meses]);
+
         
-        if($prev == "http://calefaccion.store/pedidos")
-        {
-            //dd("we");
-            return view('pedidos.list',compact('temporal'));
-        }
-        else if($prev == "http://calefaccion.store/pedidofinanciado")
-        {
-            
-            return view('pedidofinanciado.list',compact('temporal'));
-        }
-        
+        $total = session('total');
+        $total = $this->precioTotal($total, $precioLitro, $pedidoFinanciado, $cantidad, $meses);
+        $precioLitro = $total/$cantidad;
+
+        // dd($precioLitro);
+
+        return view('pedidos.list', compact('total', 'cantidad', 'poblacion', 'email', 'telefono', 'cp', 'precioLitro', 'pedidoFinanciado', 'meses'));
     }
 
     /**
@@ -49,8 +116,139 @@ class PedidosController extends Controller
      */
     public function create(Request $request)
     {
-        
-        return view('pedidos.create',compact('temporal'));
+
+        return view('pedidos.create', compact('temporal'));
+    }
+
+    public function sendEmail($pedido, $entregaDia, $precioLitro)
+    {
+        $objDemo = new \stdClass();
+        $objDemo->demo_one = $pedido->id;
+        $objDemo->demo_two = $pedido->nombre;
+        $objDemo->demo_three = $pedido->dni;
+        $objDemo->demo_four = $pedido->address;
+        $objDemo->demo_five = $pedido->poblacion;
+        $objDemo->demo_six = $pedido->provincia;
+        $objDemo->demo_seven = $pedido->CP;
+        $objDemo->demo_eight = $pedido->canal;
+        $objDemo->demo_nine = $pedido->estado;
+        $objDemo->demo_ten = $pedido->producto;
+        $objDemo->demo_eleven = $pedido->cantidad;
+        $objDemo->demo_twelve = $pedido->total;
+        $objDemo->demo_thirteen = $entregaDia;
+        $objDemo->demo_fourteen = $precioLitro;
+        $objDemo->sender = 'Simongrup S.l.';
+        $objDemo->receiver = $pedido->nombre;
+
+        Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
+        Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
+    }
+
+    public function storePedido($nombre, $codigoPromo, $telefono, $idUser, $simonCoins, $email, $now, $dni, $direccion, $poblacion, $cp, $canal, $estado, $producto, $cantidad, $total, $observaciones, $entregaDia, $precioLitro, $cuponValidado, $meses)
+    {
+        if ($codigoPromo && !$cuponValidado) {
+            // Not considering the zone
+            $oferta = Oferta::where('oferta', 'like', $codigoPromo)->whereDate('fecha_ini', '<', Carbon::now())->whereDate('fecha_fin', '>', Carbon::now())->where('rango1', '<=', $cantidad)->where('rango2', '>=', $cantidad)->first();
+            $valeBienvenida = User::where('bienvenidavale', '=', 1)->where('id', 'like', $idUser)->first();
+
+            if ($codigoPromo == 'WEB5' && $valeBienvenida != null) {
+                if ($meses != null)
+                {
+                    $total = $this->precioTotal($total, $precioLitro, true, $cantidad, $meses);
+                    $totalDescuento = $total - 5;
+                }
+                else 
+                {
+                    $total = $cantidad * $precioLitro;
+                    $totalDescuento = $total - 5;
+                }
+                
+
+                return $totalDescuento;
+            }
+
+            if ($oferta == null) {
+                throw new CouponNotValidException();
+            } else {
+                if ($meses != null)
+                {
+                    $total = $this->precioTotal($total, $precioLitro, true, $cantidad, $meses);
+                    if ($oferta->tipo == '€') {
+                        $totalDescuento = $total - $oferta->cantidad01;
+                    } else {
+                        $totalDescuento = $total - $total * $oferta->cantidad02 / 100;
+                    }
+                }
+                else 
+                {
+                    $totalDescuento = $cantidad * $precioLitro;
+
+                    if ($oferta->tipo == '€') {
+                        $totalDescuento = $totalDescuento - $oferta->cantidad01;
+                    } else {
+                        $totalDescuento = $totalDescuento - $totalDescuento * $oferta->cantidad02 / 100;
+                    }
+                }
+
+                return $totalDescuento;
+            }
+        } else if ($simonCoins) {
+        } else {
+            $totalFinanciado = null;
+            if ($meses != null)
+            {
+                $totalFinanciado = $this->precioTotal($total, $precioLitro, true, $cantidad, $meses);
+            }
+            
+            $pedido = new Pedidos([
+                'nombre' => $nombre,
+                'email' => $email,
+                'fechaentrada' => $now,
+                'dni' => $dni,
+                'address' => $direccion,
+                'poblacion' => $poblacion,
+                'provincia' => session('provincia'),
+                'CP' => $cp,
+                'canal' => $canal,
+                'estado' => $estado,
+                'producto' => $producto,
+                'cantidad' => $cantidad,
+                'total' => $total,
+                'observaciones' => $observaciones,
+                'seleccionado' => 'si',
+                'financiado' => $meses != null,
+                'cuotas' => $meses ?? 1,
+                'totalfinan' => $totalFinanciado ?? 0,
+                'meses' => $meses ?? 1,
+                'telefono' => $telefono,
+            ]);
+
+            $pedido->save();
+
+            // TDOO: set bienvenida to false in case is using that coupon
+
+            $valeBienvenida = User::where('bienvenidavale', '=', 1)->where('id', 'like', $idUser)->first();
+            if ($valeBienvenida != null) {
+                $valeBienvenida->bienvenidavale = 0;
+                $valeBienvenida->save();
+            }
+
+            $user = User::find($idUser);
+
+            // Updating the user info with the latest order
+            $user->dni = $dni;
+            $user->telefono = $telefono;
+            $user->provincia = session('provincia');
+            $user->localidad = $poblacion;
+            $user->address = $direccion;
+            $user->CP = $cp;
+
+            $user->update();
+
+            // $this->sendEmail($pedido, $entregaDia, $precioLitro);
+
+            return null;
+        }
     }
 
     /**
@@ -61,782 +259,79 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
+        $meses = session('meses');
+
         $id = Auth::user()->id;
-        
-        $temporal = Temporals::find($id);
-        $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
-        $request->validate([
-            'Dni'=>'required',
-            'CP' =>'required',
-            //'Nombre' => 'required',
-            /*'txtFirstName'=>'required',
-            'txtLastName'=> 'required',*/
-            'Direccion' => 'required',
-        ]);
 
-        $session = Session::get('_token');
-       
-        $codigopromo = $request->get('txtPromocion');
-        
-        //dd($codigopromocion);
-        //dd($request);
-        $simon = $request->get('txtSimon');
+        $codigoPromo = $request->get('txtPromocion');
+
+        $simonCoins = $request->get('txtSimon');
         $now =  Carbon::now();
-        
-        if(isset($codigopromo))
-        {
-            //$codpromo = Oferta::where('oferta','like',$codigopromo)->where('fecha_ini','<',$now)->where('fecha_fin','>',$now)->where('rango1','<',$temporal->cantidad)->where('rango2','>',$temporal->cantidad)->get();
-            $name = Auth::user()->name;
-            $fecha = Oferta::where('oferta','like',$codigopromo)->get();
-            $bienvenida = User::where('bienvenidavale','=',1)->where('name', 'like', $name)->get();
-            $bienvenida2 = count($bienvenida);
-            $fecha2 = count($fecha);
-            $addressSession = $request->get('Direccion');
-            $telefonoSession = $request->get('tel');
-            $dniSession = $request->get('Dni');
-            session()->put(['address'=> $addressSession]);
-            session()->put(['telefono'=> $telefonoSession]);
-            session()->put(['dni'=> $dniSession]);
-            //dd(session());
-            /*if(($codigopromo == 'bienvenidavale') && $bienvenida2 > 0 && !empty($bienvenida)  )
-            {
-                dd($bienvenida);
-                $prev= url()->previous();
-                $request->session()->put(['codigopromo'=> 1]);
-            
-                 if($prev == "http://calefaccion.store/pedidos")
-                        {
-                                foreach ($bienvenida as $bienvenidas)
-                                
-                                //{
-                                
-                
-                                  $bienvenidas->bienvenidavale = 0;
-                                    
-                                   
-                                   $bienvenidas->save();
-                                    
-                                     
-                                //}
-                                
-                           
-                            
-                                    $totalt = $temporal->cantidad * $temporal->preciol;
-                                    $totaltemp = $totalt - 5;
-                                    $total2 = $totaltemp;
-                                    $cantidad = $request->txtCantidad;
-                                    $poblacion = $request->txtPoblacion;
-                                    $request->session()->put(['totaltemp'=> $totalt]);
-                                    
-                                    
-                                    return view('pedidos.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
-                        }
-                else if($prev == "http://calefaccion.store/pedidofinanciado")
-                        {
-                                foreach ($bienvenida as $bienvenidas)
-                                
-                                //{
-                                     
-                
-                                  $bienvenidas->bienvenidavale = 0;
-                                    
-                                   
-                                   $bienvenidas->save();
-                                    
-                                     
-                                //}
-                                
-                                     $valor = $request->get('term');
-                                       
-                                       
-                                         switch($valor)
-                                      {
-                                        case 0.341447:
-                                        default:
-                                            $meses = 3;
-                                        break;
-                                        case 0.256987:
-                                            $meses = 4;
-                                        break;
-                                        case 0.206313:
-                                            $meses = 5;
-                                        break;
-                                        case 0.172531:
-                                            $meses = 6;
-                                        break;
-                                        case 0.148403:
-                                            $meses = 7;
-                                        break;    
-                                        case 0.130307:
-                                            $meses = 8;
-                                        break;
-                                        case 0.116234:
-                                            $meses = 9;
-                                        break;
-                                        case 0.104976:
-                                            $meses = 10;
-                                        break;
-                                        case 0.095766:
-                                            $meses = 11;
-                                        break;
-                                        case 0.088092:
-                                            $meses = 12;
-                                        break;
-                                      }
-                                      
-                                      $cantidad = intval($request->get('txtCantidad'));
-                                      $preciol = floatval($temporal->preciol);
-                            //mira
-                        
-                                       if($cantidad <= 200)
-                                       {
-                                        $comision = 0.03;
-                                       }
-                                       else if($cantidad >=200 && $cantidad <300)
-                                       {
-                                        $comision = 0.03;
-                                       }
-                                       else if($cantidad >=300 && $cantidad <400)
-                                       {
-                                        $comision = 0.02;
-                                       }
-                                       else if($cantidad >=400 && $cantidad <500)
-                                       {
-                                        $comision = 0.015;
-                                       }
-                                       else if($cantidad >=500 )
-                                       {
-                                        $comision = 0.01;
-                                       }
-                                
-                                    
-                                    $valor = (float)$valor;
-                
-                                   $nresult = $preciol + $comision;
-                                   
-                                   $total = $nresult * $cantidad;
-                                   
-                                   $total = $total * $valor;
-                                   
-                                   $total = round($total*100)/100;
-                                   $cuotas = $total ;
-                                   $total = $total * $meses;
-                                   $cuotas = $cuotas - ($meses/10);
-                                   $totalt = round($total*100)/100;
-                                    
-                                    
-                                    $totalt=round($total*100)/100;
-                            
-                                    //$totalt = $temporal->cantidad * $temporal->preciol;
-                                    $totaltemp = $totalt - 10;
-                                    $total2 = $totaltemp;
-                                    $cantidad = $request->txtCantidad;
-                                    $poblacion = $request->txtPoblacion;
-                                    
-                                    return view('pedidofinanciado.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
-                        }
-            }
-            */
-            
-            if($fecha2 > 0) 
-            {
-                $request->session()->put(['codigopromo'=> 1]);
-        
-                $prev= url()->previous();
-                //dd($fecha2);
-                foreach ($fecha as $fechas)
-                {
-                
-                $now = strtotime($now);
-                //dd($now);
-                 $fechaini= strtotime($fechas->fecha_ini);
-                $inicial = $now -$fechaini;
-                
-                $fechafin = strtotime($fechas->fecha_fin);
-                $final = $now -$fechafin;
-                //dd($final);
-                }
-                
-                if(($codigopromo == 'bienvenidavale') && $bienvenida2 > 0 && !empty($bienvenida)  )
-            {
-                //dd($bienvenida);
-                $prev= url()->previous();
-                $request->session()->put(['codigopromo'=> 1]);
-            
-                 if($prev == "http://calefaccion.store/pedidos")
-                        {
-                                foreach ($bienvenida as $bienvenidas)
-                                
-                                //{
-                                
-                
-                                  $bienvenidas->bienvenidavale = 0;
-                                    
-                                   
-                                   $bienvenidas->save();
-                                    
-                                     
-                                //}
-                                
-                           
-                            
-                                    $totalt = $temporal->cantidad * $temporal->preciol;
-                                    $totaltemp = $totalt - 5;
-                                    $total2 = $totaltemp;
-                                    $cantidad = $request->txtCantidad;
-                                    $poblacion = $request->txtPoblacion;
-                                    $request->session()->put(['totaltemp'=> $totalt]);
-                                    
-                                    
-                                    return view('pedidos.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
-                        }
-                else if($prev == "http://calefaccion.store/pedidofinanciado")
-                        {
-                                foreach ($bienvenida as $bienvenidas)
-                                
-                                //{
-                                     
-                
-                                  $bienvenidas->bienvenidavale = 0;
-                                    
-                                   
-                                   $bienvenidas->save();
-                                    
-                                     
-                                //}
-                                
-                                     $valor = $request->get('term');
-                                       
-                                       
-                                         switch($valor)
-                                      {
-                                        case 0.341447:
-                                        default:
-                                            $meses = 3;
-                                        break;
-                                        case 0.256987:
-                                            $meses = 4;
-                                        break;
-                                        case 0.206313:
-                                            $meses = 5;
-                                        break;
-                                        case 0.172531:
-                                            $meses = 6;
-                                        break;
-                                        case 0.148403:
-                                            $meses = 7;
-                                        break;    
-                                        case 0.130307:
-                                            $meses = 8;
-                                        break;
-                                        case 0.116234:
-                                            $meses = 9;
-                                        break;
-                                        case 0.104976:
-                                            $meses = 10;
-                                        break;
-                                        case 0.095766:
-                                            $meses = 11;
-                                        break;
-                                        case 0.088092:
-                                            $meses = 12;
-                                        break;
-                                      }
-                                      
-                                      $cantidad = intval($request->get('txtCantidad'));
-                                      $preciol = floatval($temporal->preciol);
-                            //mira
-                        
-                                       if($cantidad <= 200)
-                                       {
-                                        $comision = 0.03;
-                                       }
-                                       else if($cantidad >=200 && $cantidad <300)
-                                       {
-                                        $comision = 0.03;
-                                       }
-                                       else if($cantidad >=300 && $cantidad <400)
-                                       {
-                                        $comision = 0.02;
-                                       }
-                                       else if($cantidad >=400 && $cantidad <500)
-                                       {
-                                        $comision = 0.015;
-                                       }
-                                       else if($cantidad >=500 )
-                                       {
-                                        $comision = 0.01;
-                                       }
-                                
-                                    
-                                    $valor = (float)$valor;
-                
-                                   $nresult = $preciol + $comision;
-                                   
-                                   $total = $nresult * $cantidad;
-                                   
-                                   $total = $total * $valor;
-                                   
-                                   $total = round($total*100)/100;
-                                   $cuotas = $total ;
-                                   $total = $total * $meses;
-                                   $cuotas = $cuotas - ($meses/10);
-                                   $totalt = round($total*100)/100;
-                                    
-                                    
-                                    $totalt=round($total*100)/100;
-                            
-                                    //$totalt = $temporal->cantidad * $temporal->preciol;
-                                    $totaltemp = $totalt - 10;
-                                    $total2 = $totaltemp;
-                                    $cantidad = $request->txtCantidad;
-                                    $poblacion = $request->txtPoblacion;
-                                    
-                                    return view('pedidofinanciado.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
-                        }
-            }else{
-                return view('pedidos.list')->with('danger','cupón no válido');
-            }
-                
-                if(isset($fecha) && ($inicial > 0) && ($final < 0))
-                {
-                    //dd("gsgdg");
-                    foreach ($fecha as $fechas)
-                    {
-                        if($prev == "http://calefaccion.store/pedidos")
-                        {
-                            
-                            if(($fechas->tipo) == '%')
-                            {
-                                
-                                $totalt = $temporal->cantidad * $temporal->preciol;
-                                $totaltemp = number_format(($totalt * $fechas->cantidad02)/100,2);
-                                $total2 = $request->txtTotal-$totaltemp;
-                                $cantidad = $request->txtCantidad;
-                                $poblacion = $request->txtPoblacion;
-                                $request->session()->put(['totaltemp'=> $totalt]);
-                                //dd($total2);
-                                 foreach ($bienvenida as $bienvenidas)
-                                
-                                //{
-                                
-                
-                                  $bienvenidas->bienvenidavale = 0;
-                                    //dd($bienvenidas);
-                                   
-                                   $bienvenidas->save();
-                                    
-                                     
-                                //}
-                                
-                                 return view('pedidos.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
-                            }
-                            elseif(($fechas->tipo) == '€')
-                            {
-                               $totalt = $temporal->cantidad * $temporal->preciol;
-                                $totaltemp = $totalt - $fechas->cantidad01;
-                                $total2 = floatval($totaltemp);
-                                $cantidad2 = $request->txtCantidad;
-                                $poblacion = $request->txtPoblacion;
-                                $request->session()->put(['totaltemp'=> $totalt]);
-                                //dd($total2);
-                                
-                                
-                                
-                                foreach ($bienvenida as $bienvenidas)
-                                
-                                {
-                                
-                
-                                  $bienvenidas->bienvenidavale = 0;
-                                    //dd($bienvenidas);
-                                   
-                                   $bienvenidas->save();
-                                    
-                                     
-                                }
-                                
-                                 return view('pedidos.list',compact('total2','cantidad2','poblacion'))->with('success','cupón validado'); 
-                            }
-                           else
-                           {
-                               dd("HOL");
-                                alert("fallo en el cupón");
-                           }
-                        }
-                         else if($prev == "http://calefaccion.store/pedidofinanciado")
-                        {
-                            if(($fechas->tipo) == '%')
-                            {
-                                
-                                $totalt = $temporal->cantidad * $temporal->preciol;
-                                $totaltemp = number_format(($totalt * $fechas->cantidad02)/100,2);
-                                $total2 = $request->txtTotal-$totaltemp;
-                                $cantidad = $request->txtCantidad;
-                                $poblacion = $request->txtPoblacion;
-                                $request->session()->put(['totaltemp'=> $totalt]);
-                                //dd($total2);
-                                
-                                 return view('pedidofinanciado.list',compact('total2','cantidad','poblacion'))->with('success','cupón validado');
-                            }
-                            elseif(($fechas->tipo) == '€')
-                            {
-                               $totalt = $temporal->cantidad * $temporal->preciol;
-                                $totaltemp = $totalt - $fechas->cantidad01;
-                                $total2 = floatval($totaltemp);
-                                $cantidad2 = $request->txtCantidad;
-                                $poblacion = $request->txtPoblacion;
-                                $request->session()->put(['totaltemp'=> $totalt]);
-                                //dd($total2);
-                                
-                                 return view('pedidofinanciado.list',compact('total2','cantidad2','poblacion'))->with('success','cupón validado'); 
-                            }
-                           else
-                           {
-                               dd("HOL");
-                                alert("fallo en el cupón");
-                           }
-                           
-                        }
-                    }
-                }
-                else
-                {
-                    
-                    dd("HOL2");
-                    return view('pedidos.list')->with('danger','cupón no válido');
-                }
-            
-            
-            }
-            else
-            {
-                $prev= url()->previous();
-                //dd($temporal);
-                if($prev == "http://calefaccion.store/pedidos")
-                {
-                    //dd("Hallo");
-                    return view('pedidos.list')->with('danger','cupón no válido');
-                }
-                else if($prev == "http://calefaccion.store/pedidofinanciado")
-                {
-                    //dd("Hallo2");
-                    return view('pedidofinanciado.list')->with('danger','cupón no válido');
-                }
-            }
-             
-             
-            
-            //dd($codpromo);
-          
-            
+
+        $nombre = Auth::user()->name;
+        $telefono = $request->get('tel');
+        if ($request->get('tel') == null) {
+            $telefono = Auth::user()->telefono;
         }
-        elseif(isset($simon))
-        {
-            
+        $dni = $request->get('Dni');
+        $idUser = Auth::user()->id;
+        $email = auth()->user()->email;
+        $direccion = $request->get('Direccion');
+        $poblacion = session('poblacion');
+        $cp = session('cp');
+        $canal = 'WEB';
+        $estado = 'Pendiente';
+        $producto = 'GOB';
+        $cantidad = session('cantidad');
+        $total = session('total');
+        $observaciones = $request->get('observaciones');
+        $entregaDia = session('entregadia');
+        $precioLitro = session('precioLitro');
+        $codigoPromoValidado = $codigoPromo == null;
+
+        $comision = 0.03;
+        if ($cantidad <= 300) {
+            $comision = 0.02;
+        } else if ($cantidad <= 400) {
+            $comision = 0.015;
+        } else if ($cantidad <= 500) {
+            $comision = 0.01;
         }
-        else
-        {
-            //dd($request);
-            $request->session()->put(['codigopromo'=> 0]);
-            //dd(session());
-            $prev= url()->previous();
-            
-            if($request->get('tel')!== null)
-            {
-                $telefono= $request->get('tel');
-                 
+
+        $pedidoFinanciado = session('financiado');
+
+        // dd($pedidoFinanciado);
+
+        try {
+            $precioCuponAplicado = $this->storePedido($nombre, $codigoPromo, $telefono, $idUser, null, $email, $now, $dni, $direccion, $poblacion, $cp, $canal, $estado, $producto, $cantidad, $total, $observaciones, $entregaDia, $precioLitro, $codigoPromoValidado, $meses);
+            $total = $this->precioTotal($total, $precioLitro, true, $cantidad, $meses);
+
+            if ($precioCuponAplicado != null) {
+                $request->session()->put(['codigopromo' => 1]);
+
+                return view('pedidos.list', compact('total', 'cantidad', 'poblacion', 'email', 'telefono', 'cp', 'precioCuponAplicado', 'precioLitro', 'comision', 'pedidoFinanciado', 'meses'))->with('success', 'cupón validado');
+            } else {
+                $id = 3594;
+
+                $request->session()->forget('poblacion');
+                $request->session()->forget('cantidad');
+                $request->session()->forget('unidad');
+                $request->session()->forget('precioLitro');
+                $request->session()->forget('diferencialitro2');
+                $request->session()->forget('meses');
+                $request->session()->forget('result');
+                $request->session()->forget('nomRuta');
+                $request->session()->forget('address');
+                $request->session()->forget('dni');
+                $request->session()->forget('telefono');
+                $request->session()->forget('codigopromo');
+
+                return view('pedidos.pedidos2', compact('pedidoFinanciado'))->with('success', 'Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
             }
-            else{
-                $telefono= Auth::user()->telefono;
-                 
-            }
-           
-            if($prev == "https://calefaccion.store/pedidos")
-            {
-                //dd(Auth::user()->id);
-                
-                $id = Auth::user()->id;
-                $temporal = Temporals::find($id);
-                $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
-                
-                if(is_null($temporal))
-                {
-                    $id = 666666;
-                    $temporal = Temporals::find($id);
-                    $temporal = Temporals::where('user','=',$id)->latest('created_at','asc')->first();
-                    //dd($temporal);
-                }
-                
-                //dd($temporal);
-                $pedido = new Pedidos([
-                'session_token'=> $request->get('txtSession'),
-                'codigocliente' => $request->get('txtCodCli'),
-                'codigoproconsi'=> 'BXY14GDHF',
-                'nombre'=> $request->get('txtNombre'),
-                'email' => auth()->user()->email,
-                'fechaentrada'=> $now,
-                'dni'=> $request->get('Dni'),
-                'address'=> $request->get('Direccion'),
-                'poblacion'=> $request->get('txtPoblacion'),
-                'provincia'=> $temporal->provincia,
-                'CP'=> $request->get('CP'),
-                'canal'=> $request->get('txtCanal'),
-                'estado'=> $request->get('txtEstado'),
-                'producto'=> $request->get('txtProducto'),
-                'cantidad'=> $request->get('txtCantidad'),
-                'total'=> $request->get('txtTotal'),
-                'observaciones'=> $request->get('observaciones'),
-                'seleccionado'=> 'si',
-                'financiado' => 0,
-                'cuotas' => 0,
-                'totalfinan' => 0,
-                'meses' => 1,
-                'telefono' => $telefono,
-
-            ]);
-               // dd($pedido);
-            $pedido->save();
-            
-            $id = auth()->user()->id;
-            $user = User::find($id);
-        
-            $user->dni = $request->get('Dni');
-            $user->telefono = $request->get('tel');
-            $user->provincia = $temporal->provincia;
-            $user->localidad = $request->get('txtPoblacion');
-            $user->address = $request->get('Direccion');
-            $user->CP = $request->get('CP');
-                
-           //dd($user->CP);
-            $user->update();
-
-            $objDemo = new \stdClass();
-            $objDemo->demo_one = $session;
-            $objDemo->demo_two = $request->get('txtNombre');
-            $objDemo->demo_three = $request->get('Dni');
-            $objDemo->demo_four = $request->get('Direccion');
-            $objDemo->demo_five = $request->get('txtPoblacion');
-            $objDemo->demo_six = $temporal->provincia;
-            $objDemo->demo_seven = $request->get('CP');
-            $objDemo->demo_eight = $request->get('txtCanal');
-            $objDemo->demo_nine = $request->get('txtEstado');
-            $objDemo->demo_ten = $request->get('txtProducto');
-            $objDemo->demo_eleven = $request->get('txtCantidad');
-            $objDemo->demo_twelve = $request->get('txtTotal');
-            $objDemo->sender = 'Simongrup S.l.';
-            $objDemo->receiver = Auth::user()->name;
-            
-    //dd($objDemo);
-            //Mail::to(Auth::user()->name)->send(new DemoEmail($objDemo));
-           Mail::to('sofia.shevchuk8@gmail.com')->send(new DemoEmail($objDemo));
-            Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
-           // Mail::to('operador23@simongrup.com')->send(new DemoEmail($objDemo));
-            //Mail::to('pedidos@simongrup.com')->send(new DemoEmail($objDemo));
-            
-            $id =3594;
-            $temporal = Temporals::latest('created_at' )->first();
-            //$temporal = Temporals::find($id);
-            //dd($temporal);
-            
-            $temporal->delete();
-            $request->session()->forget('poblacion');
-            $request->session()->forget('cantidad');
-            $request->session()->forget('unidad');
-            $request->session()->forget('preciol');
-            $request->session()->forget('diferencialitro2');
-            $request->session()->forget('meses');
-            $request->session()->forget('result');
-            $request->session()->forget('nomRuta');
-             $request->session()->forget('address');
-            $request->session()->forget('dni');
-            $request->session()->forget('telefono');
-           
-                //dd("jkbjkgh");
-                return view('pedidos.pedidos2',compact('temporal'))->with('success','Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
-            }
-            else if($prev == "https://calefaccion.store/pedidofinanciado")
-            {
-                //dd($fecha2);
-                $valor = $request->get('term');
-               //dd($valor);
-                 switch($valor)
-              {
-                case 0.341447:
-                default:
-                    $meses = 3;
-                break;
-                case 0.256987:
-                    $meses = 4;
-                break;
-                case 0.206313:
-                    $meses = 5;
-                break;
-                case 0.172531:
-                    $meses = 6;
-                break;
-                case 0.148403:
-                    $meses = 7;
-                break;    
-                case 0.130307:
-                    $meses = 8;
-                break;
-                case 0.116234:
-                    $meses = 9;
-                break;
-                case 0.104976:
-                    $meses = 10;
-                break;
-                case 0.095766:
-                    $meses = 11;
-                break;
-                case 0.088092:
-                    $meses = 12;
-                break;
-              }
-              
-             // dd($request);
-              $cantidad = intval($request->get('txtCantidad'));
-              
-             $preciol = floatval(session('preciol'));
-              //dd(session());
-              //dd(session('diferencialitro2'));
-    //mira
-
-               if($cantidad <= 200)
-               {
-                $comision = 0.03;
-               }
-               else if($cantidad >=200 && $cantidad <300)
-               {
-                $comision = 0.03;
-               }
-               else if($cantidad >=300 && $cantidad <400)
-               {
-                $comision = 0.02;
-               }
-               else if($cantidad >=400 && $cantidad <500)
-               {
-                $comision = 0.015;
-               }
-               else if($cantidad >=500 )
-               {
-                $comision = 0.01;
-               }
-
-               $interes = 0.341447;
-
-               //$result= (($preciol+$comision)*($cantidad))*($valor);
-               
-                //$valor = (float)$valor;
-                
-               $nresult = $preciol + $comision;
-               
-               $total =  $cantidad * $nresult ;
-               //dd($preciol);
-               $total = $total * $valor;
-               
-               //$total = round($total*100)/100;
-               $cuotas = $total ;
-               
-               $total = $total * $meses;
-               
-               
-               $total = round($total*100)/100;
-                
-                
-                
-                 if($request->get('tel')!== null)
-                    {
-                        $telefono= $request->get('tel');
-                    }
-                    else{
-                        $telefono= Auth::user()->telefono;
-                    }
-                
-               //dd($cuotas);
-                $pedido = new Pedidos([
-                'session_token'=> $request->get('txtSession'),
-                'codigocliente' => $request->get('txtCodCli'),
-                'codigoproconsi'=> 'BXY14GDHF',
-                'nombre'=> $request->get('txtNombre'),
-                'email' => auth()->user()->email,
-                'fechaentrada'=> $now,
-                'dni'=> $request->get('Dni'),
-                'address'=> $request->get('Direccion'),
-                'poblacion'=> $request->get('txtPoblacion'),
-                'provincia'=> $temporal->provincia,
-                'CP'=> $request->get('CP'),
-                'canal'=> $request->get('txtCanal'),
-                'estado'=> $request->get('txtEstado'),
-                'producto'=> $request->get('txtProducto'),
-                'cantidad'=> $request->get('txtCantidad'),
-                'total'=> $total,
-                'observaciones'=> $request->get('observaciones'),
-                'seleccionado'=> 'si',
-                'financiado' => 1,
-                'cuotas' => $cuotas,
-                'totalfinan' => $total,
-                'meses' => $meses,
-                'telefono' => $telefono,
-
-            ]);
-               //dd(session());
-               //dd($pedido); 
-               
-            $pedido->save();
-
-            /*$objDemo = new \stdClass();
-            $objDemo->demo_one = $session;
-            $objDemo->demo_two = $request->get('txtNombre');
-            $objDemo->demo_three = $request->get('Dni');
-            $objDemo->demo_four = $request->get('Direccion');
-            $objDemo->demo_five = $request->get('txtPoblacion');
-            $objDemo->demo_six = $request->get('txtProvincia');
-            $objDemo->demo_seven = $request->get('CP');
-            $objDemo->demo_eight = $request->get('txtCanal');
-            $objDemo->demo_nine = $request->get('txtEstado');
-            $objDemo->demo_ten = $request->get('txtProducto');
-            $objDemo->demo_eleven = $request->get('txtCantidad');
-            $objDemo->demo_twelve = $request->get('txtTotal');
-            $objDemo->sender = 'Simongrup S.l.';
-            $objDemo->receiver = 'Adnan Basic';*/
-            
-           // $prev= url()->previous();
-            dd("hola");
-            Mail::to($data['email'])->send(new DemoEmail($objDemo));
-            Mail::to("sofia.shevchuk8@gmail.com")->send(new DemoEmail($objDemo));
-            Mail::to('it@nascorenergias.com')->send(new DemoEmail($objDemo));
-            //Mail::to('operador23@simongrup.com')->send(new DemoEmail($objDemo));
-            
-
-            $id = 1;
-            $temporal = Temporals::find($id);
-            
-            //$temporal->delete();
-            //dd(session());
-            $request->session()->forget('poblacion');
-            $request->session()->forget('cantidad');
-            $request->session()->forget('unidad');
-            $request->session()->forget('preciol');
-            $request->session()->forget('diferencialitro2');
-            $request->session()->forget('meses');
-            $request->session()->forget('result');
-            $request->session()->forget('nomRuta');
-            //dd("hhh");
-            //dd(session());
-
-             
-                return view('pedidofinanciado.pedidos2',compact('temporal'))->with('success','Pedido realizado correctamente, en breve recibirás un correo de nuestra organización. Gracias por confiar en nosotros!');
-            }
-            return view('pedidos.list',compact('temporal'))->with('danger','cupón no válido');
-        }  
-        //dd($request);
+        } catch (CouponNotValidException $e) {
+            return view('pedidos.list', compact('total', 'cantidad', 'poblacion', 'email', 'telefono', 'cp', 'meses'))->with('danger', 'cupón no válido');
+        }
     }
-
-
 
     /**
      * Display the specified resource.
@@ -846,15 +341,16 @@ class PedidosController extends Controller
      */
     public function show()
     {
-        $session = Session::get('_token');
+        $userName = Auth::user()->name;
 
-        $pedidos = Pedidos::where('session_token','like',$session)->latest('created_at','desc')->first();
+        $pedidos = Pedidos::where('nombre', 'like', $userName)->latest('created_at', 'desc')->first();
+        
+        $pedidoFinanciado = session('financiado');
 
-
-        return view('pedidos.view',compact('pedidos'));
+        return view('pedidos.view', compact('pedidos','pedidoFinanciado'));
     }
 
-   
+
 
     /**
      * Display the specified resource.
@@ -866,12 +362,12 @@ class PedidosController extends Controller
     {
         $session = Auth::user()->name;
 
-        $pedidos = Pedidos::where('nombre','like',$session)->latest('created_at','asc')->first();
+        $pedidos = Pedidos::where('nombre', 'like', $session)->latest('created_at', 'asc')->first();
 
-        $cliente = User::where('name','like',$session)->get();
+        $cliente = User::where('name', 'like', $session)->get();
 
 
-        return view('pedidos.unclick',compact('pedidos','cliente'));
+        return view('pedidos.unclick', compact('pedidos', 'cliente'));
     }
 
 
@@ -885,9 +381,9 @@ class PedidosController extends Controller
     {
         $session = Auth::user()->name;
 
-        $pedidos = Pedidos::where('nombre','like',$session)->latest('created_at','asc')->first();
+        $pedidos = Pedidos::where('nombre', 'like', $session)->latest('created_at', 'asc')->first();
 
-        return view('pedidos.pedidosunclick',compact('pedidos'));
+        return view('pedidos.pedidosunclick', compact('pedidos'));
     }
 
     /**
@@ -898,7 +394,7 @@ class PedidosController extends Controller
      */
     public function edit(Pedido $pedido)
     {
-        return view('pedidos.edit',compact('pedido'));
+        return view('pedidos.edit', compact('pedido'));
     }
 
     /**
@@ -911,19 +407,19 @@ class PedidosController extends Controller
     public function update(Request $request, Pedido $pedido)
     {
         $request->validate([
-            'txtFirstName'=>'required',
-            'txtLastName'=> 'required',
+            'txtFirstName' => 'required',
+            'txtLastName' => 'required',
             'Direccion' => 'required'
         ]);
- 
- 
+
+
         $pedido = Pedido::find($id);
         $pedido->first_name = $request->get('txtFirstName');
         $pedido->last_name = $request->get('txtLastName');
         $pedido->address = $request->get('Direccion');
- 
+
         $pedido->update();
- 
+
         return redirect('/pedidos')->with('success', 'Pedido modificado correctamente');
     }
 

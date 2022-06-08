@@ -1,13 +1,16 @@
 
-@extends('layouts.appfaq')
-@section('title', 'SimonGrup')
+@extends('layouts.apppolitica')
+@section('title', 'Términos y condiciones Simon Grup')
 @section('content')
+<head>
+    <link rel="canonical" href="https://www.gasoleodecalefaccion.com/condiciones" />
+</head>
 <div class="row bg-faq pt-1 pb-1 fixed-top4">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-4 columna">
 		<div class="card">
   			<div class="card-body">
-			   <h3 class="card-title text-white ml-25">Términos y condiciones Simon Grup</h3>
+			   <h1 style="font-size: 30px;" class="card-title text-white ml-25">Términos y condiciones Simon Grup</h1>
 			</div>
 		</div>
 	</div>
@@ -92,11 +95,6 @@
 		    
 			
 		</ul>
-		
-	
-				
-		
-	
 		
 		<h4 style="color:#0075c9" class="quienes cont"></h4>
 	</div>

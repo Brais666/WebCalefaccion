@@ -4,15 +4,14 @@ use App\Oferta;
 $i= 0;
 $ofertas = Oferta::whereNotNull('nombre')->get();
    $now = Carbon\Carbon::now();
+   //$ofertas = Oferta::whereNotNull('nombre')->where('zonas','=','todas')->where('fecha_ini','<',$now)->where('fecha_fin','>',$now)->get();
 //dd($now);
 ?>
 <div id="myCarousel" class="carousel slide bg-white" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators ocultar-div">
          @foreach ($ofertas as $oferta)
-            @if($i==0)<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            @else<li data-target="#myCarousel" data-slide-to="{{$i}}" class="active"></li>
-            @endif 
+            <li data-target="#myCarousel" data-slide-to="{{$loop->index}}" class="$loop->first ? 'active' : '' "></li> 
          @endforeach
     </ol>
 
@@ -20,9 +19,9 @@ $ofertas = Oferta::whereNotNull('nombre')->get();
     <div class="carousel-inner">
         @foreach ($ofertas as $oferta)
         <?php
-            $img = 'https://admin.calefaccion.store/images/'.$oferta->nombre.'';
+            //$img = 'https://admin.calefaccion.store/images/'.$oferta->nombre.'';
             //dd($img);
-            //$img = 'https://134.122.70.106/admin/public/images/'.$oferta->nombre.'';
+            $img = '/adminp/public/images/'.$oferta->nombre.'';
         ?>
          @if($i==0)<div class="item active">@else<div class="item">@endif
               <img src="{{$img}}" alt="promoción" class="car-mov img-fluid" >

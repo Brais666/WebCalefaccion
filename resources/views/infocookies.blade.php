@@ -1,14 +1,16 @@
-
 @extends('layouts.appfaq')
 @section('title', 'SimonGrup')
 @section('content')
+<head>
+    <link rel="canonical" href="https://www.gasoleodecalefaccion.com/info" />
+</head>
 
 <div class="apartado row bg-faq pt-1 pb-1 fixed-top4">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-4 columna">
 		<div class="card">
   			<div class="card-body">
-			   <h3 class="card-title text-white ml-25">Política de Cookies</h3>
+			   <h1 style="font-size: 30px;" class="card-title text-white ml-25">Política de Cookies Simon Grup</h1>
 			</div>
 		</div>
 	</div>
@@ -27,14 +29,14 @@
 		
 
 		
-		<h3 style="color:#0075c9" class=" quienes-politica quienes cont">Tipos de cookies</h3>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Tipos de cookies</h2>
 			
 				
 		<p class=" quienes-politica quienes">A continuación, se realiza una clasificación de las cookies en función de una serie de categorías. No obstante es necesario tener en cuenta que una misma cookie puede estar incluida en más de una categoría.</p>
 		
 	
 				
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Según la entidad que las gestiona</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Según la entidad que las gestiona</h2>
 		<ul class="quienes-politica">
 			<li><b>Cookies propias</b>: Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio gestionado por el propio editor y desde el que se presta el servicio solicitado por el usuario.</li>
 			<li><b>Cookies de terceros</b> : Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio que no es gestionado por el editor, sino por otra entidad que trata los datos obtenidos través de las cookies.</li>
@@ -45,7 +47,7 @@
 		
 		
 				
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Según el plazo de tiempo que permanecen activadas</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Según el plazo de tiempo que permanecen activadas</h2>
 		<p class=" quienes-politica quienes">Según el plazo de tiempo que permanecen activadas en el equipo terminal podemos distinguir:</p>
 		<ul class=" quienes-politica quienes-politica">
 			<li><b>Cookies de sesión</b>: Son un tipo de cookies diseñadas para recabar y almacenar datos mientras el usuario accede a una página web. Se suelen emplear para almacenar información que solo interesa conservar para la prestación del servicio solicitado por el usuario en una sola ocasión (p.e. una lista de productos adquiridos).</li>
@@ -55,7 +57,7 @@
 		</ul>
 
 
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Según su finalidad</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Según su finalidad</h2>
 		<p class=" quienes-politica quienes">Según la finalidad para la que se traten los datos obtenidos a través de las cookies, podemos distinguir entre:</p>
 		<ul class=" quienes-politica quienes-politica">
 			<li><b>Cookies técnicas</b>: Son aquellas que permiten al usuario la navegación a través de una página web, plataforma o aplicación y la utilización de las diferentes opciones o servicios que en ella existan como, por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, realizar el proceso de compra de un pedido, realizar la solicitud de inscripción o participación en un evento, utilizar elementos de seguridad durante la navegación, almacenar contenidos para la difusión de videos o sonido o compartir contenidos a través de redes sociales.</li>
@@ -67,7 +69,7 @@
 		
 			
 
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Cómo desactivar las cookies en los principales navegadores web</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Cómo desactivar las cookies en los principales navegadores web</h2>
 		<p class=" quienes-politica quienes">Para configurar el uso de cookies, sigue las instrucciones correspondientes a tu navegador o consulta su ayuda:</p>
 		<ul class=" quienes-politica quienes-politica">
 			<li><a href="https://support.apple.com/es-es/HT201265">Safari</a> -https://support.apple.com/es-es/HT201265</li>
@@ -80,17 +82,17 @@
 		
 			
 
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Qué sucede si no se aceptan las cookies</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Qué sucede si no se aceptan las cookies</h2>
 		<p class=" quienes-politica quienes">El rechazo de las cookies puede impedir el acceso a contenidos y servicios personalizados.</p>
 		
 		
 				
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Actualizaciones y modificaciones en la política de cookies.</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Actualizaciones y modificaciones en la política de cookies.</h2>
 		<p class=" quienes-politica quienes">Programador Web PHP y Laravel puede modificar esta política de cookies en función de las exigencias legislativas, reglamentarias, con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos, por cuestiones técnicas o de reorganización de la web; por ello te aconsejamos que la visites periódicamente.</p>
 		
 			<p class="quienes cont">
 				
-	 <h4 style="color:#0075c9" class="quienes-politica quienes">Contacto</h4>
+	 <h2 style="color:#0075c9; font-size: 20px;" class="quienes-politica quienes">Contacto</h2>
 		<p class="quienes-politica quienes">Para resolver cualquier duda puedes contactarnos a traves de este <a href="contacto" style="">enlace</a></li>.</p>
 		
 		<h4 style="color:#0075c9" class=" quienes-politica quienes cont"></h4>
