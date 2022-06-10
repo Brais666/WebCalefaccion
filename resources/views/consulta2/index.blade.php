@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appnoruta')
 @section('title', 'SimonGrup')
 @section('content')
 <div class="container border">
