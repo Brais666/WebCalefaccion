@@ -27,11 +27,9 @@
                                         <span class="help-block">
                                             <strong>{{ $errors->first('name') }}</strong>
                                         </span>
-                                    @endif
-                                    
+                                    @endif                                 
                                 </div>
                             </div>
-
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} ">
                                 <div class="col-sm-2"></div>
                                 <label for="email" class="col-sm-6 margin-centrar">Dirección E-Mail</label>
@@ -46,7 +44,6 @@
                                     @endif
                                 </div>
                             </div>
-
                         </div>                      
                         <div class="form-row">
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -76,9 +73,6 @@
                             <div class="col-sm-4 g-recaptcha pb-1" data-sitekey="6LdtL4gfAAAAAKpmljKE0dWq4NaOmAJVC5rPeHMm"></div>
                             <div class="col-sm-4"></div>
                         </div>
-                            
-                        
-
                         <div class="form-group">
                             <div class="col-md-4 col-md-offset-4 flex-columnas width-btn">
                                 <button type="submit" class="btn btn-primary">
@@ -86,8 +80,6 @@
                                 </button>
                                 
                             </div>
-
-                             
                         </div>
                         <p class="pt-1"></p> 
                     </form>

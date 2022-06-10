@@ -63,6 +63,10 @@ Route::get('/info', function () {
     return view('infocookies');
 });
 
+Route::get('/infophp', function () {
+    return view('infophp');
+});
+
 Route::get('/privacidad', function () {
     return view('privacidad');
 });
@@ -114,4 +118,12 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     // Route::post('pedido', 'PedidosController@');
     // Route::post('pedido.store', 'PedidosController@store');
     Route::get('User.cuenta', 'UserController@update');
+});
+
+Route::resource('consulta','NorutaController');
+
+Route::resource('consulta2','CasirutaController');
+
+Route::get('prueba', function () {
+    return view('prueba');
 });

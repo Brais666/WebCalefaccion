@@ -4,6 +4,7 @@
             @include('layouts.headerlogin')
 <div class="padding-top-general container pt-2 login-caja2">
     <div class="row">
+        <a href="prueba">Prueba</a>
         <div class="col-sm-10 col-xs-12 ml-6 margin-left-register">
             <div class="card text-center border">
                 <div class="titulo-registro card-header bg-login">Te damos la bienvenida</div>
