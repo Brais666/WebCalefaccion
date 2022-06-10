@@ -73,12 +73,12 @@ $ofertas = Oferta::all();
             <div class="card pt-2" >
               <div class="card-body">
                 <h3 class="card-title titlefaq" id="comision">¿Qué ventajas tengo al financiar mi pedido con VIVO?</h3>
-                <p class="card-text">A diferencia de otros servicios de financiación VIVO te permite disponer de crédito inmediatamente después de haberlo liquidado. Si por ejemplo financias tu pedido en 3 cuotas, cunado abones la primera, ésta ya estará disponible si deseas volver a financiar un nuevo pedido sin tener que hacer de nuevas gestiones de apertura o papeleo.</p>
+                <p class="card-text">A diferencia de otros servicios de financiación VIVO te permite disponer de crédito inmediatamente después de haberlo liquidado. Si por ejemplo financias tu pedido en 3 cuotas, cuando abones la primera, ésta ya estará disponible si deseas volver a financiar un nuevo pedido sin tener que hacer de nuevas gestiones de apertura o papeleo.</p>
               </div>
             </div>
             <div class="card pt-2" >
               <div class="card-body">
-                <h3 class="card-title titlefaq" >¿En cuántas cuotas puedo financiar mi pedido?</h3>
+                <h3 class="card-title titlefaq">¿En cuántas cuotas puedo financiar mi pedido?</h3>
                 <p class="card-text">Puedes financiar tu gasoil de calefacción de 3 a un máximo de 12 cuotas.</p>
               </div>
             </div>

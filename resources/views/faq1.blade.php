@@ -124,7 +124,7 @@ $ofertas = Oferta::all();
             <div class="card pt-2" >
               <div class="card-body">
                 <h3 class="card-title titlefaq">¿Cuál es el pedido mínimo de Gasóleo de Calefacción?</h3>
-                <p class="card-text"><p>400 litros por domicilio para pedidos individuales.</p>
+                <p class="card-text"><p>300 litros por domicilio para pedidos individuales.</p>
               <p>300 litros por domicilio para pedidos Agrupados siempre que entre todos los solicitantes superen el mínimo total (ver tabla de pedidos agrupados).</p></p>
               </div>
             </div>
