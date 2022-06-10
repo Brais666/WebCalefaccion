@@ -1,4 +1,3 @@
-
 <?php
 use App\Pedidos;
 use App\User;
@@ -87,7 +86,7 @@ use Carbon\Carbon;
 			    		    <input type="tel" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="{{$telefono}}" readonly="true" pattern="[0-9]{9}">
 			    		</div>
 			    		<div class="col-md-auto col-xs-auto">
-			    		    <a href="#" onclick="ponerReadOnly('txtTelefono')"<span class="material-icons">edit</span></a>
+			    		    <a href="#" onclick="ponerReadOnly('txtTelefono')"><span class="material-icons">edit</span></a>
 			    		</div>
 			    		<div class="col-md-12">
 			    		    <p class="text-success formato">Ej. 123456789</p>

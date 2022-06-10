@@ -1,5 +1,5 @@
 @extends('layouts.appfinan')
-@section('title', 'SimonGrup')
+@section('title', 'Financiación Vivo')
 @section('content')
 <div class="container pt-2">
     
@@ -10,7 +10,7 @@
 	        
 	                    
 	                    
-	                      <div class="col-sm-5 pt-1 ">
+	                      <div class="col-sm-5 pt-1 centrar-vivo">
 	                      	<div class="col-sm-1"></div>
 	                      	<div class="col-sm-11">
 	                      	    

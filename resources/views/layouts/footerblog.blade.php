@@ -13,16 +13,16 @@
             <div class="col-lg-2 col-sm-3 col-xs-6 ptmov-2">
                 <ul class="footli">
                     <li><h6><b>Para tu pedido</b></h6></li>
-                    <li class="pb-1"><a href="precios" style="color:white">Pedidos</a></li>
-                    <li class="pb-1"><a href="financiacion" style="color:white">Financiaci&oacute;n</a></li>
-                    <li class="pb-1"><a href="faq" style="color:white">Preguntas frecuentes</a></li>
+                    <li class="pb-1"><a href="/precios" style="color:white">Pedidos</a></li>
+                    <li class="pb-1"><a href="/financiacion" style="color:white">Financiaci&oacute;n</a></li>
+                    <li class="pb-1"><a href="/faq" style="color:white">Preguntas frecuentes</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-6 ptmov-2">
                 <ul class="footli">
                     <li ><h6><b>Sobre nosotros</b></h6></li>
-                    <li class="pb-1"><a href="quienessomos" style="color:white">Sobre nosotros</a></li>
-                    <li class="pb-1"><a href="contacto" style="color:white">Contacto</a></li>
+                    <li class="pb-1"><a href="/quienessomos" style="color:white">Sobre nosotros</a></li>
+                    <li class="pb-1"><a href="/contacto" style="color:white">Contacto</a></li>
                 </ul>
             </div>
             
@@ -46,7 +46,7 @@
                   </div>
             </div>
             <div class="col-xs-5 ocultar-div-tab ocultar-div-desk footerredes">
-                    <a  href="https://134.122.70.106/nueva/public"><img src="../images/Logofooter.png" class="footerimg"></a>
+                    <a  href="/"><img src="../images/Logofooter.png" class="footerimg"></a>
             </div>
         </div>
             <div class="col-lg-auto">
@@ -65,16 +65,16 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-6 col-sm-7 col-xs-12">
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="condiciones">Condiciones de servicio</a>
+                    <a style="color:white;"href="/condiciones">Condiciones de servicio</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="terminos">Términos y condiciones</a>
+                    <a style="color:white;"href="/terminos">Términos y condiciones</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="privacidad">Política de privacidad</a>
+                    <a style="color:white;"href="/privacidad">Política de privacidad</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="info">Política de cookies</a>
+                    <a style="color:white;"href="/info">Política de cookies</a>
                 </div>
                 <div class="col-lg-auto"></div>
             </div>
@@ -86,7 +86,7 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-6 col-sm-7 col-xs-12">
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
-                    <a style="color:white;"href="condiciones">Condiciones de servicio</a>
+                    <a style="color:white;"href="/condiciones">Condiciones de servicio</a>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-xs-3 float-left">
                     Términos y condiciones

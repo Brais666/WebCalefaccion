@@ -35,7 +35,7 @@ class WelcomeUser extends Mailable
      */
     public function build()
     {
-        return $this->from('hola@calefaccion.com')
+        return $this->from('atencionalcliente@simongrup.com')
                     ->view('mails.welcome')
                     ->text('mails.welcome_plain')
                       ->attach(public_path('/images').'/SIMON_GRUP.png', [

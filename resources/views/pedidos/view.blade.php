@@ -1,13 +1,10 @@
-<?php
-    $prev= url()->current();
-    $prev2 = url()->previous();
-    //dd($pedidos);
-?>
 @extends('layouts.appfaq2')
 @section('title', 'SimonGrup')
 @section('content')
-
-<div class="container pt-2 ">         
+@if ($pedidoFinanciado)
+<link href="{{ asset('css/financiado.css') }}" rel="stylesheet">
+@endif
+<div class="container pt-11 pb-9">         
         <div class="row border pt-2">
              
             
@@ -27,6 +24,7 @@
                                 <th>Estado</th>
                                 <th>Producto</th>
                                 <th>Cantidad</th>
+                                <th>Preciol</th>
                                 <th>Total</th>
                             </tr> 
                             <tr>
@@ -45,10 +43,11 @@
                                 
                                 <td >{{$pedidos->producto}}</td>
                                 <td>{{$pedidos->cantidad}} Lts.</td>
-                                @if($prev == "https://134.122.70.106/nueva/public/pedidos.view")
-                                    <td>{{$pedidos->total}} €</td>
-                                @elseif($prev == "https://134.122.70.106/nueva/public/pedidofinanciado.view")
-                                    <td>{{$pedidos->totalfinan}} €</td>
+                                <td>{{$pedidos->preciol}}€/l</td>
+                                @if($pedidos->totalfinan !== 0)
+                                    <td>{{$pedidos->total}}€</td>
+                                @else
+                                    <td>{{$pedidos->totalfinan}}€</td>
                                 @endif
                             </tr> 
                             
@@ -70,6 +69,7 @@
                                 <th>Estado</th>
                                 <th>Producto</th>
                                 <th>Cantidad</th>
+                                <th>Preciol</th>
                                 <th>Total</th>
                             </tr> 
                             <tr class="col-xs-6">
@@ -88,9 +88,10 @@
                                 
                                 <td class="ohnemargin">{{$pedidos->producto}}</td>
                                 <td class="ohnemargin">{{$pedidos->cantidad}} Lts.</td>
-                                @if($prev == "https://134.122.70.106/nueva/public/pedidos.view") 
-                                    <td class="ohnemargin">{{$pedidos->total}} €  </td>
-                                @elseif($prev == "https://134.122.70.106/nueva/public/pedidofinanciado.view") 
+                                <td class="ohnemargin">{{$pedidos->preciol}}€/l</td>
+                                @if($pedidos->totalfinan !== 0)
+                                    <td class="ohnemargin">{{$pedidos->total}}€  </td>
+                                @else
                                     <td class="ohnemargin">{{$pedidos->total}}*3 €</td> 
                                 @endif
                             </tr> 
@@ -131,10 +132,10 @@
                        </div>
                        @endif
                         
-                        <div class="row pt-2 pb-1 text-center">
+                        <!--<div class="row pt-2 pb-1 text-center">
                             <img src="images/googleplay.png">
                             <img src="images/apple.png">
-                       </div>  
+                       </div>  -->
                        <div class="row ml-7">
                            @if(!isset($pedidos->observaciones))
                            
@@ -147,7 +148,7 @@
                        </div>
                 </div>
                 <div class="row pt-1 pb-2 text-center">
-                        <button type="submit" class="btn buttoncons"><a href="bienvenido" style="color:white">Volver a inicio</a></button>
+                        <button type="submit" class="btn buttoncons button-financiado"><a href="/nueva/public" style="color:white">Volver a inicio</a></button>
                 </div>
         </div>
 </div>

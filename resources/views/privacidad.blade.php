@@ -23,7 +23,7 @@
 		
 	
 				
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">¿Qué​​ datos ​​de ​​carácter ​​personal​​ se​​ pueden​​ recopilar?</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">¿Qué​​ datos ​​de ​​carácter ​​personal​​ se​​ pueden​​ recopilar?</h2>
 		
 		<ul class="quienes-politica">
 			<li type="disc">Al crear un ID, solicitar un crédito comercial, comprar un producto, descargar una actualización de software, se recopilan diferentes datos, como nombre, dirección postal, número de teléfono, dirección ​​de ​​correo ​​electrónico ​​o​​ los ​​datos ​​de ​​la tarjeta​​de ​​crédito.</li>
@@ -33,7 +33,7 @@
 		
 	
 				
-		<h4 style="color:#0075c9" class=" quienes-politica quienes cont">Propósito del ​​tratamiento ​​de​​ datos ​​de ​​carácter​​personal</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica quienes cont">Propósito del ​​tratamiento ​​de​​ datos ​​de ​​carácter​​personal</h2>
 		
 		<p class=" quienes-politica quienes">Simon Grup podrá​​ utilizar​​ los ​​datos ​​personales​​ recabados​​ para:</p>
 		<ul class="quienes-politica">
@@ -52,7 +52,7 @@
 		
 
 				
-		<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Recopilación y  tratamiento de  datos  de carácter no personal.</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Recopilación y  tratamiento de  datos  de carácter no personal.</h2>
 		
 		<p class="quienes  quienes-politica ">Simon Grup también recopilará datos de un  modo que, por sí mismos, no pueden ser asociados directamente a una persona determinada. Estos datos de carácter no personal se pueden recopilar, tratar, transferir y publicar con cualquier intención. Estos son algunos ejemplos de las clases de datos de carácter no personal que Simon Grup puede recopilar y los fines para los que se realiza su tratamiento:</p>	
 		
@@ -66,52 +66,50 @@
 			<li type="disc">Datos sobre cómo usa su dispositivo y las aplicaciones para facilitar a ​​los​ ​desarrolladores ​​la mejora ​​de esas aplicaciones. Si juntamos datos de carácter no personal con datos personales, los datos mezclados serán tratados como datos personales mientras sigan estando ​​combinados.</li>
 		</ul>
 		
-		<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Divulgación ​​a ​​terceros</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Divulgación ​​a ​​terceros</h2>
 		
 			<p class=" quienes-politica quienes ">Ocasionalmente​ Simon Grup puede facilitar determinados datos de carácter personal a socios estratégicos que trabajen con nosotros para proveer productos y servicios o nos ayudan en nuestras actividades de marketing. No se compartirán los datos con ningún tercero para sus propios ​​fines ​​de ​​marketing.</p>
 			
 			
-			<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Proveedores ​​de​​ servicios</h4>
+			<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Proveedores ​​de​​ servicios</h2>
 			
 				<p class=" quienes-politica quienes ">Simo Grup compartirá datos de carácter personal con empresas que se ocupan, entre otras  actividades, de prestar servicios de tratamiento de datos, conceder créditos, tramitar pedidos de clientes, presentar sus productos, mejorar datos de  clientes, suministrar servicios de atención al cliente, evaluar su interés en productos y servicios y realizar investigaciones sobre​​clientes​​ o ​​su​​ grado de ​​satisfacción.</p>
 				
 			
-			<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Otros ​​terceros</h4>
+			<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Otros ​​terceros</h2>
 			
 				<p class=" quienes-politica quienes ">Es posible que Simon Grup divulgue datos de carácter personal por mandato legal, en el marco de un proceso judicial o por petición de una autoridad pública, tanto dentro como fuera de su país de residencia. Igualmente se puede publicar información personal si es necesaria o conveniente por motivos de seguridad nacional, para acatar la legislación vigente ​​o ​​por​​ otras ​​razones relevantes ​​de ​​orden ​​público.</p>
 				
-			<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Protección ​​de​​ datos​​ de​​ carácter ​​personal</h4>
+			<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Protección ​​de​​ datos​​ de​​ carácter ​​personal</h2>
 			
 				<p class=" quienes-politica quienes ">Simon Grup garantizará la protección de los datos personales mediante cifrado durante el tránsito y, los alojados en instalaciones, con medidas​​ de​​ seguridad ​​físicas. Al usar ciertos productos, servicios o  aplicaciones o al publicar opiniones en foros, salas de chat o redes sociales, el contenido y los datos de carácter personal que se comparta serán visibles para otros usuarios, que tendrán la posibilidad de leerlos, compilarlos o usarlos. Usted será responsable de los datos de carácter personal que distribuya o​​ proporcione ​​en​​ estos​​ casos.</p>
 				
-				<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Integridad​​ y ​​conservación ​​de ​​datos​​ de ​​carácter​​personal</h4>
+				<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Integridad​​ y ​​conservación ​​de ​​datos​​ de ​​carácter​​personal</h2>
 			
 				<p class=" quienes-politica quienes ">Simon Grup garantizará la exactitud y la calidad de los datos personales, se conservarán durante el tiempo necesario para cumplir los fines para los que fueron recabados, salvo que la ley exija conservarlos durante ​​más ​​tiempo.</p>
 				
-				<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Acceso​​ a ​​los ​​datos ​​de ​​carácter​​ personal</h4>
+				<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Acceso​​ a ​​los ​​datos ​​de ​​carácter​​ personal</h2>
 			
 				<p class=" quienes-politica quienes ">Respecto a los datos  de carácter personal  que conservamos, Simon Grup le ofrece acceso a ellos para cualquier fin, incluyendo las solicitudes de rectificación en caso de que sean incorrectos o de eliminación en caso de no estar obligados a conservarlos por imperativo legal o por razones legítimas  de negocio. Nos reservamos el derecho  a no tramitar aquellas solicitudes que sean improcedentes o vejatorias, que pongan en riesgo la privacidad de terceros, que resulten inviables o para las que la legislación local no exija derecho de acceso. Las solicitudes de acceso, rectificación o eliminación podrán enviarse a nuestra dirección​ Evarist Fábregas, 19 Reus (43205) o a través de la cuenta de correo electrónico simongrup@simongrup.com​​</p>
 		
 		
-		<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Niños ​​y​​ educación</h4>
+		<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Niños ​​y​​ educación</h2>
 			
 				<p class=" quienes-politica quienes ">Simon Grup es consciente de la necesidad de establecer precauciones adicionales para preservar la privacidad y la seguridad de los menores. Si se han recopilado datos personales de un menor de14 años, sin el consentimiento necesario, se debe eliminar esa información lo antes posible.</p>
 		
-				<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Servicios ​​de ​localización
-
-</h4>
+				<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Servicios ​​de ​localización</h2>
 			
 				<p class=" quienes-politica quienes ">Para prestar servicios de localización​ Simon Grup podrá reunir, utilizar y compartir datos exactos sobre ubicaciones, incluyendo la situación geográfica en tiempo real de su ordenador o de su dispositivo. Salvo que nos den su consentimiento, estos datos de localización se recogen de manera anónima de forma que no pueden utilizarse para identificarlo personalmente, y son usados para suministrar y mejorar sus productos ​​y​ ​servicios​ ​de​​localización.</p>
 				
 		
-					<h4 style="color:#0075c9" class=" quienes-politica cont quienes">Páginas ​​web ​​y​​ servicios​​ de​​ terceros</h4>
+					<h2 style="color:#0075c9; font-size: 20px;" class=" quienes-politica cont quienes">Páginas ​​web ​​y​​ servicios​​ de​​ terceros</h2>
 			
 				<p class=" quienes-politica quienes ">Las aplicaciones pueden contener enlaces a páginas web, productos y servicios de terceros. También pueden utilizar u ofrecer productos o servicios de terceros. La recogida de datos por parte de terceros, introduciendo datos sobre ubicaciones geográficas o datos de contacto, se guiará por sus respectivas políticas de privacidad. Le recomendamos​​ consultar​ ​las políticas ​​de ​​privacidad ​​de ​​esos terceros.</p>
 		
 			    <p class="quienes cont">
 		    
 	
-        <h4 style="color:#0075c9" class="quienes-politica quienes">Contacto</h4>
+        <h2 style="color:#0075c9; font-size: 20px;" class="quienes-politica quienes">Contacto</h2>
 		<p class="quienes-politica quienes">Para resolver cualquier duda puedes contactarnos a traves de este <a href="contacto" style="">enlace</a></li>.</p>
 		
 		

@@ -1,13 +1,16 @@
 
-@extends('layouts.appfaq')
-@section('title', 'SimonGrup')
+@extends('layouts.apppolitica')
+@section('title', 'Términos y Condiciones de servicio de Simon Grup')
 @section('content')
+<head>
+    <link rel="canonical"href=https://www.gasoleodecalefaccion.com/condiciones" />
+</head>
 <div class="row bg-faq pt-1 pb-1 fixed-top4">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-4 columna">
 		<div class="card">
   			<div class="card-body">
-			   <h3 class="card-title text-white ml-25">Términos y Condiciones de servicio de Simon Grup</h3>
+			   <h1 style="font-size: 30px;" class="card-title text-white ml-25">Términos y Condiciones de servicio de Simon Grup</h1>
 			</div>
 		</div>
 	</div>
@@ -34,7 +37,7 @@ Los contenidos del sitio Web www.gasoleodecalefaccion.com podrían, en ocasiones
 www.gasoleodecalefaccion.com no es responsable ni directa ni indirectamente de ninguna de los servicios, las informaciones, contenidos, afirmaciones y expresiones que contengan los proveedores de servicios de pago que puedan utilizarse en la presente URL www.gasoleodecalefaccion.com, siendo responsable cada proveedor de su gestión de cara al consumidor, Administración y terceros.
 En el caso de información de eventos y noticias del entorno, la responsabilidad recae en todo momento en las fuentes de información de dichos eventos. El cliente entiende que www.gasoleodecalefaccion.com es un mero intermediario entre él y las fuentes de información, cuando se trata de documentos, noticias y eventos de responsabilidad de terceros.</li>
 
-<h4 style="color:#0075c9" class=" cont">Sistema de venta.</h4>
+<h2 style="color:#0075c9; font-size: 20px;" class=" cont">Sistema de venta.</h2>
 <p class="">Para realizar un pedido, el usuario puede elegir entre diversas formas de hacernos llegar su solicitud:</p>	
 		
 			
@@ -51,21 +54,19 @@ En el caso de información de eventos y noticias del entorno, la responsabilidad
 				</ul>
 				
 				
-<h4 style="color:#0075c9" class=" cont">Impuestos aplicables.</h4>
+<h2 style="color:#0075c9; font-size: 20px;" class=" cont">Impuestos aplicables.</h2>
 <p class="">Los precios de los productos expuestos en la página Web de www.gasoleodecalefaccion.com, incluyen el Impuesto sobre el Valor Añadido (IVA) que, en su caso, sea procedente aplicar.</p>	
 
-<h4 style="color:#0075c9" class=" cont">Forma de pago.</h4>
-<p class="">Al formular su solicitud de pedido, el cliente no deberá realizar ningún abono hasta el momento de la entrega del pedido. En determinados casos y para prevenir posibles fraudes, SIMON GRUP se reserva la posibilidad de solicitar a un cliente una forma de pago concreta en el caso de que no se acredite fehacientemente la identidad del comprador.
-</p>	
+	
 
-<h4 style="color:#0075c9" class=" cont">Forma de pago.</h4>
+<h2 style="color:#0075c9; font-size: 20px;" class=" cont">Forma de pago.</h2>
 <p class="">Al formular su solicitud de pedido, el cliente no deberá realizar ningún abono hasta el momento de la entrega del pedido. En determinados casos y para prevenir posibles fraudes, SIMON GRUP se reserva la posibilidad de solicitar a un cliente una forma de pago concreta en el caso de que no se acredite fehacientemente la identidad del comprador.
 </p>	
 	
 		<h4 style="color:#0075c9" class="quienes cont"></h4>
 	
-        <h4 style="color:#0075c9" class="">Contacto</h4>
-		<p class="">Para resolver cualquier duda puedes contactarnos a traves de este <a href="contacto" style="">enlace</a></li>.</p>
+<h2 style="color:#0075c9; font-size: 20px;" class="">Contacto</h2>
+<p class="">Para resolver cualquier duda puedes contactarnos a traves de este <a href="contacto" style="">enlace</a></li>.</p>
 			
 			
 			

@@ -9,11 +9,10 @@
                     </a>
                     <div class="dropdown-menu" id="show" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item navbar-light logout" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Cerrar sesión
+                        document.getElementById('logout-form').submit();">Cerrar sesión
                       </a>
-                      
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
+                        {{ csrf_field() }}
                       </form>
                       <a class="dropdown-item navbar-light logout" href="actualizarad">Editar Perfil</a> 
                     </div>

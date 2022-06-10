@@ -19,19 +19,19 @@
   var usuario2 = document.getElementById('cantidad').value;
   if(usuario.length == 0) {
     if(usuario2.length == 0) {
-    swal('No has escrito nada ni en la población, ni en la cantidad',);
+    swal('No has escrito nada ni en la poblaci贸n, ni en la cantidad',);
     return;
   }
   else
   {
-    swal('No has escrito nada en la población',);
+    swal('No has escrito nada en la poblaci贸n',);
     return;
   }
     
   }
   if(usuario2.length == 0) {
      if(usuario.length == 0) {
-      swal('No has escrito nada ni en la población, ni en la cantidad',);
+      swal('No has escrito nada ni en la poblaci贸n, ni en la cantidad',);
       return;
     }
     else
