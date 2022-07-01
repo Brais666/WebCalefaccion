@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>*|MC:SUBJECT|*</title>
+    <title>www.gasoleodecalefaccion.com</title>
         
     <style type="text/css">
     p{
@@ -510,7 +510,7 @@
 }</style></head>
     <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
         <!--*|IF:MC_PREVIEW_TEXT|*-->
-        <!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->
+        <!--[if !gte mso 9]><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><![endif]-->
         <!--*|END:IF|*-->
         <center>
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
@@ -543,7 +543,7 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; text-align: center;">
                         
-                            <div style="text-align: center;"><strong><a href="*|ARCHIVE|*" target="_blank">Visita este correo en tu navegador.</a></strong></div>
+                            
 
                         </td>
                     </tr>
@@ -631,7 +631,7 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #0075C9;text-align: left;">
                         
-                            <h1 style="text-align: left;"><span style="font-size:23px"><strong>Bienvenido a Simon Grup gasóleo de calefacción</strong></span></h1>
+                            <h1 style="text-align: left;"><span style="font-size:23px"><strong>Bienvenido a Simon Grup gas&oacute;leo de calefacci&oacute;n</strong></span></h1>
 
                         </td>
                     </tr>
@@ -715,7 +715,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px; line-height: 125%; text-align: left;">
                         
-                            <span style="font-size:15px">A partir de ahora, ya puedes realizar tus pedidos de gasóleo de calefacción en nuestras plataformas digitales. ¡Bienvenido!</span>
+                            <span style="font-size:15px">A partir de ahora, ya puedes realizar tus pedidos de gas&oacute;leo de calefacci&oacute;n en nuestras plataformas digitales. &#161;Bienvenido!</span>
                         </td>
                     </tr>
                 </tbody></table>
@@ -807,7 +807,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial; font-size: 16px; padding: 13px;">
-                                <a class="mcnButton " title="HACER MI PEDIDO" href="http://www.gasoleodecalefaccion.com" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">HACER MI PEDIDO</a>
+                                <a class="mcnButton " title="HACER MI PEDIDO" href="http://calefaccion.store" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">HACER MI PEDIDO</a>
                             </td>
                         </tr>
                     </tbody>
@@ -832,7 +832,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <span style="color:#0075c9">Hacer mi pedido de gasóleo de calefacción<br>
+                            <span style="color:#0075c9">Hacer mi pedido de gas&oacute;leo de calefacci&oacute;n<br>
 <img data-file-id="15257" height="78" src="https://mcusercontent.com/baa0910438c8ee1af0750308a/images/5c800554-4242-4014-83c7-8ab3cd010d9a.png" style="border: 0px  ; width: 70px; height: 78px; margin: 0px;" width="70"></span>
                         </td>
                     </tr>
@@ -901,7 +901,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #0075C9;line-height: 150%;">
                         
-                            <div style="text-align: center;"><span style="font-size:15px"><strong>¿Quieres darte de baja de Simon Grup gasóleo de calefacción?</strong></span></div>
+                            <div style="text-align: center;"><span style="font-size:15px"><strong>&#191;Quieres darte de baja de Simon Grup gas&oacute;leo de calefacci&oacute;n?</strong></span></div>
 
 <hr color="#0075c9" size="1">
 <div style="text-align: center;"><span style="font-size:14px">Si decides dar de baja tu usuario, recuerda que puedes registrarte de nuevo cuando lo necesites. Estaremos encantados de volver a darte la bienvenida.</span></div>
@@ -964,7 +964,7 @@ Tu cuenta se ha registrado correctamente, gracias por confiar en Simon Grup.</sp
             <td valign="top" class="mcnTextBlockInner">
                 </td><td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word">
                   <div style="font-family:OpenSans,Helvetica,Tahoma,Arial,sans-serif;font-size:14px;font-weight:bold;line-height:24px;text-align:center;color:#0075C9">
-                   SÍGUENOS EN:
+                   S&Iacute;GUENOS EN:
                   </div></td>
                   
                   

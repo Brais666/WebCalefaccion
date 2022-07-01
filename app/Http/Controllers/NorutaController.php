@@ -76,7 +76,7 @@ class NorutaController extends Controller
             'poblacion'=> $request->get('txtPoblacion')
             
         ]);
-        //dd($noruta);
+        dd($noruta);
 
         $noruta->save();
         //dd($noruta);

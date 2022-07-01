@@ -1,14 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.appnoruta')
 @section('title', 'SimonGrup')
 @section('content')
 <div class="container border">
+    <?php
+    //dd("de");
+
+    ?>
+
     <div class="row "> 
         @if ($message = Session::get('success'))
            <div class="row pt-1">
                <div class="col-md-4 col-xs-4"></div>
             <div class="col-md-4 col-xs-4 alert alert-success text-center">
                 <p autofocus>{{ $message }}</p>
-                <button class="btn bg-primary"><a href="bienvenido" style="color:white;">Inicio</a></button>
+                
             </div>
             <div class="col-md-auto col-xs-auto"></div>
            </div>
@@ -30,7 +35,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtNombre">Nombre y apellidos:</label>
+                        <label for="txtNombre">Nombre y apellidos:</label>
                         <input type="text" class="form-control input" id="txtNombre" name="txtNombre" placeholder="Nombre y apellidos">
                       </div>
                       <div class="col-sm-3">  
@@ -40,7 +45,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtEmail">E-mail:</label>
+                        <label for="txtEmail">E-mail:</label>
                         <input type="email" class="form-control input" id="txtEmail" name="txtEmail" placeholder="E-mail" >
                       </div>
                       <div class="col-sm-3">       
@@ -50,7 +55,7 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtTelefono">Teléfono de contacto:</label>
+                        <label for="txtTelefono">Teléfono de contacto:</label>
                         <input type="text" class="form-control input" id="txtTelefono" name="txtTelefono" placeholder="Teléfono de contacto">
                         </div>
                       <div class="col-sm-3">       
@@ -60,8 +65,8 @@
                       <div class="col-sm-3">
                       </div>
                       <div class="col-sm-6">
-                      	<label for="txtPoblacion">Población:</label>
-                        <input type="text" class="form-control input" id="txtPoblacion" name="txtPoblacion" placeholder="Población">
+                        <label for="txtPoblacion">Población:</label>
+                        <input type="text" class="form-control input" id="txtPoblacion" name="txtPoblacion" placeholder="Localidad">
                       </div>
                       <div class="col-sm-3">                      
                       </div> 
@@ -96,27 +101,42 @@
       @include('layouts/cookies')
 @endsection
 <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("formulario").addEventListener('submit', validarFormulario); 
-});
+ document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("formulario").addEventListener('submit', validarFormulario);
+      });
 
-  function validarFormulario(evento) {
-  evento.preventDefault();
-  var nombre = document.getElementById('txtNombre').value;
-  var email = document.getElementById('txtEmail').value;
-  var tel = document.getElementById('txtTelefono').value;
-  var pobl =document.getElementById('txtPoblacion').value;
+      function validarFormulario(evento) {
+        evento.preventDefault();
+        var usuario = document.getElementById('poblacion').value;
+        var usuario2 = document.getElementById('cantidad').value;
+        var unidad = document.getElementById('unidad').value;
+        var total = document.getElementById('pedido');
+        if (usuario.length == 0) {
+          if (usuario2.length == 0) {
+            swal('No has escrito nada ni en la población, ni en la cantidad', );
+            return;
+          } else {
+            swal('No has escrito nada en la población', );
+            return;
+          }
 
-  if((nombre.length == 0) || (email.length == 0) || (tel.length == 0) || (pobl.length == 0))
-  {
-    
-      swal('Debes completar todos los campos',);
-      return;
-  }
-  
-  
-  this.submit();
-}
+        }
+
+        if (usuario2.length == 0) {
+          if (usuario.length == 0) {
+            swal('No has escrito nada ni en la población, ni en la cantidad', );
+            return;
+          } else {
+            swal('No has escrito nada en la cantidad', );
+            return;
+          }
+        }
+
+        if (pedido.length == 0) {
+          swal("no se puede realizar el pedido de 0", );
+        }
+        this.submit();
+      }
 </script>
 <script type="text/javascript">
   $(document).ready(function(){

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appnoruta')
 @section('title', 'SimonGrup')
 @section('content')
 <div class="container border">
@@ -8,7 +8,6 @@
                <div class="col-md-4 col-xs-4"></div>
             <div class="col-md-4 col-xs-4 alert alert-success text-center">
                 <p autofocus>{{ $message }}</p>
-                <button class="btn bg-primary"><a href="bienvenido" style="color:white;">Inicio</a></button>
             </div>
             <div class="col-md-auto col-xs-auto"></div>
            </div>
@@ -26,7 +25,7 @@
                             <div class="row">
                                 <p class="col-xs-11 text-danger">
                                     En breve se pondrá en ruta y podrás realizar pedidos!</p>
-                            </div
+                            </div>
                             <p><b>Lo sentimos pero aún no distribuimos en esta población.<br>
                         Si lo deseas, déjanos tus datos de contacto y te avisaremos cuando este servicio esté disponible en tu zona.</b></p>
                       </div>
@@ -102,26 +101,41 @@
 @endsection
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("formulario").addEventListener('submit', validarFormulario); 
-});
+        document.getElementById("formulario").addEventListener('submit', validarFormulario);
+      });
 
-  function validarFormulario(evento) {
-  evento.preventDefault();
-  var nombre = document.getElementById('txtNombre').value;
-  var email = document.getElementById('txtEmail').value;
-  var tel = document.getElementById('txtTelefono').value;
-  var pobl =document.getElementById('txtPoblacion').value;
+      function validarFormulario(evento) {
+        evento.preventDefault();
+        var usuario = document.getElementById('poblacion').value;
+        var usuario2 = document.getElementById('cantidad').value;
+        var unidad = document.getElementById('unidad').value;
+        var total = document.getElementById('pedido');
+        if (usuario.length == 0) {
+          if (usuario2.length == 0) {
+            swal('No has escrito nada ni en la población, ni en la cantidad', );
+            return;
+          } else {
+            swal('No has escrito nada en la población', );
+            return;
+          }
 
-  if((nombre.length == 0) || (email.length == 0) || (tel.length == 0) || (pobl.length == 0))
-  {
-    
-      swal('Debes completar todos los campos',);
-      return;
-  }
-  
-  
-  this.submit();
-}
+        }
+
+        if (usuario2.length == 0) {
+          if (usuario.length == 0) {
+            swal('No has escrito nada ni en la población, ni en la cantidad', );
+            return;
+          } else {
+            swal('No has escrito nada en la cantidad', );
+            return;
+          }
+        }
+
+        if (pedido.length == 0) {
+          swal("no se puede realizar el pedido de 0", );
+        }
+        this.submit();
+      }
 </script>
 <script type="text/javascript">
   $(document).ready(function(){

@@ -4,8 +4,10 @@
 @extends('layouts.appfaq2')
 @section('title', 'SimonGrup')
 @section('content')
-
-<div class="container pt-2">         
+@if ($pedidoFinanciado)
+<link href="{{ asset('css/financiado.css') }}" rel="stylesheet">
+@endif
+<div class="container pt-11">         
         <div class="row border pt-2 ">
              @if ($errors->any())
                 <div class="col-lg-11 alert alert-danger">
@@ -56,9 +58,11 @@
                 
  				<div class="row col-sm-12 text-center">
                     @if($prev == 'http://134.422.70.106/nueva/public/pedidos.unclick')
-                        <button type="submit" class="btn btn-default"><a href="pedidos.pedidosunclick">Mostrar pedido</a></button>
+                        <img src="images/loading-6.gif" alt="" class="content" height="30px">
+                        <button type="submit" class="btn btn-default content2" id="content2" style="display:none"><a href="pedidos.pedidosunclick">Mostrar pedido</a></button>
                     @else
- 					<button type="submit" class="btn btn-default"><a href="pedidos.view">Mostrar pedido</a></button>
+                        <img src="images/loading-6.gif" alt="" class="content" height="30px">
+     					<button type="submit" class="btn btn-default content2" id="content2" style="display:none"><a href="pedidos.view">Mostrar pedido</a></button>
                     @endif
  				</div>
  				<div class="row col-sm-12 text-center pt-3">
@@ -80,8 +84,20 @@
         
              
             <div class="row col-sm-12 pt-2 pb-1 text-center">
-            	<button type="submit" class="btn buttoncons"><a href="bienvenido" style="color:white">Volver a inicio</a></button>
+            	<button type="submit" class="btn buttoncons button-financiado"><a href="bienvenido" style="color:white">Volver a inicio</a></button>
             </div>
         </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+   
+    setTimeout(function() {
+        $(".content").fadeOut(1500);
+    },3500);
+ 
+    setTimeout(function() {
+        $(".content2").fadeIn(1500);
+    },5999);
+});
+</script>
 @endsection

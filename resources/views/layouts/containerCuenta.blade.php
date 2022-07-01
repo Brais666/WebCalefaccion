@@ -1,4 +1,3 @@
-
 <?php
 use App\Pedidos;
 use App\User;
@@ -87,7 +86,7 @@ use Carbon\Carbon;
 			    		    <input type="tel" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="{{$telefono}}" readonly="true" pattern="[0-9]{9}">
 			    		</div>
 			    		<div class="col-md-auto col-xs-auto">
-			    		    <a href="#" onclick="ponerReadOnly('txtTelefono')"<span class="material-icons">edit</span></a>
+			    		    <a href="#" onclick="ponerReadOnly('txtTelefono')"><span class="material-icons">edit</span></a>
 			    		</div>
 			    		<div class="col-md-12">
 			    		    <p class="text-success formato">Ej. 123456789</p>
@@ -294,17 +293,13 @@ use Carbon\Carbon;
 		      <td>{{ $pedido->cantidad }} l</td>
 		      <td>{{ $pedido->total }} €</td>
 		      <td>{{ $pedido->seleccionado }}</td>
-		     
-		      @if(($pedido->fechaentrada < $hoy) && ($pedido->fechaentrada > $ayer))
-		      
+		      @if(($pedido->fechaentrada < $hoy) && ($pedido->fechaentrada > $ayer))	      
 		      <td>
-		      	<form action="{{ route('pedidos.destroy',$pedido->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('pedidos.show',$pedido->id) }}"><i class="fas fa-eye"></i></a>
-                    <!--<a class="btn btn-primary" href="{{ route('pedidos.edit',$pedido->id) }}"><i class="fas fa-edit"></i></a>-->
-                    
+		      	<form action="{{ route('pedido.destroy',$pedido->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('pedido.show',$pedido->id) }}"><i class="fas fa-eye"></i></a>
+                    <!--<a class="btn btn-primary" href="{{ route('pedido.edit',$pedido->id) }}"><i class="fas fa-edit"></i></a>-->
                    <!-- @method('DELETE')
-                    <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>-->
-                    
+                    <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>-->            
                 </form>
                 
 		      </td>
